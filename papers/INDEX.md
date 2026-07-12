@@ -1,6 +1,6 @@
 # UFFT Paper Index — Complete Zenodo Publication Record
 
-**73 public papers on Zenodo + 1 standalone pure-math preprint (Fedorov spectral uniqueness) · INBOX holds Papers #74 and #75 (UNDER_REVIEW) · Applied-Tech stream confidential and excluded from public numbering · All public Zenodo records Open Access with permanent DOIs**
+**75 public papers on Zenodo + 1 standalone pure-math preprint (Fedorov spectral uniqueness) · Zenodo queue empty (all filed as of 2026-07-12) · Applied-Tech stream confidential and excluded from public numbering · All public Zenodo records Open Access with permanent DOIs**
 **Author:** Martin, Luke · Newcastle, Australia · hello@ufft.info
 **GitHub:** https://github.com/ufft-info/UFFT
 **Priority date:** 20 February 2026
@@ -13,7 +13,7 @@
 - **Book:** From_Foam_to_Fermions.md (44 chapters, narrative — self-contained, no external-paper dependencies)
 - **Verification script:** verification/19079730_UFFT_Spectrum_Verification.ipynb
 - **Local papers directory:** papers/ (public published papers, one file per Zenodo record)
-- **Zenodo upload queue (active):** Papers #74 (Structural Theorems, Electron Walk Action) and #75 (Born Rule + Twin State) in INBOX, UNDER_REVIEW — move to APPROVED only on Marto's explicit greenlight. Latest uploads (2026-07-12): Paper #73 ([10.5281/zenodo.21323677](https://zenodo.org/records/21323677), Lorentz γ kinematics) and the v2 corrigenda of Papers #57 ([21323321](https://zenodo.org/records/21323321)), #58 ([21323498](https://zenodo.org/records/21323498)), #59 ([21323529](https://zenodo.org/records/21323529)) — torsion-operator split (T_hex vs inter-type T), Thm 57.2 eigenvector claim withdrawn, Result 58.3 demotion.
+- **Zenodo upload queue (active):** empty — 2026-07-12 run published Papers #73 ([21323677](https://zenodo.org/records/21323677)), #74 ([21323789](https://zenodo.org/records/21323789)), #75 ([21323993](https://zenodo.org/records/21323993), 6-file record with 5 verification scripts) and the v2 corrigenda of Papers #57 ([21323321](https://zenodo.org/records/21323321)), #58 ([21323498](https://zenodo.org/records/21323498)), #59 ([21323529](https://zenodo.org/records/21323529)).
 - **Zenodo queue (WIP / not ready):** empty.
 
 ---
