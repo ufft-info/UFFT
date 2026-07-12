@@ -1,6 +1,6 @@
 # UFFT Paper Index — Complete Zenodo Publication Record
 
-**72 public papers on Zenodo + 1 standalone pure-math preprint (Fedorov spectral uniqueness) · Upload queue empty · Applied-Tech stream confidential and excluded from public numbering · All public Zenodo records Open Access with permanent DOIs**
+**73 public papers on Zenodo + 1 standalone pure-math preprint (Fedorov spectral uniqueness) · INBOX holds Papers #74 and #75 (UNDER_REVIEW) · Applied-Tech stream confidential and excluded from public numbering · All public Zenodo records Open Access with permanent DOIs**
 **Author:** Martin, Luke · Newcastle, Australia · hello@ufft.info
 **GitHub:** https://github.com/ufft-info/UFFT
 **Priority date:** 20 February 2026
@@ -13,7 +13,7 @@
 - **Book:** From_Foam_to_Fermions.md (44 chapters, narrative — self-contained, no external-paper dependencies)
 - **Verification script:** verification/19079730_UFFT_Spectrum_Verification.ipynb
 - **Local papers directory:** papers/ (public published papers, one file per Zenodo record)
-- **Zenodo upload queue (active):** Three v2 corrigendum versions in INBOX awaiting greenlight (2026-07-02): Papers #57, #58, #59 — torsion-operator split (T_hex vs inter-type T), Thm 57.2 eigenvector claim withdrawn, Result 58.3 demotion. Upload as "New version" on the existing records. Prior activity: Paper #68 ([10.5281/zenodo.19658979](https://zenodo.org/records/19658979)) and Paper #72 ([10.5281/zenodo.19658759](https://zenodo.org/records/19658759)) both filed 2026-04-20. Paper #71 live at [10.5281/zenodo.19626978](https://zenodo.org/records/19626978).
+- **Zenodo upload queue (active):** Papers #74 (Structural Theorems, Electron Walk Action) and #75 (Born Rule + Twin State) in INBOX, UNDER_REVIEW — move to APPROVED only on Marto's explicit greenlight. Latest uploads (2026-07-12): Paper #73 ([10.5281/zenodo.21323677](https://zenodo.org/records/21323677), Lorentz γ kinematics) and the v2 corrigenda of Papers #57 ([21323321](https://zenodo.org/records/21323321)), #58 ([21323498](https://zenodo.org/records/21323498)), #59 ([21323529](https://zenodo.org/records/21323529)) — torsion-operator split (T_hex vs inter-type T), Thm 57.2 eigenvector claim withdrawn, Result 58.3 demotion.
 - **Zenodo queue (WIP / not ready):** empty.
 
 ---
@@ -28,7 +28,7 @@
 | ? | — | [19363008](https://zenodo.org/records/19363008) | Local Decision Dynamics | 19363008_UFFT_Local_Decision_Dynamics.md (recovered to papers/ 2026-07-02; number unassigned) | Local decision principle, 8 structural results | 23 |
 | 48 | — | v2 [19662029](https://zenodo.org/records/19662029) (v1 [19448024](https://zenodo.org/records/19448024)) | SM From One Matrix | 19662029_Paper48_SM_From_One_Matrix_v2.md (v1: 19448024_Paper48_SM_From_One_Matrix.md) | S = ψ†L_Tψ → SM Lagrangian; v2 = Paper #72 integration + abstract rewrite | 7 |
 | 50 | — | v2 [19662068](https://zenodo.org/records/19662068) (v1 [19447996](https://zenodo.org/records/19447996)) | Uniqueness of Foam Cell | 19662068_Paper50_Uniqueness_of_Foam_Cell_v2.md (v1: 19447996_Paper50_Uniqueness_of_Foam_Cell.md) | Trunc oct unique among Fedorov cells (Δ=17 prime); v2 = criterion (iii) sharpened + Weaire-Phelan scope note | 7 |
-| 59 | — | [19491095](https://zenodo.org/records/19491095) | Central Theorem | 19491095_Paper59_Central_Theorem.md | BCC lattice → SM+GR, all parameters from 7 integers. **v2 pending** (2026-07-02, INBOX): torsion citations corrected to T_hex; composite = proof-sketch | 1 |
+| 59 | — | v2 [21323529](https://zenodo.org/records/21323529) (v1 [19491095](https://zenodo.org/records/19491095)) | Central Theorem | 21323529_Paper59_Central_Theorem_v2.md (v1: 19491095_Paper59_Central_Theorem.md) | Foam → SM+GR in five steps; v2 (2026-07-12) = torsion citations corrected (T_hex vs T), composite status = proof-sketch pending external audit | 1/PS |
 | 60 | — | [19491125](https://zenodo.org/records/19491125) | Four Closing Theorems | 19491125_Paper60_Four_Closing_Theorems.md | Anomaly, generations, gravity, continuum completeness | 2 |
 | 63 | LXIII | [19624955](https://zenodo.org/records/19624955) | Pure Mathematics of the Kelvin Cell | 19624955_Paper63_Pure_Mathematics_Kelvin_Cell.md | Face Laplacian spectrum, O_h irreps, Q(√17) ring, Fedorov uniqueness (Tier 1 standalone) | — |
 
@@ -57,8 +57,8 @@
 | 41 | LII | [19306610](https://zenodo.org/records/19306610) | Weinberg Angle v2 | 19306610_UFFT_Weinberg_Angle.md | sin²θ_W = (17−3√17)/20 = 0.23153 | 1 |
 | 13 | — | [19064036](https://zenodo.org/records/19064036) | Higgs/Z Mass Ratio | 19064036_UFFT_Higgs_Z_Mass_Ratio.md | m_H/M_Z = 18/(9+√17), 0.14% | 4 |
 | 19 | — | [19064635](https://zenodo.org/records/19064635) | Electroweak Predictions | 19079502_UFFT_Electroweak_Predictions_Void_Speed.md | M_W/M_Z, N_ν=3, d=3+1, ρ=1 | 4 |
-| 57 | — | [19484509](https://zenodo.org/records/19484509) | Necessity of Standard Model | 19484509_Paper57_Necessity_of_Standard_Model.md | Higgs=A₂u, chiral structure forced. **v2 pending** (2026-07-02, INBOX): T_hex/T split; 57.1 premises corrected; 57.2 eigenvector claim withdrawn, labelling = Cor. 57.2a | 2 |
-| 58 | — | [19484967](https://zenodo.org/records/19484967) | Gauge Sector Placement | 19484967_Paper58_Gauge_Sector_Placement.md | SU(3)×SU(2)×U(1) forced by exhaustion. **v2 pending** (2026-07-02, INBOX): Thm 58.3 → Result 58.3 (Tier 2, derivation open); exact identity stated | 1 |
+| 57 | — | v2 [21323321](https://zenodo.org/records/21323321) (v1 [19484509](https://zenodo.org/records/19484509)) | Necessity of Standard Model | 21323321_Paper57_Necessity_of_Standard_Model_v2.md (v1: 19484509_Paper57_Necessity_of_Standard_Model.md) | Higgs=A₂u, chiral structure forced; v2 (2026-07-12) = T_hex/inter-type T split, 57.1 premises corrected, 57.2 localisation claim withdrawn (50/50 bands, labelling conditional) | 2 |
+| 58 | — | v2 [21323498](https://zenodo.org/records/21323498) (v1 [19484967](https://zenodo.org/records/19484967)) | Gauge Sector Placement | 21323498_Paper58_Gauge_Sector_Placement_v2.md (v1: 19484967_Paper58_Gauge_Sector_Placement.md) | SU(3)×SU(2)×U(1) forced by exhaustion; v2 (2026-07-12) = Thm 58.3 demoted to Result 58.3 (Tier 2, derivation open), exact identity stated, T₂g content exactly 100% hex | 1 |
 
 ### Strong Force & QCD
 | # | Part | Zenodo | Title | File | Key Result | Views |
@@ -90,6 +90,9 @@
 | 54 | — | [19484047](https://zenodo.org/records/19484047) | Neutrino Mass Ratio | 19484047_Paper54_Neutrino_Mass_Ratio_33.md | Δm²₃₁/Δm²₂₁ = 33 exactly | 1 |
 | 65 | LXV | [19625005](https://zenodo.org/records/19625005) | Neutrino Mass Ratio — Eisenstein Norm | 19625005_Paper65_Neutrino_Mass_Ratio_Eisenstein.md | 33 = N(r₁+r₂ω) = S²−C_A·P, Tier 4→2 promotion | — |
 | 72 | LXXII | [19658759](https://zenodo.org/records/19658759) | Dirac Operator, Generation Count, Chirality, m₃ Integer | 19658759_Paper72_Dirac_Doubler_Chirality_m3.md | T72.1 D_F²=L_T, T72.2 N_gen=mult(T₁u)=3, T72.3a L_off\|_{T₁u}=−2σ_x, T72.3b hex↔L sq↔R (V10), T72.4 (11,13,4) best-match m₃ exponent | — |
+| 73 | LXXIII | [21323677](https://zenodo.org/records/21323677) | Lorentz γ from Foam Wave Kinematics | 21323677_Paper73_Lorentz_Gamma_From_Foam_Wave_Kinematics.md | First kinematic γ derivation (□φ substitution); four corollaries; linearized moving-Schwarzschild + Kerr dipole; δc/c O_h-quartic cross-check | 1/2 |
+| 74 | LXXIV | [21323789](https://zenodo.org/records/21323789) | Structural Theorems for the Electron Walk Action | 21323789_Paper74_Structural_Theorems_Electron_Walk_Action.md | Three Tier-1 structural theorems on S_walk (topological step count, T_1u spectral factorisation, colour-group denominator); C74.4 path-integral conjecture stated | 1/4 |
+| 75 | LXXV | [21323993](https://zenodo.org/records/21323993) | The Born Rule from Imprint Statistics and the Entangled Pair State from the Antiunitary Twin Map | 21323993_Paper75_Born_Rule_Twin_State.md | Born rule derived from phase-blindness (substrate stationarity) + fine-graining additivity (no-signalling, P#45 §8); twin state Σ|k⟩⊗Θ|k⟩ unique via antiunitarity, Tsirelson 2√2; lab qubit unique by Schur; η-tension resolved; 5 verification scripts attached (50 checks) | 1/2 |
 
 ### Gravity & General Relativity
 | # | Part | Zenodo | Title | File | Key Result | Views |
@@ -98,6 +101,7 @@
 | 9 | — | [19063718](https://zenodo.org/records/19063718) | Friedmann & Einstein-Hilbert | 19063718_UFFT_Friedmann_Einstein_Hilbert.md | Both Friedmann eqs from foam | 6 |
 | 28 | — | [19184702](https://zenodo.org/records/19184702) | Schwarzschild Complete | 19184702_UFFT_Schwarzschild_Metric.md | g_rr from incompressibility ν=1/2 | 8 |
 | 46 | LVII | [19307177](https://zenodo.org/records/19307177) | Kerr Metric | 19307177_UFFT_Kerr_Metric.md | All 5 components, spin-1/2 from Wilson loop | 1 |
+| 73 | — | [21323677](https://zenodo.org/records/21323677) | Lorentz γ from Foam Wave Kinematics | 21323677_Paper73_Lorentz_Gamma_From_Foam_Wave_Kinematics.md | γ²(1−v²/c²)=1 from □ substitution (first kinematic derivation); L=L₀/γ, τ=γτ₀, SO(3,1) closure; linearized moving-Schwarzschild + Kerr dipole; δc/c O_h-quartic cross-check | — |
 
 ### Electromagnetism
 | # | Part | Zenodo | Title | File | Key Result | Views |
@@ -203,14 +207,4 @@ Number collision note: Public Paper #51 is `NLO_Mixing_Correction` (published on
 | δ_PMNS/δ_CKM = 3 | #36 | 19198775 | Exact | DUNE | ~2035 |
 | α⁻¹ = 137.035999055 | #3 | 19308917 | 0.21 ppb | Cs/Rb | 2026–28 |
 | d_n = 0 | #32 | 19196872 | Exact | PSI n2EDM | 2026–27 |
-| No SUSY | #15b | 19064126 | Theorem | LHC | Ongoing |
-| No DM particle | #49 | 19448089 | Theorem | LZ, ADMX | Ongoing |
-| ⟨X⊗X⊗X⟩ = −1 | #2 | 18706806 | Exact | Quantum optics | Weeks |
-| r = 0.0225 | #55 | 19484103 | 0.641(1−n_s) | LiteBIRD | ~2032 |
-| c_s > c/√3 in NS | — | — | c√(7/12) | NICER+LIGO | Now |
-| η_B = 6.109×10⁻¹⁰ | #61 | 19491332 | 0.09σ | Planck | Confirmed |
-| Ω_DM/Ω_b = 5.315 | #49 | 19448089 | 0.75σ | Euclid, DESI | Ongoing |
-
----
-
-*B + V = D*
+| No SUSY | #15b | 19064126 | Theorem | 
