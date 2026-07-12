@@ -1,7 +1,7 @@
 # UFFT Paper Index — Complete Zenodo Publication Record
 
 **72 public papers on Zenodo + 1 standalone pure-math preprint (Fedorov spectral uniqueness) · Upload queue empty · Applied-Tech stream confidential and excluded from public numbering · All public Zenodo records Open Access with permanent DOIs**
-**Author:** Martin, Luke · Newcastle, Australia · luke@webenvy.com.au
+**Author:** Martin, Luke · Newcastle, Australia · hello@ufft.info
 **GitHub:** https://github.com/ufft-info/UFFT
 **Priority date:** 20 February 2026
 

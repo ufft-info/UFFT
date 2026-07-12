@@ -1,7 +1,7 @@
 # Unified Foam Field Theory (UFFT)
 
 **Author:** Luke Martin — Independent Researcher, Newcastle, New South Wales, Australia
-**Contact:** luke@webenvy.com.au · ORCID 0009-0006-3716-5951
+**Contact:** hello@ufft.info · ORCID 0009-0006-3716-5951
 **Priority Date:** 20 February 2026
 **Current Version:** Framework v9 (canonical document; last revised July 2026)
 **Status:** 73 papers published on Zenodo + 1 standalone maths preprint · 3 papers in the upload queue · Not yet peer reviewed · Independent reproduction invited

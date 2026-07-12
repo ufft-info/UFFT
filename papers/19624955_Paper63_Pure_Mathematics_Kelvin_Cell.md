@@ -9,7 +9,7 @@
 | Author | Luke Martin |
 | Affiliation | Independent Researcher |
 | Location | Newcastle, New South Wales, Australia |
-| Email | luke@webenvy.com.au |
+| Email | hello@ufft.info |
 | ORCID | 0009-0006-3716-5951 |
 | Date | April 2026 |
 | Series | Unified Foam Field Theory (companion standalone paper) |
