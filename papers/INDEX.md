@@ -113,7 +113,7 @@
 | # | Part | Zenodo | Title | File | Key Result | Views |
 |---|------|--------|-------|------|------------|-------|
 | 1 | VII | [18706756](https://zenodo.org/records/18706756) | Decoherence Suppression | 18706756_UFFT_Decoherence_Suppression.md | ΔΓ/Γ = 8.22×10⁻¹¹ | 87 |
-| 2 | VIII | [18706806](https://zenodo.org/records/18706806) | Bell Correlations | 18706806_UFFT_Bell_Correlations.md | Void network speed c√(3/2) | 69 |
+| 2 | VIII | [21331868](https://zenodo.org/records/21331868) | Bell Correlations (v2.0) | 21331868_UFFT_Bell_Correlations_v2.md | Void network speed c√(3/2); v2.0 supersedes [18706806](https://zenodo.org/records/18706806) (§4.1 corrected per Paper #75) | 69 |
 | 25 | — | [19085007](https://zenodo.org/records/19085007) | S-Matrix & LSZ | 19085007_UFFT_S_Matrix_LSZ.md | LSZ from foam, Compton 0.002% | 2 |
 
 ### Topology & Torsion
