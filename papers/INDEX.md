@@ -1,6 +1,6 @@
 # UFFT Paper Index — Complete Zenodo Publication Record
 
-**75 public papers on Zenodo + 1 standalone pure-math preprint (Fedorov spectral uniqueness) · Zenodo queue empty (all filed as of 2026-07-12) · Applied-Tech stream confidential and excluded from public numbering · All public Zenodo records Open Access with permanent DOIs**
+**76 public papers on Zenodo + 1 standalone pure-math preprint (Fedorov spectral uniqueness) · Zenodo queue empty (all filed as of 2026-07-12) · Applied-Tech stream confidential and excluded from public numbering · All public Zenodo records Open Access with permanent DOIs**
 **Author:** Martin, Luke · Newcastle, Australia · hello@ufft.info
 **GitHub:** https://github.com/ufft-info/UFFT
 **Priority date:** 20 February 2026
@@ -93,6 +93,7 @@
 | 73 | LXXIII | [21323677](https://zenodo.org/records/21323677) | Lorentz γ from Foam Wave Kinematics | 21323677_Paper73_Lorentz_Gamma_From_Foam_Wave_Kinematics.md | First kinematic γ derivation (□φ substitution); four corollaries; linearized moving-Schwarzschild + Kerr dipole; δc/c O_h-quartic cross-check | 1/2 |
 | 74 | LXXIV | [21323789](https://zenodo.org/records/21323789) | Structural Theorems for the Electron Walk Action | 21323789_Paper74_Structural_Theorems_Electron_Walk_Action.md | Three Tier-1 structural theorems on S_walk (topological step count, T_1u spectral factorisation, colour-group denominator); C74.4 path-integral conjecture stated | 1/4 |
 | 75 | LXXV | [21323993](https://zenodo.org/records/21323993) | The Born Rule from Imprint Statistics and the Entangled Pair State from the Antiunitary Twin Map | 21323993_Paper75_Born_Rule_Twin_State.md | Born rule derived from phase-blindness (substrate stationarity) + fine-graining additivity (no-signalling, P#45 §8); twin state Σ|k⟩⊗Θ|k⟩ unique via antiunitarity, Tsirelson 2√2; lab qubit unique by Schur; η-tension resolved; 5 verification scripts attached (50 checks) | 1/2 |
+| 76 | LXXVI | [21339706](https://zenodo.org/records/21339706) | Hydrogen from the Foam | 21339706_Paper76_Foam_Hydrogen.md | 1/r from adjacency (A=1/(4π) exact), charge = A1g dressing, SO(4) ladder, Ry = α²m_ec²/2 = 13.605693 eV (no new parameters), δ = −K/a_B² with K = 3.810 closed form | — |
 
 ### Gravity & General Relativity
 | # | Part | Zenodo | Title | File | Key Result | Views |
