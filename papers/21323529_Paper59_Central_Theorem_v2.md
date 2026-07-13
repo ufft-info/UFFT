@@ -308,6 +308,17 @@ The Standard Model is not postulated. It is the unique continuum limit of the si
 
 *Priority Date: 20 February 2026 · UFFT Paper #59 · April 2026*
 
+## References
+
+[1] Luke Martin, *UFFT Paper #10, Lepton Mass Ratios*. DOI: 10.5281/zenodo.19063774.
+[2] Luke Martin, *UFFT Paper #48, The Standard Model from One Matrix (v2)*. DOI: 10.5281/zenodo.19662029.
+[3] Luke Martin, *UFFT Paper #50, Uniqueness of the Foam Cell (v2)*. DOI: 10.5281/zenodo.19662068.
+[4] Luke Martin, *UFFT Paper #56, Torsion T1u Theorems*. DOI: 10.5281/zenodo.19484354.
+[5] Luke Martin, *UFFT Paper #57, Necessity of the Standard Model (v2)*. DOI: 10.5281/zenodo.21323321.
+[6] Luke Martin, *UFFT Paper #58, Gauge-Sector Placement (v2)*. DOI: 10.5281/zenodo.21323498.
+[7] Luke Martin, *UFFT Paper #60, Four Closing Theorems*. DOI: 10.5281/zenodo.19491125.
+[8] Luke Martin, *UFFT Paper #59, The Central Theorem (v1, superseded)*. DOI: 10.5281/zenodo.19491095.
+
 *AI Disclosure: Numerical computations and proof structure verification performed with Claude (Anthropic). All theoretical arguments, physical identifications, and the axiom B+V=D: Luke Martin.*
 
 **B + V = D**

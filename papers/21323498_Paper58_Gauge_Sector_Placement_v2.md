@@ -317,6 +317,12 @@ With this paper, the complete particle–irrep map of the framework is establish
 
 *Priority Date: 20 February 2026 · UFFT Paper #58 · April 2026*
 
+## References
+
+[1] Luke Martin, *UFFT Paper #56, Torsion T1u Theorems*. DOI: 10.5281/zenodo.19484354.
+[2] Luke Martin, *UFFT Paper #57, Necessity of the Standard Model (v2)*. DOI: 10.5281/zenodo.21323321.
+[3] Luke Martin, *UFFT Paper #58, Gauge-Sector Placement (v1, superseded)*. DOI: 10.5281/zenodo.19484967.
+
 *AI Disclosure: Numerical computations performed with Claude (Anthropic). All theoretical arguments and physical identifications: Luke Martin.*
 
 **B + V = D**

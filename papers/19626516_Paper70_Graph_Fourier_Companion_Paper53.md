@@ -191,6 +191,15 @@ All Paper #70 projector and bipartite-structure checks pass.
 
 ---
 
+## References
+
+[1] Luke Martin, *UFFT Paper #5, The Face Laplacian Spectrum*. DOI: 10.5281/zenodo.19030062.
+[2] Luke Martin, *UFFT Paper #16, The Master Equation*. DOI: 10.5281/zenodo.19064359.
+[3] Luke Martin, *UFFT Paper #42, The Path Integral from Foam*. DOI: 10.5281/zenodo.19306828.
+[4] Luke Martin, *UFFT Paper #45, The Void Channel*. DOI: 10.5281/zenodo.19307111.
+[5] Luke Martin, *UFFT Paper #48, The Standard Model from One Matrix (v1)*. DOI: 10.5281/zenodo.19448024.
+[6] Luke Martin, *UFFT Paper #53, The Dark Energy 6/7 Factor*. DOI: 10.5281/zenodo.19483955.
+
 ## AI Disclosure
 
 Developed in collaboration with Claude (Anthropic). Theoretical direction and identification of the interior-spectrum projector as the cleanest algebraic statement of the 6/7 factor: Luke Martin. Lemma 70.2 and its identification as the band-edge zero-group-velocity result from lattice-wave mechanics: developed collaboratively. AI role: proof formalisation, numerical verification (14 × 14 face Laplacian diagonalisation, projector equalities, bipartite sign-product check), document composition.

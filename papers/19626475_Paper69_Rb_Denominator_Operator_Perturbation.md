@@ -333,6 +333,17 @@ All four decompositions agree at 34. All three Wolfenstein-apex coordinates clos
 
 ---
 
+## References
+
+[1] Luke Martin, *UFFT Paper #5, The Face Laplacian Spectrum*. DOI: 10.5281/zenodo.19030062.
+[2] Luke Martin, *UFFT Paper #16, The Master Equation*. DOI: 10.5281/zenodo.19064359.
+[3] Luke Martin, *UFFT Paper #34, The CKM Matrix from Inter-Type Torsion*. DOI: 10.5281/zenodo.19198360.
+[4] Luke Martin, *UFFT Paper #45, The Void Channel*. DOI: 10.5281/zenodo.19307111.
+[5] Luke Martin, *UFFT Paper #64, The Wolfenstein rho-bar Parameter from the Inter-Type Torsion Operator*. DOI: 10.5281/zenodo.19624977.
+[6] Luke Martin, *UFFT Paper #66, Wolfenstein A from the Face-Spectral Complement*. DOI: 10.5281/zenodo.19625071.
+[7] Luke Martin, *UFFT Paper #67, NLO delta_CKM / eta-bar Closure*. DOI: 10.5281/zenodo.19625122.
+[8] Particle Data Group, Workman et al., *Review of Particle Physics 2024*. PTEP 2024, 083C01.
+
 ## AI Disclosure
 
 This paper was developed in collaboration with Claude (Anthropic). Ideas, framework, direction, and physical interpretation: Luke Martin. AI role: numerical computation and document composition.

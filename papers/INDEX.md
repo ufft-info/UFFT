@@ -149,7 +149,7 @@
 | 38 | XLIX | [19306393](https://zenodo.org/records/19306393) | Three Generations | 19306393_UFFT_Three_Generations.md | N_gen = F_sq/2 = 3 | 3 |
 | 42 | LIII | [19306828](https://zenodo.org/records/19306828) | Path Integral from Foam | 19306828_UFFT_Path_Integral.md | 5 Feynman rules from torsion walks | 3 |
 | 43 | LIV | [19306918](https://zenodo.org/records/19306918) | Information Capacity | 19306918_UFFT_Information_Capacity.md | Bandwidth, Bekenstein S≈F=14 | 1 |
-| 45 | LVI | [19307111](https://zenodo.org/records/19307111) | Void Channel | 19307111_UFFT_Void_Channel.md | H=L+ηV, boson-fermion parity | 1 |
+| 45 | LVI | [21331511](https://zenodo.org/records/21331511) | Void Channel (v2.0) | 21331511_UFFT_Void_Channel_v2.md | H=L+ηV, boson-fermion parity; v2 §6 corrected per Paper #75 (η = formation rate, not correlation strength); supersedes [19307111](https://zenodo.org/records/19307111) | 1 |
 
 ### Verification
 | # | Zenodo | Title | File | Views |

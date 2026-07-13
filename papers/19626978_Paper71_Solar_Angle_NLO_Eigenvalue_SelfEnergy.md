@@ -260,6 +260,19 @@ At the current observational precision (±0.027), the ε² correction is negligi
 
 ---
 
+## References
+
+[1] Luke Martin, *UFFT Paper #5, The Face Laplacian Spectrum*. DOI: 10.5281/zenodo.19030062.
+[2] Luke Martin, *UFFT Paper #16, The Master Equation*. DOI: 10.5281/zenodo.19064359.
+[3] Luke Martin, *UFFT Paper #35, The PMNS Matrix*. DOI: 10.5281/zenodo.19198422.
+[4] Luke Martin, *UFFT Paper #36, CP Phases from Off-Diagonal Schur Scalars*. DOI: 10.5281/zenodo.19198775.
+[5] Luke Martin, *UFFT Paper #47, NLO Neutrinos, alpha_s, M_W*. DOI: 10.5281/zenodo.19448066.
+[6] Luke Martin, *UFFT Paper #51, NLO Mixing Correction: The sqrt(17)/363 Wall Factor*. DOI: 10.5281/zenodo.19477100.
+[7] Luke Martin, *UFFT Paper #56, Torsion T1u Theorems*. DOI: 10.5281/zenodo.19484354.
+[8] Luke Martin, *UFFT Paper #60, Four Closing Theorems*. DOI: 10.5281/zenodo.19491125.
+[9] Luke Martin, *UFFT Paper #67, NLO delta_CKM / eta-bar Closure*. DOI: 10.5281/zenodo.19625122.
+[10] Particle Data Group, Workman et al., *Review of Particle Physics 2024*. PTEP 2024, 083C01.
+
 ## AI Disclosure
 
 This paper was developed in collaboration with Claude (Anthropic). Ideas, framework, direction, and physical interpretation: Luke Martin. AI role: numerical computation and document composition.
