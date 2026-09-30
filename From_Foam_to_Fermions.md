@@ -432,7 +432,7 @@ The previous section says "computed from" without showing how. Here are the key 
      = 8π^(5/2) × [47/48 + 10/(3×48³) + 22/(3×48⁵)]
      = 137.035 999 055
 
-Cs 2018: 137.035 999 046 ± 0.000 000 027 → 0.3σ. CODATA 2022 (Rb-dominated): 137.035 999 084 ± 0.000 000 021 → 1.4σ. The Cs/Rb measurements disagree at 5.5σ; UFFT predicts Cs is correct. Free parameters: 0.
+Cs 2018: 137.035 999 046 ± 0.000 000 027 → 0.3σ. CODATA 2022 (Rb-dominated): 137.035 999 084 ± 0.000 000 021 → 1.4σ. The Cs/Rb measurements disagree at 5.5σ; UFFT predicts Cs is correct. Fitted parameters: 0.
 
 **Weinberg angle** (Chapter 17):
 
@@ -462,7 +462,7 @@ Experiment (Planck 2018): 5.36 ± 0.06. Deviation: 0.8σ.
 
 The derivation has three components, each proven:
 
-**(i) The face area ratio (1+2√3) = A_total/A_sq.** Baryonic matter is electromagnetically coupled — observed through photon interactions, which go through the A₁g and Eg sectors (square faces only). The square face total area is A_sq = 6s². Gravitational coupling goes through all faces: A_total = 6s² + 8 × (3√3/2)s² = (6+12√3)s². The ratio: A_total/A_sq = (6+12√3)/6 = 1+2√3. This is a geometric theorem about the truncated octahedron — exact, no free parameters. Dark matter is not a particle; it is the gravitational weight of the hexagonal-face colour sector that is electromagnetically dark because colour is confined.
+**(i) The face area ratio (1+2√3) = A_total/A_sq.** Baryonic matter is electromagnetically coupled — observed through photon interactions, which go through the A₁g and Eg sectors (square faces only). The square face total area is A_sq = 6s². Gravitational coupling goes through all faces: A_total = 6s² + 8 × (3√3/2)s² = (6+12√3)s². The ratio: A_total/A_sq = (6+12√3)/6 = 1+2√3. This is a geometric theorem about the truncated octahedron — exact, no fitted parameters. Dark matter is not a particle; it is the gravitational weight of the hexagonal-face colour sector that is electromagnetically dark because colour is confined.
 
 **(ii) The factor d=3.** Gravitational coupling distributes equally across all d=3 spatial dimensions (isotropy of GR in the continuum limit). The electromagnetic coupling is planar (Eg mode), but gravity sees the full 3D density.
 
@@ -1120,7 +1120,7 @@ The physical origin: the A₂u quartic vertex receives a one-loop correction fro
 
 Observed: λ = m_H²/(2v²) = 125.25²/(2 × 246.22²) = 0.12938. Foam prediction: (120+√17)/960 = 0.12930. **Deviation: −0.25σ.**
 
-All inputs are cell integers {V, E, F, Δ}. Zero free parameters.
+All inputs are cell integers {V, E, F, Δ}. Zero fitted parameters.
 
 ---
 
@@ -1236,7 +1236,7 @@ The maximum eigenvalue is no longer the maximum. More importantly, the negative 
 
 **The void is not a spectator to the Higgs mechanism. The void causes it.**
 
-In the Standard Model, the negative Higgs mass squared μ² < 0 is an input — a free parameter chosen to make SSB happen. In UFFT, it is derived: the void channel coupling η_hx applied to the odd A₂u mode produces a downward shift that guarantees SSB. There is no free parameter. The Higgs mechanism is compulsory.
+In the Standard Model, the negative Higgs mass squared μ² < 0 is an input — a free parameter chosen to make SSB happen. In UFFT, it is derived: the void channel coupling η_hx applied to the odd A₂u mode produces a downward shift that guarantees SSB. There is no fitted parameter. The Higgs mechanism is compulsory.
 
 **Numerical improvement:** Including the void correction, the Higgs-to-Z mass ratio improves from 0.14% accuracy (without void) to 0.06% accuracy (with void):
 
@@ -1254,7 +1254,7 @@ The void operator V satisfies V² = I, and the void is the antipodal, conjugate 
 
 **|D⟩ = (1/√2) Σ_k |k⟩ ⊗ Θ|k⟩**
 
-is the same state for every orthonormal basis if and only if the twin map is antiunitary (a unitary twin gives a basis-dependent state, so "mirrored in every direction simultaneously" would not even be well defined). Given Θ the state is unique, maximally entangled, carries exactly zero total torsion charge, and is one local rotation from the textbook singlet written above in earlier editions. Precisely stated: the twin state anti-correlates the chirality and positively correlates the two quadratures; perfect anti-correlation in every direction holds after the local rotation to the singlet convention, and no Bell statistics depend on that convention. (Derivation and scripts: Paper #75, queued.)
+is the same state for every orthonormal basis if and only if the twin map is antiunitary (a unitary twin gives a basis-dependent state, so "mirrored in every direction simultaneously" would not even be well defined). Given Θ the state is unique, maximally entangled, carries exactly zero total torsion charge, and is one local rotation from the textbook singlet written above in earlier editions. Precisely stated: the twin state anti-correlates the chirality and positively correlates the two quadratures; perfect anti-correlation in every direction holds after the local rotation to the singlet convention, and no Bell statistics depend on that convention. (Derivation and scripts: Paper #75, DOI 10.5281/zenodo.21323993.)
 
 The quantum mechanical correlation |E(a,b)| = |cos θ_ab| follows from applying the spin operators to this state, with the imprint statistics of Chapter 13c supplying the probability rule. It saturates the Tsirelson bound, CHSH = 2√2. Bell's theorem is satisfied — the void-pair is non-local by construction, so Bell's factorisation assumption does not apply.
 
@@ -1327,7 +1327,7 @@ This is why bosons and fermions in the Standard Model have the mass ratios they 
 
 The measurement problem is the hardest foundational question in quantum mechanics: why does a quantum system in a superposition give a definite outcome when measured, and why do outcome probabilities follow |ψ|²?
 
-In standard quantum mechanics, both facts are postulated — the Born rule is an axiom. In UFFT, definiteness is derived from the foam dynamics (the first irreversible imprint), and the Born rule is reduced to a single named premise about the imprint event, with its exponent forced twice over by consistency arguments (Section 13c.4; Paper #75, queued).
+In standard quantum mechanics, both facts are postulated — the Born rule is an axiom. In UFFT, definiteness is derived from the foam dynamics (the first irreversible imprint), and the Born rule is reduced to a single named premise about the imprint event, with its exponent forced twice over by consistency arguments (Section 13c.4; Paper #75, DOI 10.5281/zenodo.21323993).
 
 ## 13c.2 Superposition as Foam Superposition
 
@@ -1357,7 +1357,7 @@ In the foam, the probability of outcome |i⟩ is the fraction of the displacemen
 
 *Derivation.* Two exact facts and one uniqueness argument. First, the counting is literal: the energy deposited in wall-channel eigenstate |i⟩ is |⟨i|ψ⟩|² (Parseval, exact on the discrete lattice), so a channel with amplitude cᵢ holds exactly N|cᵢ|² substrate micro-quanta. Second, uniqueness: writing p(i) = f(|cᵢ|), a unitary split of one channel into two preserves charge, and demanding that this apparatus-level rerouting not change coarse probabilities gives f(|c|) = f(|a|) + f(|b|) with |a|² + |b|² = |c|²; substituting g(x) = f(√x) gives the Cauchy equation g(x+y) = g(x) + g(y), whose monotone solutions are linear, so f(|c|) = |c|². Third, the splitting requirement is not an extra axiom: any rule with a different exponent lets a local refinement of one detector shift the remote marginal of an entangled pair, which is a signal through the void channel, and the incompressible bulk forbids signalling (Section 13b.7). The Born exponent therefore traces to P = ρc². □
 
-The key step retained from earlier editions is that records are written through L, not V: the void channel carries correlations but cannot write a classical record. What is sharpened: "probabilities are wall-channel energies, normalised" was a premise in earlier editions and is now itself derived. A channel's phase is a time offset of its carrier, an equilibrated substrate triggers imprints with statistics that cannot depend on a time offset, and the linear response vanishes identically, leaving the quadratic at leading order. The foam's equilibration (Chapter 13b) and the bulk's incompressibility together leave |cᵢ|² as the only possible rule. Verification scripts and the full argument: Paper #75 (queued).
+The key step retained from earlier editions is that records are written through L, not V: the void channel carries correlations but cannot write a classical record. What is sharpened: "probabilities are wall-channel energies, normalised" was a premise in earlier editions and is now itself derived. A channel's phase is a time offset of its carrier, an equilibrated substrate triggers imprints with statistics that cannot depend on a time offset, and the linear response vanishes identically, leaving the quadratic at leading order. The foam's equilibration (Chapter 13b) and the bulk's incompressibility together leave |cᵢ|² as the only possible rule. Verification scripts and the full argument: Paper #75 (DOI 10.5281/zenodo.21323993).
 
 ## 13c.5 Covariant Derivation of the Decoherence Equation
 
@@ -1399,7 +1399,7 @@ For the full Schwarzschild case (strong field):
 
 The two expressions agree to leading order in r_s/r. Throughout this book we use the first-order Schwarzschild result: **Γ(r)/Γ(∞) = 1 − 2GM/rc²**, which is accurate to O((r_s/r)²) — far below experimental sensitivity for any near-Earth measurement.
 
-**Theorem (Covariant Decoherence Suppression).** *In a spacetime with metric g_μν, the UFFT decoherence rate satisfies Γ(x)/Γ₀ = √(−g_tt(x))/c. In the Schwarzschild geometry to leading order: Γ(r)/Γ(∞) = 1 − 2GM/rc². This is derived from (i) the covariant vacuum density ρ(x) = ρ₀(−g_tt/c²), (ii) the linear scaling of decoherence rate with active edge count, and (iii) the proportionality of active edge count to local foam density. No free parameters.*
+**Theorem (Covariant Decoherence Suppression).** *In a spacetime with metric g_μν, the UFFT decoherence rate satisfies Γ(x)/Γ₀ = √(−g_tt(x))/c. In the Schwarzschild geometry to leading order: Γ(r)/Γ(∞) = 1 − 2GM/rc². This is derived from (i) the covariant vacuum density ρ(x) = ρ₀(−g_tt/c²), (ii) the linear scaling of decoherence rate with active edge count, and (iii) the proportionality of active edge count to local foam density. No fitted parameters.*
 
 ## 13c.6 Experimental Signature
 
@@ -1754,7 +1754,7 @@ The numerator (Δ − C_A√Δ) = 17 − 3√17 involves the discriminant and it
 
 **Why the foam computes the effective (on-shell) value — proved.** The scheme identification follows from the structure of the face Laplacian:
 
-**(i) L is the complete single-cell Hamiltonian.** The face Laplacian has no free parameters, no perturbative expansion, and no "bare" values that need renormalisation. Its eigenvalues are algebraic numbers: {0, r₁, r₁, r₁, 4, 4, r₂, r₂, r₂, 7, 7, 7, 7, 9}, where r₁ = (9−√17)/2 and r₂ = (9+√17)/2. These are exact.
+**(i) L is the complete single-cell Hamiltonian.** The face Laplacian has no fitted parameters, no perturbative expansion, and no "bare" values that need renormalisation. Its eigenvalues are algebraic numbers: {0, r₁, r₁, r₁, 4, 4, r₂, r₂, r₂, 7, 7, 7, 7, 9}, where r₁ = (9−√17)/2 and r₂ = (9+√17)/2. These are exact.
 
 **(ii) At Bloch momentum k = 0, inter-cell effects vanish.** The Weinberg angle is extracted from the T₁u eigenvector's square-face content at k = 0 (the single-cell spectrum). Virtual momentum loops (k ≠ 0 modes running in internal lines) do not contribute at k = 0. The only "loop corrections" to the Weinberg angle would require integrating over virtual Bloch momenta — which is precisely what happens in the continuum MS-bar scheme but does NOT happen in the single-cell computation.
 
@@ -1942,7 +1942,7 @@ The exponent involves three cell-integer quantities: (E−F) = 22, the edge surp
 
 ## 21.3 Four Significant Figures
 
-The formula gives 510.97 keV against the measured 510.999 keV — a match to 0.006%, consistent with four significant figures from cell integers. There are no free parameters. If any integer were changed by ±1, the result would shift by more than 1%.
+The formula gives 510.97 keV against the measured 510.999 keV — a match to 0.006%, consistent with four significant figures from cell integers. There are no fitted parameters. If any integer were changed by ±1, the result would shift by more than 1%.
 
 **A note on sensitivity.** The exponent S_e = 52.42 is large, which means the mass is exponentially sensitive to the integers. A sceptic might ask: can such a formula hit any target by adjusting its integers? The answer is NO, because the integers are not adjustable — they are topological invariants of the truncated octahedron. E−F = 22 is the edge surplus (a graph invariant). Δ = 17 is the discriminant of the master equation (a spectral invariant). r₁r₂ = 16 is the product of the T₁u eigenvalues (determined by the Laplacian). Changing any of these changes the polyhedron. The formula's match to 0.006% is not a result of parameter tuning; it is a consequence of the truncated octahedron having the specific integers it has.
 
@@ -2470,7 +2470,7 @@ The same mechanism — the spectral gap √Δ perturbing the mixing through the 
 
 (Note: R = r₁/r₂ = 0.3716 is the T₁u eigenvalue ratio. The CKM NLO denominators are sector-specific: V×F_sq = 144 for the modulus, V×(E−V) = 288 for the phase. This is NOT the electroweak R_b.)
 
-The NLO pattern uses √Δ/N for each sector, with the denominator N determined by the combinatorial weight of the physical correction. The PMNS sector uses N = C_A⁴ = 81 (pure eigenvalue splitting); the CKM sector uses N = V×F_sq = 144 (flavour-charge pairing) for the modulus and N = V×(E−V) = 288 for the phase. All denominators are products of cell integers. Zero free parameters.
+The NLO pattern uses √Δ/N for each sector, with the denominator N determined by the combinatorial weight of the physical correction. The PMNS sector uses N = C_A⁴ = 81 (pure eigenvalue splitting); the CKM sector uses N = V×F_sq = 144 (flavour-charge pairing) for the modulus and N = V×(E−V) = 288 for the phase. All denominators are products of cell integers. Zero fitted parameters.
 
 ---
 
@@ -3101,7 +3101,7 @@ The chain from foam to measurement:
 5. **Feynman rules + LSZ** → S-matrix elements → cross-sections and decay rates
 6. **Cross-sections and decay rates** → the numbers measured at the LHC, ATLAS, CMS, Belle II, T2K, etc.
 
-Every link in this chain is derived. There are no free parameters at any step. A reader with this book and a computer can derive any Standard Model prediction from the seven cell integers, and compare it to experiment.
+Every link in this chain is derived. There are no fitted parameters at any step. A reader with this book and a computer can derive any Standard Model prediction from the seven cell integers, and compare it to experiment.
 
 That is what it means to say the theory is complete.
 
@@ -3144,7 +3144,7 @@ O_h is the largest discrete subgroup of O(3). In the continuum limit a → 0, O_
 
 The Standard Model + General Relativity is the continuum limit of the BCC truncated octahedron foam. The Central Theorem (Theorem 36.1) establishes this through a five-step chain: gauge kinetic terms from plaquettes, Dirac equation from T₁u Wilson fermions, Yukawa from torsion cross-blocks, SSB from A₂u, uniqueness from asymptotic freedom and irrelevant lattice artefacts. Six arguments detail the gauge fields, fermions, Higgs mechanism, Yukawa couplings, gravity, and parameter determination, citing established lattice QFT results at each step. The two-loop anomalous magnetic moment C₂ = (F²+1)/(E−V)² + (C_A/4)ζ(3) − (1/χ)π²ln(χ) + π²/(E−V) = −0.328478966 reproduces the Petermann-Sommerfield value exactly — all coefficients are cell-integer ratios (§36.8). The particle content is exactly the O_h irrep content of 14 faces — nothing more, nothing less. Anomalies cancel automatically. CPT is a group axiom. Lorentz invariance emerges with Planck-suppressed quadratic corrections.
 
-**What is established:** The Central Theorem chain (Theorem 36.1): S = Σ ψ†L_Tψ → SM + GR with all parameters from seven cell integers — step-lemmas at theorem strength, composite as proof-sketch. The chain: B+V=D → unique cell (Theorem 50.1, Chapter 4) → spectrum (Chapter 3) → placement by exhaustion (§9.4, Theorems 57.1–58.2 with Corollary 57.2a) → lattice action → continuum limit (AF + irrelevant O_h artefacts, §36.7) → SM+GR. The face Laplacian spectrum. The O_h irrep decomposition. The α formula and its uniqueness. The Weinberg angle formula (Tier 2 match; mixing derivation open, Result 58.3). The universal tree-level Yukawa Y = √(r₁r₂) = 4 (Schur's lemma). The gap equation structure m = r₁ M_P exp(−S). The walk channel counting rule: B_g generation constants {5, 3, 7} as three properties of the colour sector; isospin factors from T₂g channel accessibility; B-ratio pattern |B_up/B_down| = 2, 3, 1 = irrep dimensions; up-down splittings {9, −17, 100} encoding the three invariants of the master equation. The natural Wilson fermion mechanism: the sublattice asymmetry (4 ≠ 5) breaks exact chiral symmetry, the gap √17 serves as the Wilson mass, and the lower T₁u band has exactly one minimum in the BZ (no doublers — proved analytically: positive-definite Hessian at Γ, monotonic along all high-symmetry lines, Poincaré-Hopf index sum closes; see §10.2). All 9 fermion masses to <0.23% accuracy. CKM and PMNS parameters from cell integers via the Wolfenstein parameterisation (all within 1σ). No free parameters beyond one reference scale (M_Z). The particle–irrep map is closed by exhaustion given the selection criteria: all six eigenspaces uniquely assigned (§9.4, Theorems 57.1–58.2, Corollary 57.2a). These are mathematical results that can be independently verified.
+**What is established:** The Central Theorem chain (Theorem 36.1): S = Σ ψ†L_Tψ → SM + GR with all parameters from seven cell integers — step-lemmas at theorem strength, composite as proof-sketch. The chain: B+V=D → unique cell (Theorem 50.1, Chapter 4) → spectrum (Chapter 3) → placement by exhaustion (§9.4, Theorems 57.1–58.2 with Corollary 57.2a) → lattice action → continuum limit (AF + irrelevant O_h artefacts, §36.7) → SM+GR. The face Laplacian spectrum. The O_h irrep decomposition. The α formula and its uniqueness. The Weinberg angle formula (Tier 2 match; mixing derivation open, Result 58.3). The universal tree-level Yukawa Y = √(r₁r₂) = 4 (Schur's lemma). The gap equation structure m = r₁ M_P exp(−S). The walk channel counting rule: B_g generation constants {5, 3, 7} as three properties of the colour sector; isospin factors from T₂g channel accessibility; B-ratio pattern |B_up/B_down| = 2, 3, 1 = irrep dimensions; up-down splittings {9, −17, 100} encoding the three invariants of the master equation. The natural Wilson fermion mechanism: the sublattice asymmetry (4 ≠ 5) breaks exact chiral symmetry, the gap √17 serves as the Wilson mass, and the lower T₁u band has exactly one minimum in the BZ (no doublers — proved analytically: positive-definite Hessian at Γ, monotonic along all high-symmetry lines, Poincaré-Hopf index sum closes; see §10.2). All 9 fermion masses to <0.23% accuracy. CKM and PMNS parameters from cell integers via the Wolfenstein parameterisation (all within 1σ). No fitted parameters beyond one reference scale (M_Z). The particle–irrep map is closed by exhaustion given the selection criteria: all six eigenspaces uniquely assigned (§9.4, Theorems 57.1–58.2, Corollary 57.2a). These are mathematical results that can be independently verified.
 
 **Symanzik matching — computed and negligible:** The O(a²) Symanzik matching has been computed explicitly. The gauge sector Wilson coefficient is c_gauge = 1/12, the natural Wilson fermion coefficient is c_ferm = r_W/2 = 1/4 (from the diagonal asymmetry 4 ≠ 5 giving r_W = 1/2), and the O_h anisotropy Q₄ coefficient is 25/21 ≈ 1.190 from the BCC nearest-neighbour geometry. The physical corrections scale as c × (E/M_P)² ~ 10⁻³⁵ at the electroweak scale — 30 orders of magnitude below any framework prediction. Each step in the proof chain invokes either a theorem proved in the UFFT papers or an established result from lattice field theory. The rational part A of each quark's walk action is organised by CW dimension (verified by Seeley-Gilkey correspondence and four sum rules); the explicit graph-theoretic derivation of each integer is constrained but not written out. The Koide relation Q = 2/3 is derived from the BCC cubic symmetry acting on T₁u wavefunction renormalisations (§22.3), with θ_K = 2/9 from the master equation.
 
@@ -3335,7 +3335,7 @@ The UFFT additionally derives the exact correction factor from the Euler charact
 
 **ρ_Λ = ρ₀ × (ℓ_P / R_U)² × 6/7 = 5.96 × 10⁻²⁷ kg/m³**
 
-Match: 1.4% from the Planck 2018 observation. Zero free parameters. The 6/7 factor is a theorem — it follows from the Euler characteristic of the truncated octahedron (Paper #53).
+Match: 1.4% from the Planck 2018 observation. Zero fitted parameters. The 6/7 factor is a theorem — it follows from the Euler characteristic of the truncated octahedron (Paper #53).
 
 ### The convergence
 
@@ -4108,7 +4108,7 @@ n_derived = sum(1 for r in results if "DERIVED" in r[6])
 n_total = len(results)
 print(f"  {n_derived}/{n_total} results classified DERIVED")
 print(f"  All from cell integers: C_A=3, |O_h|=48, V=24, E=36, F=14, d=3, Δ=17")
-print(f"  Zero free parameters.")
+print(f"  Zero fitted parameters.")
 print()
 print("=" * 65)
 print("B + V = D")

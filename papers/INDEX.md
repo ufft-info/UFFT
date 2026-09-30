@@ -11,7 +11,7 @@
 
 - **Canonical framework document:** UFFT_Core_Framework_v9.md (contains v10 content — filename frozen)
 - **Book:** From_Foam_to_Fermions.md (44 chapters, narrative — self-contained, no external-paper dependencies)
-- **Verification script:** verification/19079730_UFFT_Spectrum_Verification.ipynb
+- **Verification script:** verification/19079730_UFFT_Spectrum_Verification.py
 - **Local papers directory:** papers/ (public published papers, one file per Zenodo record)
 - **Zenodo upload queue (active):** empty — 2026-07-12 run published Papers #73 ([21323677](https://zenodo.org/records/21323677)), #74 ([21323789](https://zenodo.org/records/21323789)), #75 ([21323993](https://zenodo.org/records/21323993), 6-file record with 5 verification scripts) and the v2 corrigenda of Papers #57 ([21323321](https://zenodo.org/records/21323321)), #58 ([21323498](https://zenodo.org/records/21323498)), #59 ([21323529](https://zenodo.org/records/21323529)).
 - **Zenodo queue (WIP / not ready):** empty.
@@ -38,7 +38,7 @@
 | 3 | IX | [19011758](https://zenodo.org/records/19011758) | Fine Structure Constant v1 | 19011758_UFFT_Fine_Structure_Constant.md | α⁻¹ = 137.035999055 (0.21 ppb) | — |
 | 3 (v2) | IX | [19019944](https://zenodo.org/records/19019944) | Fine Structure Constant v2 | 19019944_UFFT_Fine_Structure_Constant_v2.md | Uniqueness proof, CW-complex expansion | — |
 | 3 (v3) | — | [19063910](https://zenodo.org/records/19063910) | Fine Structure Constant v3 | 19063910_UFFT_Fine_Structure_Constant_v3.md | Updated with running coupling | — |
-| 3 (v4) | — | [19308917](https://zenodo.org/records/19308917) | Fine Structure Constant v4 | — | Complete derivation, 101 views, 23 downloads | 116 |
+| 3 (v4) | — | [19308917](https://zenodo.org/records/19308917) | Fine Structure Constant v4 | 19308917_UFFT_Fine_Structure_Constant_v4.md | Complete derivation, 101 views, 23 downloads | 116 |
 | 22 | — | [19084565](https://zenodo.org/records/19084565) | D-Mode Path Integral | 19084565_UFFT_D_Mode_Path_Integral.md | α as heat kernel Z_D on face graph | 14 |
 ### Anomalous Magnetic Moment (g−2)
 | # | Part | Zenodo | Title | File | Key Result | Views |
@@ -56,7 +56,7 @@
 | 11 | — | [19063822](https://zenodo.org/records/19063822) | Weinberg Angle v1 (GUT) | 19063822_UFFT_Weinberg_Angle_v1.md | sin²θ_W = 3/8 at GUT scale | 5 |
 | 41 | LII | [19306610](https://zenodo.org/records/19306610) | Weinberg Angle v2 | 19306610_UFFT_Weinberg_Angle.md | sin²θ_W = (17−3√17)/20 = 0.23153 | 1 |
 | 13 | — | [19064036](https://zenodo.org/records/19064036) | Higgs/Z Mass Ratio | 19064036_UFFT_Higgs_Z_Mass_Ratio.md | m_H/M_Z = 18/(9+√17), 0.14% | 4 |
-| 19 | — | [19064635](https://zenodo.org/records/19064635) | Electroweak Predictions | 19079502_UFFT_Electroweak_Predictions_Void_Speed.md | M_W/M_Z, N_ν=3, d=3+1, ρ=1 | 4 |
+| 19 | — | [19064635](https://zenodo.org/records/19064635) | Electroweak Predictions | 19064635_UFFT_Electroweak_Predictions.md | M_W/M_Z, N_ν=3, d=3+1, ρ=1 | 4 |
 | 57 | — | v2 [21323321](https://zenodo.org/records/21323321) (v1 [19484509](https://zenodo.org/records/19484509)) | Necessity of Standard Model | 21323321_Paper57_Necessity_of_Standard_Model_v2.md (v1: 19484509_Paper57_Necessity_of_Standard_Model.md) | Higgs=A₂u, chiral structure forced; v2 (2026-07-12) = T_hex/inter-type T split, 57.1 premises corrected, 57.2 localisation claim withdrawn (50/50 bands, labelling conditional) | 2 |
 | 58 | — | v2 [21323498](https://zenodo.org/records/21323498) (v1 [19484967](https://zenodo.org/records/19484967)) | Gauge Sector Placement | 21323498_Paper58_Gauge_Sector_Placement_v2.md (v1: 19484967_Paper58_Gauge_Sector_Placement.md) | SU(3)×SU(2)×U(1) forced by exhaustion; v2 (2026-07-12) = Thm 58.3 demoted to Result 58.3 (Tier 2, derivation open), exact identity stated, T₂g content exactly 100% hex | 1 |
 
@@ -84,7 +84,7 @@
 |---|------|--------|-------|------|------------|-------|
 | 10 | XXIV | [19063774](https://zenodo.org/records/19063774) | Lepton Mass Ratios v1 | 19063774_UFFT_Lepton_Mass_Ratios.md | Koide Q=2/3 as theorem | 9 |
 | 31 | XXIV | [19185685](https://zenodo.org/records/19185685) | Lepton Mass Ratios v2 | 19185685_UFFT_Lepton_Mass_Ratios_Part_XXIV.md | Koide θ=2/9, 10-70 ppm | 5 |
-| 44 | LV | [19307003](https://zenodo.org/records/19307003) | Complete Particle Masses | 19307003_UFFT_Particle_Masses.md | All 13 masses, zero free parameters | 1 |
+| 44 | LV | [19307003](https://zenodo.org/records/19307003) | Complete Particle Masses | 19307003_UFFT_Particle_Masses.md | All 13 masses, zero fitted parameters | 1 |
 | 47 | — | [19448066](https://zenodo.org/records/19448066) | NLO Neutrinos, α_s, M_W | 19448066_Paper47_NLO_Neutrinos_AlphaS.md | m₁=0, m₃=49.5 meV, α_s=0.11799 | 2 |
 | 52 | — | [19477132](https://zenodo.org/records/19477132) | n-p Mass Difference NLO | 19477132_Paper52_np_mass_difference_NLO.md | Δm=1.2933 MeV (0.34σ) | 3 |
 | 54 | — | [19484047](https://zenodo.org/records/19484047) | Neutrino Mass Ratio | 19484047_Paper54_Neutrino_Mass_Ratio_33.md | Δm²₃₁/Δm²₂₁ = 33 exactly | 1 |
@@ -115,6 +115,7 @@
 |---|------|--------|-------|------|------------|-------|
 | 1 | VII | [18706756](https://zenodo.org/records/18706756) | Decoherence Suppression | 18706756_UFFT_Decoherence_Suppression.md | ΔΓ/Γ = 8.22×10⁻¹¹ | 87 |
 | 2 | VIII | [21331868](https://zenodo.org/records/21331868) | Bell Correlations (v2.0) | 21331868_UFFT_Bell_Correlations_v2.md | Void network speed c√(3/2); v2.0 supersedes [18706806](https://zenodo.org/records/18706806) (§4.1 corrected per Paper #75) | 69 |
+| ? | — | [19079502](https://zenodo.org/records/19079502) | Void Network Speed and the Mechanism of Bell Non-Locality | 19079502_UFFT_Paper15_Bell_Void_Speed.md (number never assigned; uploaded file carries a pre-registry "Paper #15" label) | Bell correlations propagate at c√(3/2), the BCC nearest-neighbour speed | — |
 | 25 | — | [19085007](https://zenodo.org/records/19085007) | S-Matrix & LSZ | 19085007_UFFT_S_Matrix_LSZ.md | LSZ from foam, Compton 0.002% | 2 |
 
 ### Topology & Torsion
@@ -168,7 +169,7 @@ Papers published on Zenodo under the author's ORCID but **not** numbered in the 
 
 | Zenodo | Title | Files | Notes |
 |--------|-------|-------|-------|
-| [19625142](https://zenodo.org/records/19625142) | Spectral Uniqueness of the Truncated Octahedron Among Fedorov Parallelohedra | `.md` + `.docx` + `verify_spectra_v2.py` | Pure mathematics (MSC 05C50, 52B10, 52C22). Independent combinatorial result; readable without UFFT context. Every claim reproduced by the bundled verification script. |
+| [19625142](https://zenodo.org/records/19625142) | Spectral Uniqueness of the Truncated Octahedron Among Fedorov Parallelohedra | 19625142_Spectral_Uniqueness_Fedorov_Parallelohedra.md + `verification/verify_spectra_v2.py` (.docx on Zenodo) | Pure mathematics (MSC 05C50, 52B10, 52C22). Independent combinatorial result; readable without UFFT context. Every claim reproduced by the bundled verification script. |
 
 ## On Hold — INBOX (WIP / not ready for upload)
 

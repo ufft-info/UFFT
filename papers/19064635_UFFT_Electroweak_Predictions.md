@@ -15,7 +15,7 @@
 | Framework | v10 |
 | Status | Complete |
 | Tier | Tier 2 |
-| DOI | 10.5281/zenodo.19079502 |
+| DOI | 10.5281/zenodo.19064635 |
 | GitHub | https://github.com/ufft-info/UFFT |
 
 **Keywords:** UFFT, W boson mass, neutrino species, spacetime dimensions, rho parameter, gauge bosons, electroweak, foam geometry, counting theorems
@@ -121,6 +121,6 @@ Developed in collaboration with Claude (Anthropic). Ideas, framework, direction:
 
 ---
 
-*Unified Foam Field Theory · Paper #19 · DOI: 10.5281/zenodo.19079502 · Priority Date: 20 February 2026*
+*Unified Foam Field Theory · Paper #19 · DOI: 10.5281/zenodo.19064635 · Priority Date: 20 February 2026*
 
 *B + V = D*

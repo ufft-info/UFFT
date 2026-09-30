@@ -3,8 +3,8 @@
 **Author:** Luke Martin — Independent Researcher, Newcastle, New South Wales, Australia
 **Contact:** hello@ufft.info · ORCID 0009-0006-3716-5951
 **Priority Date:** 20 February 2026
-**Current Version:** Framework v9 (canonical document; last revised July 2026)
-**Status:** 73 papers published on Zenodo + 1 standalone maths preprint · 3 papers in the upload queue · Not yet peer reviewed · Independent reproduction invited
+**Current Version:** Framework v9 (canonical document; last revised September 2026)
+**Status:** 76 papers published on Zenodo + 1 standalone maths preprint · Not yet peer reviewed · Independent reproduction invited
 
 ---
 
@@ -14,7 +14,7 @@ The Unified Foam Field Theory derives the dimensionless constants of the Standar
 
 **Axiom Zero: B + V = D** — Bubble + Void = Displacement.
 
-Every event in the universe is a displacement in an infinite pre-existing foam at the Planck scale. From this single axiom and the integer topology of the Kelvin cell, UFFT pre-registers **eleven falsifiable predictions** (the sharpest near-term being δ_PMNS/δ_CKM = 3, testable by DUNE around 2035) and contains **a family of structural identities and sector-specific identifications of varying derivational status**. The framework's postdictions across roughly 60 observables are under ongoing look-elsewhere-corrected joint-χ² audit; per the 19 April 2026 methodological review, the earlier "60+ observables with zero free parameters" framing has been retired as not defensible against a trials-factor audit. The honest summary of the empirical case lives in `verification/peer_review_deliverables/D1_Supplement_Joint_Chi2_Defense.md`.
+Every event in the universe is a displacement in an infinite pre-existing foam at the Planck scale. From this single axiom and the integer topology of the Kelvin cell, UFFT pre-registers **eleven falsifiable predictions** (the sharpest near-term being δ_PMNS/δ_CKM = 3, testable by DUNE around 2035) and contains **a family of structural identities and sector-specific identifications of varying derivational status**. The framework's postdictions across roughly 60 observables are under ongoing look-elsewhere-corrected joint-χ² audit; per the 19 April 2026 methodological review, the earlier "60+ observables with zero fitted parameters" framing has been retired as not defensible against a trials-factor audit. The honest summary of the empirical case lives in `verification/peer_review_deliverables/D1_Supplement_Joint_Chi2_Defense.md`.
 
 ---
 
@@ -104,7 +104,7 @@ For Fedorov-parallelohedron spectral uniqueness, `verify_spectra_v2.py` ships wi
 
 ## Zenodo
 
-73 papers are published with permanent DOIs, plus one standalone mathematics preprint (spectral uniqueness of the truncated octahedron among the Fedorov parallelohedra). Three further papers are queued for upload.
+76 papers are published with permanent DOIs, plus one standalone mathematics preprint (spectral uniqueness of the truncated octahedron among the Fedorov parallelohedra).
 
 See `papers/INDEX.md` for the full list of published papers with DOIs.
 
