@@ -1251,6 +1251,22 @@ The off-diagonal entry −2 is nonzero (it is minus the number of square-hexagon
 
 ---
 
+## 10. Independent Confirmation of the Characteristic Polynomial (October 2026)
+
+The face-adjacency graph of the truncated octahedron (14 vertices, 36 edges, automorphism group of order 48) is the tetrakis hexahedral graph, the skeleton of the dual Catalan solid. Its adjacency characteristic polynomial is tabulated in a standard reference (MathWorld, "Tetrakis Hexahedral Graph") as
+
+x²(x+1)³(x+3)(x²−3x−12)(x²−x−4)³.
+
+The factor (x²−x−4)³ has discriminant 17. The face Laplacian L = D − A used throughout this framework has characteristic polynomial
+
+x(x−9)(x−7)⁴(x−4)²(x²−9x+16)³,
+
+whose T₁u factor (x²−9x+16) also has discriminant 17. The two polynomials differ because the graph is not regular (squares have degree 4, hexagons degree 6), so L is not a shift of A; the quadratic irrationality √17 is a property of the graph itself, not of the Laplacian convention. The tabulated polynomial was computed with no physical application in view. Its agreement with a rebuild of the cell from its vertices is confirmation of the mathematics of this Part (Tier 1); it is not evidence for the physical identifications built on it, which are assessed on their own tier.
+
+Verification: `verification/verify_tetrakis_charpoly_2026-10-06.py` (9 checks, all pass).
+
+---
+
 # Part XI — Elemental Resonance and the Foam Resonance Periodic Table
 
 **Elemental Resonance and the Foam Resonance Table**
@@ -2188,6 +2204,24 @@ Luke Martin · The Unified Foam Field Theory · Part XVIII · March 2026 ---
 
 ---
 
+# Prior Art and Related Programmes
+
+This framework was developed without reference to the following, which were identified in a literature review in October 2026. They are listed so that a reader can place the work, and so that no result here is presented as novel where it is not.
+
+**The cell.** Fedorov (1885) classified the five convex parallelohedra. Kelvin (1887) proposed the truncated octahedron as the minimal-surface space-filler, and it is named for him; the Weaire–Phelan structure (1993) has about 0.3% less surface area. The uniqueness argument used here (Paper #50) rests on the prime discriminant of the face Laplacian, not on surface area, and is unaffected.
+
+**Matter as structure in a medium.** Kelvin's vortex-atom programme (1867) proposed atoms as knotted vortices in the ether. It failed because vortex knots in a continuous fluid unravel. The present framework places the twist on a closed loop of cell walls, where it is quantised by the loop (Part XXXIV, spin-statistics). Kelvin held both halves of this picture, the knot (1867) and the cell (1887), and did not combine them.
+
+**Lattice and defect models of the vacuum.** Kleinert's gauge fields in condensed matter and Volovik's *The Universe in a Helium Droplet* treat gauge fields and particles as defects and excitations of a condensed medium. Cox (Annals of Physics 493, 170613, 2026; monograph, Zenodo 10.5281/zenodo.19145609) develops an FCC Cosserat supersolid in that tradition and obtains α⁻¹ = 137.035999177 from a Peierls–Nabarro tunnelling calculation. The present framework is BCC and combinatorial rather than mechanical, and gives the caesium value 137.035999055. The two frameworks share the point group O_h and agree on several parity-sensitive results (baryon asymmetry, Dirac neutrinos); they disagree on α⁻¹ at the ninth digit, on Σm_ν (58.1 meV here, 65.5 meV there) and on the dark-energy equation of state (w = −1 here, w = −2/3 there). Neither framework's method reproduces the other's results on the other's lattice: the counting method of Part X applied to the FCC Voronoi cell gives α⁻¹ = 137.0326 and a face Laplacian with integer spectrum and no √17.
+
+**Tight-binding spectra on polyhedra.** Avishai and Luck (2008) computed tight-binding spectra on the Platonic solids and C₆₀ as a function of a magnetic charge threading the polyhedron. The torsion flux π on fermion loops in this framework is a holonomy of that kind on the truncated octahedron, which those authors did not treat. González, Guinea and Vozmediano (Nucl. Phys. B 406, 771, 1992) showed that electrons on a honeycomb lattice folded into a polyhedron obey the Dirac equation with the pentagonal defects acting as flux; Dirac fermions from lattice geometry plus flux is the structure of *From Foam to Fermions*, established earlier for carbon.
+
+**Hückel theory.** The face Laplacian is formally a Hückel (tight-binding) Hamiltonian on 14 sites. Movassagh, Strang, Tsuji and Hoffmann (J. Math. Phys. 58, 033505, 2017) give the Green's function for this class of matrix in general; their machinery applies to the heat-kernel evaluation that would promote the α derivation from Tier 2 to Tier 1.
+
+**Decoherence.** The record-based measurement criterion of Part I is in the objective-collapse family and draws on Zurek's einselection and the Joos–Zeh environmental decoherence programme, both cited in Part VII.
+
+---
+
 # Known Limitations and Future Programme
 
 We derive gravity, quantum mechanics, gauge groups, the fine structure constant, the dark matter ratio, the dark energy density, the covariant vacuum density, the complete Schwarzschild metric, the Einstein field equations (unimodular), Maxwell's equations, the Friedmann equations, the periodic table structure, and charge quantisation from a single axiom and cell geometry. The following are honestly acknowledged as NOT derived and represent the boundaries of the current framework.
@@ -2228,7 +2262,7 @@ We derive gravity, quantum mechanics, gauge groups, the fine structure constant,
 
 **Aufbau ordering.** CLOSED. The Madelung (n+l) rule for electron shell filling order derived from O_h crystal field splitting of the foam lattice. Preprint DOI: 10.5281/zenodo.19185628.
 
-**Electroweak predictions.** CLOSED. sin²θ_W = (17−3√17)/20 = 0.23153 identified as the effective Z-pole value sin²θ_W^eff (LEP/SLD combined 0.23153 ± 0.00016, 0.0σ — scheme identification, Paper #47). The earlier 10σ tension was a scheme mismatch: the face Laplacian is the complete single-cell Hamiltonian with exact algebraic eigenvalues at k=0 — no virtual momentum loops to subtract — so it computes the on-shell (effective) value, not the MS-bar value (which subtracts oblique corrections that have no counterpart on the finite face graph). GUT-scale value 3/8 = (C_A²−F_sq)/F_hx derived from face counts. M_W = M_Z√(1−sin²θ_W^eff/κ) = 80.366 GeV (observed 80.3692 ± 0.0133 GeV, 0.005%, 0.3σ — Paper #47). M_W/M_Z = cosθ_W (0.51%). N_ν = dim(T₁u) = 3 (exact). d = 3+1 from BCC uniqueness + wave equation. ρ = 1 from custodial SU(2). N_gauge = 12 from Casimir counting. Electroweak face-type partition: Eg (weak force) = pure square faces, A₂u (Higgs) = pure hexagonal faces (proven). V−F = 10 appears in both the α formula and the Weinberg angle — same topological quantity governs both couplings. Preprint DOI: 10.5281/zenodo.19079502.
+**Electroweak predictions.** CLOSED. sin²θ_W = (17−3√17)/20 = 0.23153 identified as the effective Z-pole value sin²θ_W^eff (LEP/SLD combined 0.23153 ± 0.00016, 0.0σ — scheme identification, Paper #47). The earlier 10σ tension was a scheme mismatch: the face Laplacian is the complete single-cell Hamiltonian with exact algebraic eigenvalues at k=0 — no virtual momentum loops to subtract — so it computes the on-shell (effective) value, not the MS-bar value (which subtracts oblique corrections that have no counterpart on the finite face graph). GUT-scale value 3/8 = (C_A²−F_sq)/F_hx derived from face counts. M_W = M_Z√(1−sin²θ_W^eff/κ) = 80.366 GeV (observed 80.3692 ± 0.0133 GeV, 0.005%, 0.3σ — Paper #47). M_W/M_Z = cosθ_W (0.51%). N_ν = dim(T₁u) = 3 (exact). d = 3+1 from BCC uniqueness + wave equation. ρ = 1 from custodial SU(2). N_gauge = 12 from Casimir counting. Electroweak face-type partition: Eg (weak force) = pure square faces, A₂u (Higgs) = pure hexagonal faces (proven). V−F = 10 appears in both the α formula and the Weinberg angle — same topological quantity governs both couplings. Preprint DOI: 10.5281/zenodo.19064635 (Paper #19); M_W and the scheme identification: Paper #47.
 
 **Void network speed.** WITHDRAWN (October 2026, v2.0 of record 19079502). The v1.0 claim that voids propagate at c√(3/2) ≈ 1.22c rested on two errors: the BCC octahedral-void spacing is a/2 (face centres and edge midpoints are both octahedral sites), not a/√2; and the speed ratio was inverted (a shorter hop with a common hop time is slower, not faster). The propagation front of the void network never exceeds that of the bubble network in any direction under any hop model (verification/verify_void_network_speed_2026-10-05.py). Independently, any finite influence speed is excluded by experiment (Salart et al. 2008, v > ~10⁴ c) and by theorem (Bancal et al. 2012: every finite-speed influence model permits signalling). Bell correlations have no propagation speed; the mechanism is the void channel of H = L + ηV (Paper #45; see "The void channel" below). Correction record DOI: 10.5281/zenodo.23157808 (v2.0 of record 19079502).
 
@@ -2242,7 +2276,7 @@ We derive gravity, quantum mechanics, gauge groups, the fine structure constant,
 
 **The Kerr metric.** CLOSED. The exact Kerr metric derived from three foam conditions: (1) covariant vacuum density ρ(r,θ) = ρ₀(1 − r_sr/Σ) with oblate correction Σ = r² + a²cos²θ gives g_tt = −(1−r_sr/Σ); (2) foam incompressibility ν = 1/2 with centrifugal barrier gives g_rr = Σ/Δ where Δ = r² − r_sr + a², and angular incompressibility gives g_θθ = Σ; (3) torsion = angular momentum gives g_tφ = −r_sra sin²θ/Σ (frame dragging from torsion gradient); g_φφ from the determinant condition √(−g) = Σ sinθ (cell count conservation). All five metric components derived from foam mechanics with zero fitted parameters beyond M and J. Every Kerr feature interpreted: event horizon = radial edge saturation, ergosphere = torsion-inverted density, ring singularity = equatorial topology change, frame dragging = Newton's 3rd law on rotating walls, cosmic censorship = structural limit of foam topology.
 
-**Spin-statistics.** CLOSED. Spin = Wilson loop flux / (2π), with torsion flux defined as the sum of angular deficits δ = π − θ per traversed edge (Regge 1961). The fermion triangle carries Φ = 2δ_sh + δ_hh = 2(π − θ_sh) + (π − θ_hh) = 3π − (2θ_sh + θ_hh) = 3π − 2π = π exactly, using the classical vertex identity 2·arccos(−1/√3) + arccos(−1/3) = 2π. Spin = π/(2π) = 1/2 for fermions. Bosonic 4-cycles carry flux 0 (spin 0, scalar) or 2π (spin 1, vector). Double-winding gives flux 4π (spin 2, graviton). The spin-statistics connection is the connection between torsion flux topology and the loop type on the face graph. Not imposed — derived from the angular deficits (discrete curvature) of the Kelvin cell edges. **Convention note:** early UFFT drafts stated this as "2θ_sh + θ_hh = π" in interior-dihedral form, which arithmetically gives 2π. The statement above uses the angular deficit convention consistently; physical content is unchanged.
+**Spin-statistics.** CLOSED. Spin = Wilson loop flux / (2π), with torsion flux defined as the sum of angular deficits δ = π − θ per traversed edge (Regge 1961). The fermion triangle carries Φ = 2δ_sh + δ_hh = 2(π − θ_sh) + (π − θ_hh) = 3π − (2θ_sh + θ_hh) = 3π − 2π = π exactly, using the classical vertex identity 2·arccos(−1/√3) + arccos(−1/3) = 2π. Spin = π/(2π) = 1/2 for fermions. Bosonic 4-cycles carry flux 0 (spin 0, scalar) or 2π (spin 1, vector). Double-winding gives flux 4π (spin 2, graviton). The spin-statistics connection is the connection between torsion flux topology and the loop type on the face graph. The torsion flux is a holonomy of the edge connection; it does not enter the face Laplacian L, whose spectrum {0, r₁³, 4², r₂³, 7⁴, 9} is that of the flux-free operator. (The magnetic Laplacian with flux π on every vertex triangle has a different spectrum, with no √17; see the Avishai–Luck construction in Prior Art. L is the wall-channel operator and carries no connection.) Not imposed — derived from the angular deficits (discrete curvature) of the Kelvin cell edges. **Convention note:** early UFFT drafts stated this as "2θ_sh + θ_hh = π" in interior-dihedral form, which arithmetically gives 2π. The statement above uses the angular deficit convention consistently; physical content is unchanged.
 
 **Information capacity and bandwidth.** CLOSED. Each edge carries max 1 displacement quantum per Planck time. Square faces: 4 channels. Hexagonal faces: 6 channels. The weak force (Eg, pure square) propagates through 24 of 36 edges = 2/3 of EM bandwidth → weaker and shorter-range. The Bekenstein-Hawking entropy S = A/(4l_P²) ≈ F = 14 per cell (4% match). The Bekenstein area quantum ΔA = 4 ln(k) l_P² with k identified as C_A = 3 (three dissolution channels: square face, hex face, vertex) — ΔA = 4 ln(3) l_P² = 4.3944 l_P² (Paper #49). The factor 4 = C_A+1 = d+1 = λ_Eg (exact identity, specific to d=3). A black hole = cell with all 36 edges at capacity. Asymptotic freedom: hx-hx edges saturate first → signal reroutes → coupling weakens at high energy. Confinement: tube of edges at capacity → snaps at pair production threshold. Speed of light: network speed limit, 1 cell per t_P. All physics at 10⁻²⁰ of capacity → linear approximation (face Laplacian) works → physics looks simple.
 
@@ -2324,6 +2358,16 @@ We distinguish three levels of completion within the framework:
 **IDENTIFIED AND DERIVED:** Electron, muon, tau as face Laplacian eigenmodes (T₁u) with masses from exp(−(E−F)(2Δ+√Δ)/16) + Koide (0.006–0.009%). All six quarks as m_e × exp((A+B√Δ)/C) with A, B cell integers (0.08–0.23%). Neutrinos as chiral foam modes. Proton/neutron as colour-neutral torsion bound states. Higgs as A₂u mode (eigenvalue −1 under torsion, SSB forced).
 
 The framework is structurally complete. Every sector of the Standard Model maps to a specific component of the truncated octahedron: square faces carry the weak force (Eg), hexagonal faces carry the Higgs (A₂u), the T₁u doubling carries generations, the master equation carries mixing angles and mass ratios, the boundary topology (V−F, E−F) carries coupling constants, and the BCC lattice carries the generation count and particle spectrum. All 15 fermion masses are derived from cell integers (0.006–0.75%), completing the particle spectrum. Former open items now closed: Feynman diagram matching (24 triangles + 42 four-cycles, exhaustive), g-2 C₂ walk sum (all 5 coefficients = cell-integer ratios), ρ̄ CKM (sector-specific NLO, 0.04σ combined), Higgs quartic (NLO foam correction, 0.25σ), n−p mass difference (NLO, 0.41σ). The remaining open items — cosmological initial conditions (H₀, pre-bounce), tensor-to-scalar ratio r (inside bound, not yet sharp), and ongoing ISF collaboration — are computations or processes within this identified structure, not searches for new structure. The baryon asymmetry gap is now closed (NLO, Paper #61, 0.09σ).
+
+---
+
+## Observables Not Yet Addressed
+
+Two measured quantities have no treatment anywhere in this framework, and are listed so that their absence is a stated gap rather than an oversight.
+
+**Cosmic birefringence.** A frequency-independent rotation of the CMB linear polarisation is now reported at 4 to 5σ (Eskilt and Komatsu 2022, 0.342° ± 0.094° from Planck and WMAP; ACT DR6 2025, 0.215° ± 0.074°). A parity-odd effect of this kind is the natural territory of the A₂u sector, but the framework currently derives neither a per-cell chirality angle nor the multiplier that would carry it to a cosmological rotation. No claim is made.
+
+**Dark-energy equation of state.** The framework gives w = −1 as an integration constant (Part XVII). DESI DR2 (2025) combined with supernovae prefers a time-varying w at 2.8 to 4.2σ depending on the supernova sample. If that drift survives, it is a direct tension with this framework; a foam answer has not been prepared.
 
 ---
 
