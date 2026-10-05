@@ -51,7 +51,7 @@ Before the derivations, here are the three most striking outputs of this framewo
 
 α⁻¹ = 8π^(5/2) × [47/48 + 10/(3×48³) + 22/(3×48⁵)] = **137.035 999 055**
 
-Cs 2018: 137.035 999 046 ± 0.000 000 027 → **0.3σ**. CODATA 2022 (Rb-dominated): 137.035 999 084 ± 0.000 000 021 → **1.4σ**. The Cs and Rb measurements disagree at 5.5σ — an unresolved experimental tension. UFFT predicts Cs is correct. If Rb is independently confirmed at >3σ, this formula is excluded.
+Cs 2018: 137.035 999 046 ± 0.000 000 027 → **0.3σ**. CODATA 2022 (Rb-dominated): 137.035 999 177 ± 0.000 000 021 → **5.8σ**. The Cs and Rb measurements disagree at 5.5σ — an unresolved experimental tension. UFFT predicts Cs is correct. If Rb is independently confirmed at >3σ, this formula is excluded.
 
 The five inputs are the integers |G|=48, V−F=10, E−F=22, d=3, and the constant π. All five are read directly from the truncated octahedron or from Euclidean space. No fitting. Run the three lines of arithmetic yourself.
 
@@ -432,7 +432,7 @@ The previous section says "computed from" without showing how. Here are the key 
      = 8π^(5/2) × [47/48 + 10/(3×48³) + 22/(3×48⁵)]
      = 137.035 999 055
 
-Cs 2018: 137.035 999 046 ± 0.000 000 027 → 0.3σ. CODATA 2022 (Rb-dominated): 137.035 999 084 ± 0.000 000 021 → 1.4σ. The Cs/Rb measurements disagree at 5.5σ; UFFT predicts Cs is correct. Fitted parameters: 0.
+Cs 2018: 137.035 999 046 ± 0.000 000 027 → 0.3σ. CODATA 2022 (Rb-dominated): 137.035 999 177 ± 0.000 000 021 → 5.8σ. The Cs/Rb measurements disagree at 5.5σ; UFFT predicts Cs is correct. Fitted parameters: 0.
 
 **Weinberg angle** (Chapter 17):
 
@@ -1626,7 +1626,7 @@ This subsection complements §15.6's Wick-rotation route. The Wick-rotation argu
 
 **α⁻¹ = 8π^{5/2} × [47/48 + 10/(3·48³) + 22/(3·48⁵)] = 137.035999055**
 
-*Cs 2018: 137.035999046 ± 0.000000027 → 0.3σ. CODATA 2022 (Rb-dominated): 137.035999084 ± 0.000000021 → 1.4σ. The Cs/Rb measurements disagree at 5.5σ — an unresolved experimental tension. UFFT predicts Cs is correct; Rb confirmation at >3σ would exclude this formula.*
+*Cs 2018: 137.035999046 ± 0.000000027 → 0.3σ. CODATA 2022 (Rb-dominated): 137.035999177 ± 0.000000021 → 5.8σ. The Cs/Rb measurements disagree at 5.5σ — an unresolved experimental tension. UFFT predicts Cs is correct; Rb confirmation at >3σ would exclude this formula.*
 
 ## 16.2 The Derivation
 
