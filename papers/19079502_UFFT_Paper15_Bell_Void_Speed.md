@@ -1,188 +1,167 @@
-# Void Network Speed and the Mechanism of Bell Non-Locality in Unified Foam Field Theory
+# Void Network Geometry and Bell Non-Locality: Withdrawal of the c√(3/2) Propagation Speed
 
-**Luke Martin**  
-Independent Researcher, Sydney, Australia  
-March 2026
+**Unified Foam Field Theory — Part XXXIII**
+
+| Field | Value |
+|-------|-------|
+| Author | Luke Martin |
+| Affiliation | Independent Researcher |
+| Location | Newcastle, New South Wales, Australia |
+| Email | hello@ufft.info |
+| ORCID | 0009-0006-3716-5951 |
+| Date | October 2026 (v2.0); original March 2026 (v1.0) |
+| Series | Unified Foam Field Theory |
+| Paper | unnumbered record (Part XXXIII) |
+| Framework | v9 |
+| Version | 2.0 |
+| Status | Central result of v1.0 (c_V = c√(3/2)) WITHDRAWN. Mechanism superseded by Paper #45 [DOI: 10.5281/zenodo.19307111] and Paper #75 [DOI: 10.5281/zenodo.21323993]. Retained as the record of the correction. |
+| Tier | §2 (lattice geometry): Tier 1, exact. §3 (front-speed theorem): Tier 1, exact. §4 (exclusion of any finite influence speed): external results (Salart 2008; Bancal 2012). |
+| DOI | 10.5281/zenodo.23157808 (v2.0); v1.0: 10.5281/zenodo.19079502; concept: 10.5281/zenodo.19079501 |
+| Verification | verify_void_network_speed_2026-10-05.py (geometry, front speeds by closed form and by breadth-first search, experimental comparison) |
+| GitHub | https://github.com/ufft-info/UFFT |
+
+**Keywords:** UFFT, truncated octahedron, face Laplacian, foam lattice, BCC lattice, octahedral interstitial sites, Bell non-locality, no-signalling, void channel, correction
 
 ---
 
 ## Abstract
 
-We derive a geometric mechanism for Bell non-locality from the Planck-scale BCC foam structure of Unified Foam Field Theory (UFFT). Under the identification B = Planck spheres, V = octahedral interstitial voids, D = truncated octahedra (Kelvin cells), the void network has nearest-neighbour spacing l_P√(2/3) — shorter than the bubble network spacing l_P. This gives void propagation speed **c_V = c√(3/2) ≈ 1.22c** from pure BCC geometry, with zero free parameters. When a displacement event D creates a bubble B at x and a void V at x', the void half of the pair propagates through geometrically shorter paths, arriving at distant locations before the bubble. Since V carries no information — only topological identity — no-signalling is preserved. This provides a concrete, sub-Planckian mechanism for the apparent non-locality observed in Bell experiments, without hidden variables, without retrocausality, and without modifying quantum mechanics. The result follows from BCC sphere-packing geometry alone.
+Version 1.0 of this record claimed that the octahedral-void network of the BCC Planck foam has nearest-neighbour spacing l_P√(2/3), shorter than the bubble spacing l_P, and that voids therefore propagate at c_V = c√(3/2) ≈ 1.22c, supplying a finite-speed mechanism for Bell non-locality. That result is withdrawn. Two errors are identified. First, the void spacing is wrong: BCC has three octahedral holes per lattice site, at the face centres and the edge midpoints of the conventional cube, and the nearest-neighbour spacing of the full void network is a/2, not a/√2. Second, the speed ratio is inverted: with a common hop time a shorter hop is slower, not faster. The propagation front of each network is computed exactly (support function of the hop set, confirmed by breadth-first search). Under a common hop time the void front never exceeds the bubble front in any direction (ratio 1 along ⟨100⟩, 1/2 along ⟨110⟩, 1/3 along ⟨111⟩); under a common hop speed both networks reach exactly c in their fastest direction. No model yields a ratio above 1. Independently, any finite influence speed is excluded: experiment bounds such a speed above roughly 10⁴ c (Salart et al. 2008), and Bancal et al. (2012) prove that every finite-speed influence model permits superluminal signalling, so "the void carries no information" cannot rescue a finite c_V. The surviving content is the lattice geometry of the two networks. The mechanism of Bell correlations in UFFT is the one already published in Paper #45: the void channel of H = L + ηV is the antipodal map through the incompressible bulk, with no propagation and no speed, and no-signalling follows from incompressibility. The pair state is derived in Paper #75.
 
 ---
 
-## 1. Introduction
+## Changes in this version
 
-Bell's theorem establishes that no local hidden variable theory can reproduce the predictions of quantum mechanics [1]. Experiments confirm Bell inequality violations to high precision [2,3]. The standard interpretation is that quantum correlations are non-local — but the mechanism by which space-like separated measurements remain correlated has remained unexplained.
-
-Previous UFFT papers derived gravitational suppression of quantum decoherence [4] and void-pair conservation as the origin of Bell correlations [5]. That work established that a void-pair (B, V) created by a single displacement event D is the UFFT analogue of an entangled pair, with the conservation law B + V = D (Axiom Zero) playing the role of the entanglement constraint.
-
-What was not previously derived is *why* this constraint propagates at apparently superluminal speed in Bell experiments. The present paper closes this gap through a purely geometric calculation.
-
----
-
-## 2. BCC Foam Geometry
-
-### 2.1 The three objects
-
-Under the geometric reframe established in March 2026:
-
-| Object | Identity | Geometry |
-|--------|----------|---------|
-| B (Bubble) | Planck sphere | Radius r_P = l_P/2, BCC lattice |
-| V (Void) | Octahedral interstitial void | Gap between spheres, BCC octahedral hole |
-| D (Displacement) | Truncated octahedron | Voronoi/Wigner-Seitz cell of BCC |
-
-The BCC lattice parameter is a = 2l_P/√3. Planck spheres of radius l_P/2 pack in BCC arrangement with packing fraction π√3/8 = 68.0%. The remaining 32.0% of space consists of interstitial voids.
-
-### 2.2 The two networks
-
-**Bubble network (B):** Planck sphere centres form the BCC lattice. Nearest-neighbour distance = l_P (by construction — the sphere diameter equals the lattice spacing).
-
-**Void network (V):** The interstitial voids in BCC sit at octahedral hole positions: face centres of the cubic unit cell, at positions (a/2, a/2, 0) and permutations. The nearest-neighbour distance between adjacent octahedral voids is:
-
-**d_V = a/√2 = (2l_P/√3)/√2 = l_P√(2/3)**
-
-This is shorter than the bubble spacing l_P by factor √(2/3).
-
-### 2.3 The speed ratio
-
-If the bubble (B) propagates through its network at the speed of light c — which is the definition of c in UFFT (the displacement speed of the foam, set by the equation of state P = ρc²) — then the void (V), propagating through its geometrically shorter network, travels at:
-
-**c_V = c × (l_P / d_V) = c × (l_P / l_P√(2/3)) = c√(3/2)**
-
-**c_V = c√(3/2) ≈ 1.2247c**
-
-This is exact from BCC geometry. No free parameters.
+- Title changed to state the withdrawal.
+- Abstract rewritten. The v1.0 abstract is reproduced in §1 for the record.
+- §2 (geometry) corrected: all six octahedral sites per cube are counted; d_V = a/2.
+- §3 replaces the v1.0 "speed ratio" (c_V = c·l_P/d_V) with the propagation-front theorem and the computed table.
+- §4 added: exclusion of any finite influence speed by experiment and by the Bancal et al. theorem.
+- §5 (v1.0 "Physical Mechanism", "Predictions", "Relation to Previous Papers") withdrawn and replaced by a pointer to Paper #45 and Paper #75.
+- Header brought to the current paper standard. Verification script added.
 
 ---
 
-## 3. Physical Mechanism for Bell Non-Locality
+## 1. What version 1.0 claimed
 
-### 3.1 The displacement event
+For the record, the v1.0 abstract read:
 
-Axiom Zero: **B(x) + V(x') = D**
+> We derive a geometric mechanism for Bell non-locality from the Planck-scale BCC foam structure of Unified Foam Field Theory (UFFT). Under the identification B = Planck spheres, V = octahedral interstitial voids, D = truncated octahedra (Kelvin cells), the void network has nearest-neighbour spacing l_P√(2/3) — shorter than the bubble network spacing l_P. This gives void propagation speed c_V = c√(3/2) ≈ 1.22c from pure BCC geometry, with zero free parameters. When a displacement event D creates a bubble B at x and a void V at x′, the void half of the pair propagates through geometrically shorter paths, arriving at distant locations before the bubble. Since V carries no information — only topological identity — no-signalling is preserved.
 
-A single displacement event D simultaneously creates a bubble B at position x and a void V at position x'. The two objects are topologically complementary — B + V = D is a conservation law, not a coincidence.
-
-### 3.2 The asymmetric propagation
-
-After creation, B and V propagate through their respective networks:
-- B travels at speed c through the bubble network
-- V travels at speed c_V = c√(3/2) through the void network
-
-For a pair created at the origin at t = 0, propagating in opposite directions:
-- B reaches position x = ct at time t
-- V reaches position x' = c_V t at time t
-
-The void arrives at its destination **before** the bubble arrives at its equivalent distance. When a measurement is made on the bubble at event (x, t), the void has already established its topological position at x' = c_V × (x/c) = x√(3/2).
-
-### 3.3 Why no-signalling is preserved
-
-The void V carries no information. It is a geometric absence — the gap left by the displacement — not a carrier of classical or quantum signals. The Axiom Zero constraint B + V = D is a topological identity, not a communication channel.
-
-The void's faster propagation pre-positions the topological constraint before any bubble measurement occurs. When the bubble is measured, the outcome is correlated with the void's position not because a signal was sent, but because both were created together and the void has already traversed its shorter network path.
-
-This is consistent with the no-signalling theorem: an observer at x' cannot use the void's position to receive information from x, because the void's state is not determined by what happens at x — it is determined at the moment of creation D.
-
-### 3.4 Connection to Bell inequality violation
-
-The Bell inequality is violated when measurement outcomes at space-like separated locations are correlated beyond what local hidden variables permit. In UFFT:
-
-- The "hidden variable" is the void position — but V is not local (it travels at c_V > c)
-- The "entanglement" is the conservation law B + V = D — a topological constraint, not a quantum superposition
-- The "measurement" on B updates the topological record of D, which is already reflected in V's position via the faster void network
-
-The correlation is pre-established geometrically, not transmitted superluminally. No signal crosses the Bell inequality bound — only a topological accounting completes at speed c_V.
+The derivation was: bubble spacing l_P; void spacing d_V = a/√2 = l_P√(2/3); hence c_V = c × (l_P/d_V) = c√(3/2). Each of the two steps after the first is wrong, as §2 and §3 show. The claim is withdrawn in full. Nothing downstream in the corpus takes c_V as an input; the correction is confined to this record, to the two summary lines in the Core Framework that quoted it, and to the papers index.
 
 ---
 
-## 4. Exact Geometric Result
+## 2. Lattice geometry (corrected)
 
-### 4.1 Summary
+Take the BCC conventional cube of edge a, with lattice sites (bubble centres) at the corners and the body centre. The bubble nearest-neighbour distance is the half body diagonal,
 
-From BCC sphere-packing geometry with sphere radius r_P = l_P/2:
+l_P = a√3/2.
 
-| Quantity | Value | Source |
-|---------|-------|--------|
-| Bubble network spacing | l_P | BCC lattice definition |
-| Void network spacing | l_P√(2/3) | Octahedral hole geometry |
-| **c_V / c** | **√(3/2) = 1.2247...** | Ratio of network spacings |
-| Octahedral hole radius | (√2−1)l_P/2 = 0.207 l_P | BCC geometry |
-| Sphere fits in hex face | r_P = 0.5 l_P < r_in = 0.707 l_P | 41% clearance |
+The octahedral interstitial sites of BCC are the points equidistant from six neighbouring lattice sites. There are two crystallographically equivalent families: the face centres, (a/2, a/2, 0) and permutations, and the edge midpoints, (a/2, 0, 0) and permutations. Both lie exactly a/2 from the nearest lattice site. Counting per cube: six faces each shared by two cubes give 3, twelve edges each shared by four cubes give 3, so there are 6 octahedral sites per cube and 3 per lattice site. (The tetrahedral sites, at (a/2, a/4, 0) and permutations, lie a√5/4 ≈ 0.559a from the nearest lattice site and are a distinct family.)
 
-### 4.2 Exact form
+Version 1.0 counted the face centres only. The nearest neighbour of a face-centre site is not another face centre at a/√2; it is an edge midpoint at a/2. With all octahedral sites included the void network has nearest-neighbour spacing
 
-**c_V = c × √(3/2) = c × √6/2**
+d_V = a/2 = 0.500a   (v1.0: a/√2 = 0.707a).
 
-This is an exact algebraic number. It is determined by:
-1. The BCC lattice (Kelvin's theorem — minimum surface area tiling)
-2. Planck sphere radius r_P = l_P/2
-3. No additional inputs
+In units of l_P: d_V = l_P/√3. The hop vectors of the void network are the six axial vectors (±a/2, 0, 0) and permutations; the hop vectors of the bubble network are the eight body-diagonal vectors (±a/2, ±a/2, ±a/2).
 
-### 4.3 The factor √(3/2) in context
-
-Within UFFT, √3 appears throughout the hexagonal face geometry (A_hex = √3 l_P²) and √(3/2) appears here as the void speed ratio. The factor is not coincidental: the octahedral hole positions are determined by the same BCC geometry that defines the hexagonal faces of the Kelvin cell. Both are consequences of the single geometric object — the truncated octahedron — that underlies the entire framework.
+All of this is checked numerically in the verification script (sites built from scratch; distances measured; 3 voids per bubble confirmed).
 
 ---
 
-## 5. Predictions and Tests
+## 3. Propagation fronts (the speed ratio, done correctly)
 
-### 5.1 Not a testable velocity
+A disturbance that hops from site to site advances, in direction n̂, at the rate set by how far each hop carries it along n̂. For a network with hop vectors {e_j} and a common hop time τ, the graph-distance front in direction n̂ moves at
 
-c_V is not a signal velocity and cannot be directly measured. The no-signalling theorem is not violated. There is no experiment that measures "void speed."
+v(n̂) = max_j (e_j · n̂) / τ,
 
-### 5.2 Testable consequences
+the support function of the hop set. This is the standard first-passage result for a lattice with a fixed hop time; it is confirmed in the verification script by breadth-first search on a lattice of radius 14a, which agrees with the closed form to the discretisation error.
 
-The geometric mechanism predicts:
-1. **No signalling** — void carries no information, so Bell inequality violation cannot be used for faster-than-light communication. Consistent with all experiments.
-2. **Maximum violation** — the Tsirelson bound (2√2 for CHSH) is geometric in origin, set by the topology of the T₂g and T₁u vacuum manifolds. Not derived here; noted as consistent.
-3. **Lorentz invariance of outcomes** — since c_V is a property of the foam structure (below the Planck scale), it does not appear in any coarse-grained measurement. Bell correlations are Lorentz-invariant even though the underlying mechanism involves c_V ≠ c.
-4. **No collapse, no retrocausality** — the void pre-positions topological constraint geometrically. No wavefunction collapse is required; no retrocausal influence is needed.
+**Theorem 3.1 (common hop time).** With τ the same for both networks, the void front never exceeds the bubble front.
+
+*Proof.* For the bubble hops, v_B(n̂) = (a/2)(|n_x| + |n_y| + |n_z|)/τ. For the void hops, v_V(n̂) = (a/2) max(|n_x|, |n_y|, |n_z|)/τ. Since max ≤ sum, v_V ≤ v_B for every n̂, with equality only along the coordinate axes. ∎
+
+| Direction | bubble front | void front (true a/2 hops) | ratio | void front (v1.0 a/√2 hops) | ratio |
+|---|---|---|---|---|---|
+| ⟨100⟩ axis | 0.500 | 0.500 | 1.00 | 0.500 | 1.00 |
+| ⟨110⟩ face diagonal | 0.707 | 0.354 | 0.50 | 0.707 | 1.00 |
+| ⟨111⟩ body diagonal | 0.866 | 0.289 | 0.33 | 0.577 | 0.67 |
+
+(Units a/τ.) Even with the v1.0 spacing the ratio never exceeds 1.
+
+**Theorem 3.2 (common hop speed).** If instead every hop is traversed at c, each network reaches exactly c in its own fastest direction (bubbles along ⟨111⟩, voids along ⟨100⟩) and less than c elsewhere.
+
+*Proof.* v(n̂) = c · max_j (e_j · n̂)/|e_j| ≤ c, with equality when n̂ is parallel to some hop. ∎
+
+The v1.0 formula c_V = c·(l_P/d_V) has the ratio inverted: it assigns a higher speed to the network with the shorter hop. Under a common hop time the shorter hop is the slower one; under a common hop speed neither network is faster. The two networks differ in anisotropy, not in speed. There is no hop model under which the void network propagates faster than the bubble network, and the number √(3/2) does not arise.
 
 ---
 
-## 6. Relation to Previous UFFT Papers
+## 4. Any finite influence speed is excluded
 
-**Paper: Void-Pair Conservation and Bell Correlations (DOI: 10.5281/zenodo.18706806)** established that B + V = D (Axiom Zero) is the topological origin of Bell correlations. The present paper derives the geometric mechanism: void propagation through the shorter octahedral network at c_V = c√(3/2).
+Even had the geometry supported it, a finite c_V is ruled out on two independent grounds.
 
-Together, these two papers provide:
-- *Why* correlations exist: conservation law B + V = D
-- *How* correlations propagate: void network speed c_V = c√(3/2)
+**Experiment.** If Bell correlations were carried by an influence travelling at a finite speed v in some preferred frame, there would be measurement configurations in which neither detection event could reach the other in time, and the correlations would drop to the local bound. Salart et al. (2008) searched for this and found no drop, bounding v above roughly 10⁴ c for any reasonable choice of frame; later tests (Cocciaro et al.; Yin et al. 2013) give bounds of the same order or stronger. A speed of 1.22c is excluded by a factor of about 8000.
+
+**Theorem.** Bancal, Pironio, Acín, Liang, Scarani and Gisin (2012) prove that any model in which quantum correlations arise from causal influences propagating at a finite speed, however large, allows faster-than-light signalling at the level of observable statistics. The v1.0 argument that "the void carries no information, so no-signalling is preserved" (v1.0 §3.3) therefore cannot hold for a finite c_V: the theorem concerns the structure of finite-speed models, not the nature of the carrier. The only influence speed consistent with no-signalling is the limit in which there is no finite speed at all.
+
+Both results point the same way as the lattice geometry: there is no finite-speed void mechanism.
 
 ---
 
-## 7. Conclusion
+## 5. What stands, and where the mechanism now lives
 
-The void network in BCC foam propagates at **c_V = c√(3/2) ≈ 1.22c** — exactly 22.5% faster than the bubble network. This follows from a single geometric fact: the octahedral interstitial voids in BCC have nearest-neighbour spacing l_P√(2/3), shorter than the bubble spacing l_P by factor √(2/3).
+Nothing in the corpus takes c_V as an input. The results that the v1.0 paper was meant to serve are unaffected:
 
-This provides the physical mechanism for Bell non-locality in UFFT:
-- The void half of a displacement pair pre-positions topological constraint faster than light
-- No signal is transmitted — the void carries identity, not information
-- No-signalling is preserved; Lorentz invariance of outcomes is preserved
-- The mechanism is sub-Planckian and therefore undetectable directly
+- the identification of entangled particles as the two endpoints of one displacement event D, with the conservation law B + V = D as the entanglement constraint (Paper #2, DOI 10.5281/zenodo.18706806; v2.0 DOI 10.5281/zenodo.21331868);
+- the escape from Bell's factorisation, on the ground that D is a single extended object and not a local hidden variable (Core Framework Part VI);
+- the derived pair state, the antiunitary twin map Θ = V∘K, Tsirelson saturation, and the uniqueness of the laboratory qubit (Paper #75, DOI 10.5281/zenodo.21323993).
 
-The result is exact, algebraic, and zero-parameter. It is a consequence of BCC geometry and Axiom Zero alone.
+The mechanism is the one published in Paper #45 (DOI 10.5281/zenodo.19307111). The axiom B + V = D maps to the two-channel Hamiltonian H = L + ηV. The wall channel L is the face Laplacian: local, causal, speed c, one cell per Planck time. The void channel ηV is the antipodal map through the incompressible bulk (P = ρc²): the void appears on the antipodal face by pressure conservation, with no traversal and no speed. No-signalling follows from incompressibility: no wave propagates through the bulk, so the void channel has zero capacity for directed information and non-zero capacity for correlation. That is the structure the Bancal theorem permits.
+
+The geometry of §2 survives as a statement about the lattice: the void sites of the BCC foam form a network of their own, with spacing a/2 and axial hops. It has no bearing on the speed of anything.
+
+The open question, named here so that it is not mistaken for closed: Paper #45 states that the antipodal constraint holds across the pair without traversal. Why the conservation law B + V = D holds across the whole foam at once, rather than cell by cell, is the existence half of the continuum bridge that Paper #75 names as open (its header and §9). The present correction does not close it; it removes a wrong answer to it.
+
+---
+
+## 6. Conclusion
+
+The claim that voids propagate at c√(3/2) is withdrawn. The void spacing in BCC is a/2, not a/√2; the front-speed ratio of the void network to the bubble network is at most 1 in every direction under any hop model; and any finite influence speed is excluded by experiment (Salart 2008) and by theorem (Bancal 2012). Bell correlations in UFFT have no propagation speed. They are a property of the single displacement event D, carried by the void channel of H = L + ηV (Paper #45), with the pair state derived in Paper #75.
+
+Status line for the Core Framework: **Void network speed. WITHDRAWN** (v2.0 of this record, October 2026). Mechanism: Paper #45 void channel.
 
 ---
 
 ## References
 
-[1] Bell, J.S. (1964). On the Einstein-Podolsky-Rosen paradox. *Physics* 1(3), 195–200.
+[1] Bell, J. S. (1964). On the Einstein Podolsky Rosen paradox. Physics Physique Fizika, 1(3), 195–200.
 
-[2] Aspect, A., Grangier, P., Roger, G. (1982). Experimental realization of Einstein-Podolsky-Rosen-Bohm Gedankenexperiment. *Phys. Rev. Lett.* 49, 91.
+[2] Salart, D., Baas, A., Branciard, C., Gisin, N., & Zbinden, H. (2008). Testing the speed of 'spooky action at a distance'. Nature, 454, 861–864.
 
-[3] Hensen, B. et al. (2015). Loophole-free Bell inequality violation. *Nature* 526, 682–686.
+[3] Bancal, J.-D., Pironio, S., Acín, A., Liang, Y.-C., Scarani, V., & Gisin, N. (2012). Quantum non-locality based on finite-speed causal influences leads to superluminal signalling. Nature Physics, 8, 867–870.
 
-[4] Martin, L. (2026). Gravitational Suppression of Quantum Decoherence. Zenodo. DOI: 10.5281/zenodo.18706756
+[4] Yin, J., et al. (2013). Lower bound on the speed of nonlocal correlations without locality and measurement choice loopholes. Physical Review Letters, 110, 260407.
 
-[5] Martin, L. (2026). Void-Pair Conservation and Bell Correlations. Zenodo. DOI: 10.5281/zenodo.18706806
+[5] Martin, L. (2026). Void-Pair Conservation and Bell Correlations (Paper #2). DOI: 10.5281/zenodo.18706806; v2.0 DOI: 10.5281/zenodo.21331868.
 
-[6] Martin, L. (2026). The Laplacian Spectrum of the Truncated Octahedron. Zenodo. DOI: 10.5281/zenodo.19011758
+[6] Martin, L. (2026). The Void Channel: H = L + ηV (Paper #45). DOI: 10.5281/zenodo.19307111.
+
+[7] Martin, L. (2026). The Born Rule from Imprint Statistics and the Entangled Pair State from the Antiunitary Twin Map (Paper #75). DOI: 10.5281/zenodo.21323993.
+
+[8] Martin, L. (2026). The Unified Foam Field Theory: Core Mathematical Framework. DOI: 10.5281/zenodo.18706756.
 
 ---
 
-*Luke Martin · The Unified Foam Field Theory · Paper #15 · March 2026*
+## AI Disclosure
 
-*Developed in collaboration with Claude (Anthropic). Ideas, framework, direction: Luke Martin. AI role: geometric calculation, paper drafting.*
+This paper was developed in collaboration with Claude (Anthropic). Ideas, framework, direction, and physical interpretation: Luke Martin. AI role: numerical computation and document composition.
+
+UFFT Core Framework: github.com/ufft-info/UFFT
+
+---
+
+*Unified Foam Field Theory · Part XXXIII · DOI 10.5281/zenodo.23157808 · Priority Date: 20 February 2026*
+
+*B + V = D*

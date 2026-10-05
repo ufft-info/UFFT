@@ -253,7 +253,7 @@ Four results from two foam integers (Δ = 17, C_A = 3) and one symmetry (T₁u Z
 
 [5] Martin, L. (2026). The Master Equation of the Truncated Octahedron. Zenodo. DOI: 10.5281/zenodo.19064359.
 
-[6] Martin, L. (2026). Electroweak Predictions from Foam Geometry. Zenodo. DOI: 10.5281/zenodo.19079502.
+[6] Martin, L. (2026). Electroweak Predictions from Foam Geometry (Paper #19). Zenodo. DOI: 10.5281/zenodo.19064635.
 
 [7] Martin, L. (2026). The CKM Quark Mixing Matrix from Foam Cell Geometry. Zenodo. DOI: 10.5281/zenodo.19197458.
 

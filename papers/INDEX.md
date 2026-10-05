@@ -114,8 +114,8 @@
 | # | Part | Zenodo | Title | File | Key Result | Views |
 |---|------|--------|-------|------|------------|-------|
 | 1 | VII | [18706756](https://zenodo.org/records/18706756) | Decoherence Suppression | 18706756_UFFT_Decoherence_Suppression.md | ΔΓ/Γ = 8.22×10⁻¹¹ | 87 |
-| 2 | VIII | [21331868](https://zenodo.org/records/21331868) | Bell Correlations (v2.0) | 21331868_UFFT_Bell_Correlations_v2.md | Void network speed c√(3/2); v2.0 supersedes [18706806](https://zenodo.org/records/18706806) (§4.1 corrected per Paper #75) | 69 |
-| ? | — | [19079502](https://zenodo.org/records/19079502) | Void Network Speed and the Mechanism of Bell Non-Locality | 19079502_UFFT_Paper15_Bell_Void_Speed.md (number never assigned; uploaded file carries a pre-registry "Paper #15" label) | Bell correlations propagate at c√(3/2), the BCC nearest-neighbour speed | — |
+| 2 | VIII | [21331868](https://zenodo.org/records/21331868) | Bell Correlations (v2.0) | 21331868_UFFT_Bell_Correlations_v2.md | Void-pair conservation B + V = D as the origin of Bell correlations; singlet state and CHSH; v2.0 supersedes [18706806](https://zenodo.org/records/18706806) (§4.1 corrected per Paper #75) | 69 |
+| ? | — | [23157808](https://zenodo.org/records/23157808) (v1.0: [19079502](https://zenodo.org/records/19079502)) | Void Network Geometry and Bell Non-Locality: Withdrawal of the c√(3/2) Propagation Speed | 19079502_UFFT_Paper15_Bell_Void_Speed.md (number never assigned; v2.0 published 2026-10-05) | v1.0 result (c_V = c√(3/2)) WITHDRAWN: void spacing is a/2, front-speed ratio ≤ 1, finite speeds excluded (Salart 2008, Bancal 2012). Mechanism: Paper #45 void channel | — |
 | 25 | — | [19085007](https://zenodo.org/records/19085007) | S-Matrix & LSZ | 19085007_UFFT_S_Matrix_LSZ.md | LSZ from foam, Compton 0.002% | 2 |
 
 ### Topology & Torsion

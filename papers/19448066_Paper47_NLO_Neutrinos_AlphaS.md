@@ -344,7 +344,7 @@ Zero free parameters
 
 [5] Martin, L. (2026). The Hierarchy Problem Dissolved. DOI: 10.5281/zenodo.19196942.
 
-[6] Martin, L. (2026). The Weinberg Angle. DOI: 10.5281/zenodo.19079502.
+[6] Martin, L. (2026). The Weinberg Angle (Paper #41). DOI: 10.5281/zenodo.19306610.
 
 [7] Particle Data Group (2024). Review of Particle Physics. Phys. Rev. D 110, 030001.
 
