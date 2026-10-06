@@ -82,7 +82,17 @@ for name, val in (("A1g(0)", 0), ("Eg", 4), ("A2u", 9)):
 E7 = eigspace(7); print("T on lambda=7 space, norm:", np.linalg.norm(T@E7).round(6))
 E0 = eigspace(0); print("T on A1g(0), norm:", np.linalg.norm(T@E0).round(6), " T E0 lies in lambda=7 space:", np.allclose(E7@E7.T@(T@E0), T@E0))
 # where does T send the T1u(r1) space? check T E1 lies in E2 span
-proj = E2 @ E2.T; print("T E1 subset of E2:", np.allclose(proj @ (T@E1), T@E1), " T E2 subset of E1:", np.allclose(E1@E1.T@(T@E2), T@E2))
+proj = E2 @ E2.T; one_sq=np.array([1.0]*6+[0.0]*8); one_hx=np.array([0.0]*6+[1.0]*8)
+print("exact: K 1_sq = 3 1_hx and K 1_hx = -4 1_sq:", np.allclose(T@one_sq,3*one_hx) and np.allclose(T@one_hx,-4*one_sq), " => K^2 = -12 I on the A1g plane")
+# exact integer checks of the T1u block on raw coordinate vectors (no eigensolver)
+for ax in range(3):
+    s_raw=np.zeros(14); s_raw[2*ax]=1; s_raw[2*ax+1]=-1       # +axis square = +1, -axis square = -1
+    h_raw=np.zeros(14)
+    for i in range(6,14): h_raw[i]=np.sign(np.mean([V[j][ax] for j in F[i]]))
+    assert np.allclose(L@s_raw,4*s_raw-h_raw) and np.allclose(L@h_raw,-4*s_raw+5*h_raw), "T1u block"
+    assert np.allclose(T@T@s_raw,-4*s_raw) and np.allclose(T@T@h_raw,-4*h_raw)
+print("exact: L s = 4s - h, L h = -4s + 5h, K^2 s = -4 s, K^2 h = -4 h on raw coordinate vectors, all three axes: True")
+print("T E1 subset of E2:", np.allclose(proj @ (T@E1), T@E1), " T E2 subset of E1:", np.allclose(E1@E1.T@(T@E2), T@E2))
 # automorphism group order
 try:
     import networkx as nx
@@ -131,4 +141,4 @@ for i in range(4):
 cp_e = spectrum_report("elongated dodecahedron", Ae)
 print("elongated dodecahedron L charpoly coefficients:", cp_e)
 print("truncated octahedron L charpoly coefficients:", charpoly_int(L))
-print("done")
+print("ALL PASS")

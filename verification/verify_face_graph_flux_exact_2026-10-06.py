@@ -2,7 +2,7 @@
 """Exact spectra of the magnetic face Laplacian at flux pi/2 and pi per vertex-plaquette.
 Builds a tree gauge with edge phases in {1,i,-1,-i} (resp. {+1,-1}) and computes the
 characteristic polynomial exactly with sympy over Gaussian integers."""
-import itertools, math, numpy as np, sympy as sp
+import itertools, math, sys, numpy as np, sympy as sp
 import io, contextlib
 with contextlib.redirect_stdout(io.StringIO()):
     import importlib.util, os
@@ -43,12 +43,37 @@ def gauge(units_per_plaq, modulus):
     assert np.all((M @ kk - b) % modulus == 0)
     return kk
 x = sp.symbols('x')
+import json
+def holonomy_check(kk, modulus):
+    """every oriented triangle must carry exactly 1 unit of flux mod modulus (1 unit = 2pi/modulus)"""
+    flux = M @ kk
+    return all(int(round(v)) % modulus == 1 for v in flux)
+certificate = {"vertex_order": [list(map(int, v)) for v in V], "faces": [[int(i) for i in sorted(f)] for f in F],
+               "edges": [list(e) for e in edges], "oriented_plaquettes": plaq, "tree_edges": sorted(list(e) for e in tree)}
 def exact_charpoly(kk, unit):
     H = sp.zeros(n, n)
     for (i, j), k in zip(edges, kk):
         H[i, j] = unit**int(k); H[j, i] = sp.conjugate(unit**int(k))
     Lm = sp.diag(*[int(d) for d in A.sum(1)]) - H
     return sp.factor(sp.expand(Lm.charpoly(x).as_expr()))
-print("flux pi per plaquette (signs +-1):", exact_charpoly(gauge(1, 2), sp.Integer(-1)))
-print("flux pi/2 per plaquette (phases i^k):", exact_charpoly(gauge(1, 4), sp.I))
-print("flux 0:", exact_charpoly(np.zeros(36, int), sp.Integer(1)))
+fails = 0
+k2 = gauge(1, 2); k4 = gauge(1, 4)
+print("holonomy check, flux pi  (every triangle = -1):", holonomy_check(k2, 2))
+print("holonomy check, flux pi/2 (every triangle =  i):", holonomy_check(k4, 4))
+fails += (not holonomy_check(k2, 2)) + (not holonomy_check(k4, 4))
+c12 = exact_charpoly(k2, sp.Integer(-1)); c6 = exact_charpoly(k4, sp.I); c0 = exact_charpoly(np.zeros(36, int), sp.Integer(1))
+print("flux pi per plaquette (signs +-1):", c12)
+print("flux pi/2 per plaquette (phases i^k):", c6)
+print("flux 0:", c0)
+exp12 = sp.factor((x-8)**3*(x-5)**3*(x-4)**2*(x-3)**4*(x**2-13*x+24))
+exp6 = sp.factor((x-9)*(x-8)**3*(x-3)**4*(x**2-9*x+16)**3)
+exp0 = sp.factor(x*(x-9)*(x-7)**4*(x-4)**2*(x**2-9*x+16)**3)
+for name, got, want in (("q=12", c12, exp12), ("q=6", c6, exp6), ("q=0", c0, exp0)):
+    ok = sp.expand(got - want) == 0; print(("PASS " if ok else "FAIL ") + name + " characteristic polynomial"); fails += (not ok)
+certificate["phase_exponents_mod4_q6"] = [int(v) for v in k4]
+certificate["phase_exponents_mod2_q12"] = [int(v) for v in k2]
+certificate["charpoly_q6"] = str(sp.expand(c6)); certificate["charpoly_q12"] = str(sp.expand(c12))
+cert_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "flux_gauge_certificate.json")
+with open(cert_path, "w") as fh: json.dump(certificate, fh, indent=1)
+print("certificate written:", cert_path)
+print("ALL PASS" if fails == 0 else f"{fails} FAIL"); sys.exit(1 if fails else 0)

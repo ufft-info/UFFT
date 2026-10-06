@@ -1,0 +1,10 @@
+# External reviews and the changes they produced
+
+This directory holds every external review of the UFFT corpus that its author has agreed to make public, together with the author's response and the commits that implemented it. Reviews are reproduced verbatim and unedited. They are automated, AI-assisted referee audits run by Prof. Pablo Moscato (School of Computer and Information Sciences, University of Newcastle) with his memetic-algorithm review pipeline; they are not human peer review, not journal decisions, and not endorsements, and the reviewer has asked that they not be represented as any of those things. They are published here, at his suggestion, so that readers can follow what was found and what was changed, and so that others can contribute in the same way.
+
+Anyone who wants to run the same kind of audit is welcome to; a report sent to hello@ufft.info will be answered in the same way, with corrections dated and committed.
+
+| Date | Subject | Review | Response | Commits |
+|---|---|---|---|---|
+| 2026-10-06 | The whole public corpus at commit 78f9a28 (81 index rows, 9 scripts run) | `2026-10-06_corpus_audit/UFFT_Referee_Review.pdf` | `2026-10-06_corpus_audit/RESPONSE.md` | df5431f, 2ade431, e0969f6 |
+| 2026-10-07 | The standalone face-graph note (draft 1) | `2026-10-07_face_graph_note/Standalone_Referee_Review.pdf` (+ tex, verifier, results) | `2026-10-07_face_graph_note/RESPONSE.md` | b34fdb0 and the commit that adds this directory |

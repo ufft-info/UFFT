@@ -2371,7 +2371,7 @@ On 6 October 2026 Prof. Pablo Moscato (School of Computer and Information Scienc
 
 **Reframed.** Everything in this document labelled DERIVED or CLOSED that depends on the particle–irrep map is a consequence of premises (1)–(4) in the axiomatic accounting above, and is not a derivation from the axiom alone. The audit's phrase for the mass and mixing results is "postdiction"; this document keeps its own tier labels but the reader should understand Tier 2 to mean exactly that: an algebraic consequence of an identification, matched to data after the fact. Prospective tests remain prospective only where an exact formula and acceptance rule were frozen before the data; the audit's table of what must be frozen for each is adopted as the standard for the predictions register.
 
-**Not changed.** The graph mathematics; the Born-rule and twin-state constructions (conditional, as the audit says); the honesty rules of this document. The audit report is held by the author and will be published alongside the response when its author agrees.
+**Not changed.** The graph mathematics; the Born-rule and twin-state constructions (conditional, as the audit says); the honesty rules of this document. At the reviewer's suggestion the audit report, a second review of the standalone face-graph note, and the author's itemised responses with commit hashes are published in the repository under `reviews/`, so that readers can follow what was found and what was changed.
 
 ## Observables Not Yet Addressed
 
