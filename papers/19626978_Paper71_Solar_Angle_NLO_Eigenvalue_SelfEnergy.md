@@ -84,7 +84,7 @@ The three PMNS angles have distinct structural origins:
 
 ### 3.2 What can shift (r₁, r₂) at one loop?
 
-The master operator H = L + ηV on the face graph has the spectrum {0, r₁, 4, r₂, 7, 9} with (r₁, r₂) sitting at the T₁u multiplicities-3 irreps. Gauge bosons are identified in Paper #60 (Part LX) as the N_gauge = E − V = 12 non-trivial irreducible components of the vertex-walk closure (8 gluons + W⁺ + W⁻ + Z + photon).
+The face Laplacian L (the wall channel of the lattice operator H = L + η(I − V); the single-cell spectrum below is exact in the foam at its void-protected zone points for any η, see the Core's void-channel entry) has the spectrum {0, r₁, 4, r₂, 7, 9} with (r₁, r₂) sitting at the T₁u multiplicities-3 irreps. Gauge bosons are identified in Paper #60 (Part LX) as the N_gauge = E − V = 12 non-trivial irreducible components of the vertex-walk closure (8 gluons + W⁺ + W⁻ + Z + photon).
 
 A one-loop self-energy on a T₁u line consists of a gauge-boson loop attached at two of the V = 24 fermion-vertex sites:
 

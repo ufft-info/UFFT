@@ -1,0 +1,9 @@
+{
+  "repository": "https://github.com/ufft-info/UFFT",
+  "commit": "8c8073029db3314b0e6c3b4549b8281764943313",
+  "files_sha256": {
+    "verify_face_graph_flux_exact_2026-10-06.py": "f01c77207b8a6aa8bb834a077c7914f7610131970f53406fba6e172a36ff8523",
+    "verify_face_graph_paper_2026-10-06.py": "9f50d690c6ebe6f529f3d9295a2a4a6b4d5457433866d18fedc788eeabb73dff"
+  },
+  "python": "3.12.14"
+}

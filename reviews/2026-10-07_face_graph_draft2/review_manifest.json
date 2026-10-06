@@ -1,0 +1,8 @@
+{
+  "input_name": "face_graph_truncated_octahedron-1-2.pdf",
+  "input_sha256": "137a34a2bba09d9a5d307471e04eef40353234ed2f18e076c2ba3d7cbc7ea209",
+  "review_date": "2026-10-06",
+  "scope": "Draft 2 standalone mathematical review",
+  "author_source_commit": "8c8073029db3314b0e6c3b4549b8281764943313",
+  "new_results": "Quarter-flux Gram identity, exact blocks, explicit equivariant intertwiner, genuine magnetic O representation, two-weight family"
+}

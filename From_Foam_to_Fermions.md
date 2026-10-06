@@ -1162,11 +1162,11 @@ The Face Laplacian L describes how a displacement propagates through the *walls*
 
 But Axiom Zero says **B + V = D**. There are two components to every displacement event — the bubble B and the void V. The wall channel describes the bubble side. There is a second channel: the *void channel*, which propagates through the absence of foam rather than through its walls.
 
-These two channels together constitute the complete Hamiltonian of the foam:
+These two channels together constitute the lattice Hamiltonian of the foam:
 
-**H = L + ηV**
+**H = L + η(I − V)**
 
-where L is the face Laplacian (wall channel), V is the void operator (void channel), and η is the coupling strength between them. This equation is the foam's fundamental dynamical law — the full statement of how a displacement event evolves.
+where L is the face Laplacian (wall channel), V is the void operator (void channel, mapping each face to its antipodal partner in the neighbouring cell), and η is the coupling strength between them. (Earlier versions wrote H = L + ηV; the sign is corrected in §13b.5, October 2026.) This equation is the foam's fundamental dynamical law — the full statement of how a displacement event evolves.
 
 ## 13b.2 The Void Operator
 
@@ -1180,7 +1180,7 @@ This map has a crucial property:
 
 Applying the void map twice returns you to where you started. V is an *involution* — it squares to the identity. This is not assumed; it follows from the geometry of the truncated octahedron, which has a centre of inversion symmetry. The antipodal of the antipodal is the original face.
 
-Because V² = I, the eigenvalues of V are exactly ±1. Every eigenmode of the full Hamiltonian H = L + ηV is either *even* (eigenvalue +1 under V) or *odd* (eigenvalue −1 under V). This is the parity partition of the spectrum.
+Because V² = I, the eigenvalues of V are exactly ±1. Every eigenmode of the full Hamiltonian H = L + η(I − V) is either *even* (eigenvalue +1 under V) or *odd* (eigenvalue −1 under V). This is the parity partition of the spectrum.
 
 ## 13b.3 The Parity Partition
 
@@ -1228,21 +1228,21 @@ The most important application of the void channel is to the Higgs mechanism.
 
 The Higgs field corresponds to the A₂u mode — the maximum-eigenvalue mode at λ = 9, confined to hexagonal faces, with T_hex charge −1. The A₂u mode is *odd* under the antipodal map (V-parity = −1).
 
-When the void channel is activated — which it always is, since H = L + ηV is the complete Hamiltonian, not an approximation — the A₂u mode is shifted *downward* in energy:
+**Correction (October 2026).** Earlier versions of this section stated that the void channel shifts the A₂u level downward to 9 − η_hx, that this shift drives spontaneous symmetry breaking, and that it improves the Higgs-to-Z mass ratio from 0.14% to 0.06% via a factor (1 + η_hx/9). All three statements are withdrawn.
 
-**λ_eff(A₂u) = 9 − η_hx = 9 − 0.086 ≈ 8.914**
+The operative inter-cell operator, used in every lattice verification script since July 2026 (`verification/verify_void_protection_2026-07-03.py`, `verify_pe1_bridge_lattice_2026-07-12.py` and the ml3 family), is
 
-The maximum eigenvalue is no longer the maximum. More importantly, the negative mass squared required for spontaneous symmetry breaking — the condition that makes the Higgs potential look like a Mexican hat rather than a bowl — is achieved *automatically* by the void correction pushing A₂u below the tipping point.
+**H(q) = L + η(I − V(q))**
 
-**The void is not a spectator to the Higgs mechanism. The void causes it.**
+with V(q) the antipodal partner-face map carrying the Bloch phase. This is the B + V = D form: it annihilates the uniform (A₁g) mode for every η, so the photon stays massless, and it is the sign under which the void-protection theorem holds. The form H = L + ηV written in Paper #45 and in earlier versions of this chapter has the opposite sign on the odd sector, lifts the zero mode, and is not the operator the framework computes with.
 
-In the Standard Model, the negative Higgs mass squared μ² < 0 is an input — a free parameter chosen to make SSB happen. In UFFT, it is derived: the void channel coupling η_hx applied to the odd A₂u mode produces a downward shift that guarantees SSB. There is no fitted parameter. The Higgs mechanism is compulsory.
+Under H = L + η(I − V(q)) the single-cell eigenvalues are exact eigenvalues of the foam at specific points of the Brillouin zone, independently of η_sq and η_hx: the even levels 0, 4, 7 at the zone centre; r₁ and r₂ (hence √17, r₁ + r₂ = 9 and r₁r₂ = 16) at the zone face-centres; and the A₂u level 9 at the zone corner. This is the void-protection theorem, verified symbolically in η. In particular the Higgs level receives **no** void correction. The Higgs-to-Z ratio stands at its leading-order value
 
-**Numerical improvement:** Including the void correction, the Higgs-to-Z mass ratio improves from 0.14% accuracy (without void) to 0.06% accuracy (with void):
+**m_H/M_Z = 18/(9 + √17) = 1.3716, m_H = 125.08 GeV (observed 125.25 ± 0.17 GeV, −1.0σ)**
 
-m_H/M_Z = 18/(9+√17) × (1 + η_hx/9) = 1.3735 (observed 1.3735, 0.06%)
+and the arithmetic of the withdrawn claim was in any case wrong: 18/(9+√17) × (1 + η_hx/9) = 1.3848, which is 0.8% from the observed ratio, not 0.06%.
 
-The void correction is not optional precision — it is a physical effect with measurable consequence.
+The identification of A₂u with the Higgs, and of its T_hex charge −1 under the inter-type torsion operator with the sign of μ², is unchanged. It is an identification (Tier 2), and it does not rest on the void channel.
 
 ## 13b.6 Entanglement from the Void Channel
 
@@ -1307,21 +1307,11 @@ Because the foam bulk is **incompressible**. The foam cannot be compressed — t
 
 The void channel is real and physical. The correlations it carries are real. But the incompressibility of the foam bulk ensures that no causal signal travels through the void. This is the microscopic mechanism behind the no-signalling theorem of quantum mechanics.
 
-The wall channel (the Laplacian L) propagates at speed c — it requires compression waves, which travel at the pressure wave speed in the foam = c. The void channel (V) propagates instantaneously but carries no information. Both channels are present in H = L + ηV. They are not in conflict — they describe different aspects of the same displacement event.
+The wall channel (the Laplacian L) propagates at speed c — it requires compression waves, which travel at the pressure wave speed in the foam = c. The void channel (V) propagates instantaneously but carries no information. Both channels are present in H = L + η(I − V). They are not in conflict — they describe different aspects of the same displacement event.
 
 ## 13b.8 The Trace Conservation Law
 
-The full Hamiltonian H = L + ηV must conserve energy. In matrix terms, this requires that the trace of H equals the trace of L — since V is traceless (the antipodal map on a symmetric geometry has equal numbers of +1 and −1 eigenvalues, which sum to zero):
-
-**Tr(H) = Tr(L) + η × Tr(V) = Tr(L) + 0 = Tr(L) = 72**
-
-The trace is conserved: Σλ = 72. This is Newton's Third Law propagating through the foam bulk. Every upward push on an even mode is balanced by a downward push on an odd mode of equal magnitude (since Tr(V) = 0). The void does not create or destroy energy — it redistributes it between the boson and fermion sectors.
-
-This is why bosons and fermions in the Standard Model have the mass ratios they have. The redistribution is not arbitrary — it is governed by the antipodal geometry and the exact coupling constants η_sq and η_hx, both derived from first principles.
-
----
-
-# Chapter 13c: The Born Rule and Decoherence
+**Correction (October 2026).** This subsection previously argued that Tr(H) = Tr(L) = 72 because the antipodal map V is traceless, and read this as energy conservation across the bulk. Under the operative operator H = L + η(I − V) the trace is Tr(L) + Tr(η(I − V)) = 72 + 6η_sq + 8η_hx, since Tr(V) = 0 but Tr(I) = 14. The void term adds a positive, η-proportional cost to the odd sector at the zone centre and nothing at the void-protected points (§13b.5). The earlier trace-conservation reading is withdrawn; energy conservation in the lattice is the ordinary statement that H is Hermitian and time-independent, and needs no trace identity.
 
 ## 13c.1 The Measurement Problem
 
@@ -1333,7 +1323,7 @@ In standard quantum mechanics, both facts are postulated — the Born rule is an
 
 A quantum superposition |ψ⟩ = α|0⟩ + β|1⟩ is a foam state in which the displacement event D has not yet resolved into a definite bubble-void pair. The bubble component and the void component are coherently mixed: neither B nor V has collapsed to a specific foam cell. The superposition is real — it is a physical state of the foam, not a representation of ignorance.
 
-The amplitude α is the bubble amplitude (proportion of the state in the wall channel, the L side of H = L + ηV) and β is the void amplitude (proportion in the void channel, the V side). The two amplitudes are maintained coherently by the Hamiltonian H = L + ηV as long as the foam remains isolated.
+The amplitude α is the bubble amplitude (proportion of the state in the wall channel, the L side of H = L + η(I − V)) and β is the void amplitude (proportion in the void channel, the V side). The two amplitudes are maintained coherently by the Hamiltonian H = L + ηV as long as the foam remains isolated.
 
 ## 13c.3 Decoherence from Foam Coupling
 
@@ -1431,7 +1421,7 @@ From the foam perspective, quantum mechanics is not a fundamental theory. It is 
 2. The discrete cell structure is invisible (wavelengths >> ℓ_P)
 3. The void channel contributions are small (η_sq ≈ 0.059, η_hx ≈ 0.086)
 
-In this regime, the full Hamiltonian H = L + ηV reduces approximately to L, and the wall channel dynamics of L produces exactly the Schrödinger equation, the Born rule, and quantum statistics.
+In this regime, the full Hamiltonian H = L + η(I − V) reduces approximately to L, and the wall channel dynamics of L produces exactly the Schrödinger equation, the Born rule, and quantum statistics.
 
 Quantum mechanics is the foam seen from far away. Its axioms — superposition, the Born rule, unitarity, the Hilbert space structure — are not fundamental truths. They are emergent properties of the Planck-scale foam dynamics in the linear, long-wavelength limit.
 
@@ -3052,7 +3042,7 @@ In standard QFT, LSZ is derived from the axioms of quantum field theory (asympto
 
 **Spectral conditions:** The face Laplacian L has non-negative eigenvalues (it is positive semi-definite, as L = D − A where D is the degree matrix and A is the adjacency matrix — the eigenvalues of a graph Laplacian are ≥ 0 by construction). Non-negative eigenvalues mean non-negative mass squared for all modes. No tachyons. The spectral condition is the positive-definiteness of the Face Laplacian.
 
-All three LSZ axioms are theorems of the foam. Therefore LSZ reduction is valid in UFFT. The S-matrix exists, is unitary (because H = L + ηV is Hermitian), and has the standard reduction structure.
+All three LSZ axioms are theorems of the foam. Therefore LSZ reduction is valid in UFFT. The S-matrix exists, is unitary (because H = L + η(I − V) is Hermitian), and has the standard reduction structure.
 
 ## 36b.3 The Feynman Rules from Foam
 

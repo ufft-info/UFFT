@@ -8,3 +8,4 @@ Anyone who wants to run the same kind of audit is welcome to; a report sent to h
 |---|---|---|---|---|
 | 2026-10-06 | The whole public corpus at commit 78f9a28 (81 index rows, 9 scripts run) | `2026-10-06_corpus_audit/UFFT_Referee_Review.pdf` | `2026-10-06_corpus_audit/RESPONSE.md` | df5431f, 2ade431, e0969f6 |
 | 2026-10-07 | The standalone face-graph note (draft 1) | `2026-10-07_face_graph_note/Standalone_Referee_Review.pdf` (+ tex, verifier, results) | `2026-10-07_face_graph_note/RESPONSE.md` | b34fdb0 and the commit that adds this directory |
+| 2026-10-07 | The face-graph note, draft 2 (detailed review; four verifiers; author-script audit) | `2026-10-07_face_graph_draft2/Draft2_Detailed_Referee_Report.pdf` (+ tex, verifiers, logs) | `2026-10-07_face_graph_draft2/RESPONSE.md` | the commit that revises `verification/verify_face_graph_*.py` and adds this directory |

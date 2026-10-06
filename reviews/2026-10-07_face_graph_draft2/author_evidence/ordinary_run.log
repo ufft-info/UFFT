@@ -1,0 +1,33 @@
+vertices 24, faces 14 edges 36 degrees [np.int64(4), np.int64(4), np.int64(4), np.int64(4), np.int64(4), np.int64(4), np.int64(6), np.int64(6), np.int64(6), np.int64(6), np.int64(6), np.int64(6), np.int64(6), np.int64(6)]
+sq-hex adjacencies 24 hex-hex 12 sq-sq 0
+triangles 24 4-cycles 42
+adjacency charpoly == tabulated: True
+Laplacian charpoly == x(x-9)(x-7)^4(x-4)^2(x^2-9x+16)^3: True
+signless Laplacian charpoly: [1, -72, 2364, -46928, 629430, -6036192, 42696812, -226381872, 904433169, -2710459480, 6000070032, -9517033728, 10228101120, -6668697600, 1990656000]
+lambda=0.0000 dim=1 square trace-fraction=0.428571
+lambda=2.4384 dim=3 square trace-fraction=0.621268
+lambda=4.0000 dim=2 square trace-fraction=1.000000
+lambda=6.5616 dim=3 square trace-fraction=0.378732
+lambda=7.0000 dim=4 square trace-fraction=0.142857
+lambda=9.0000 dim=1 square trace-fraction=0.000000
+T1u square fractions closed form (1 +- 1/sqrt17)/2 = 0.6212678125181665 0.3787321874818335
+L v = 7 v for (1,...,1,-3/4,...): True  square content 0.5714285714285714
+T antisymmetric: True
+T^2 on T1u ⊕ T1u = -4 I: True
+singular values of T21: [2. 2. 2.]
+T annihilates A1g(0): False
+T annihilates Eg: True
+T annihilates A2u: True
+T on lambda=7 space, norm: 3.464102
+T on A1g(0), norm: 3.464102  T E0 lies in lambda=7 space: True
+exact: K 1_sq = 3 1_hx and K 1_hx = -4 1_sq: True  => K^2 = -12 I on the A1g plane
+exact: L s = 4s - h, L h = -4s + 5h, K^2 s = -4 s, K^2 h = -4 h on raw coordinate vectors, all three axes: True
+T E1 subset of E2: True  T E2 subset of E1: True
+automorphism group order: 48
+cube: faces 6, edges 12, L spectrum [-0.0, 4.0, 4.0, 4.0, 6.0, 6.0]
+hexagonal prism: faces 8, edges 18, L spectrum [-0.0, 3.0, 3.0, 5.0, 5.0, 6.0, 6.0, 8.0]
+rhombic dodecahedron: faces 12, edges 24, L spectrum [-0.0, 2.0, 2.0, 2.0, 4.0, 4.0, 4.0, 6.0, 6.0, 6.0, 6.0, 6.0]
+elongated dodecahedron: faces 12, edges 28, L spectrum [-0.0, 2.0, 2.763932, 2.763932, 4.0, 4.0, 6.0, 6.0, 6.0, 7.236068, 7.236068, 8.0]
+elongated dodecahedron L charpoly coefficients: [1, -56, 1404, -20784, 201664, -1345344, 6290496, -20594176, 46216960, -67645440, 58060800, -22118400, 0]
+truncated octahedron L charpoly coefficients: [1, -72, 2364, -46832, 624054, -5901696, 40713836, -207249936, 777686289, -2122507832, 4091540880, -5270926080, 4064456704, -1416167424, 0]
+ALL PASS

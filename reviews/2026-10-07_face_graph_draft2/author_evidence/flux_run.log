@@ -1,0 +1,10 @@
+holonomy check, flux pi  (every triangle = -1): True
+holonomy check, flux pi/2 (every triangle =  i): True
+flux pi per plaquette (signs +-1): (x - 8)**3*(x - 5)**3*(x - 4)**2*(x - 3)**4*(x**2 - 13*x + 24)
+flux pi/2 per plaquette (phases i^k): (x - 9)*(x - 8)**3*(x - 3)**4*(x**2 - 9*x + 16)**3
+flux 0: x*(x - 9)*(x - 7)**4*(x - 4)**2*(x**2 - 9*x + 16)**3
+PASS q=12 characteristic polynomial
+PASS q=6 characteristic polynomial
+PASS q=0 characteristic polynomial
+certificate written: /workspace/scratch/28ab7c3512cb/audit_work/draft2_author_sources/flux_gauge_certificate.json
+ALL PASS

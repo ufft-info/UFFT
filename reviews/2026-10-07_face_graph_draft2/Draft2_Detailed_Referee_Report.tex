@@ -1,0 +1,404 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=24mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,longtable,array,microtype}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\newcommand{\Q}{\mathbb Q}\newcommand{\C}{\mathbb C}\newcommand{\R}{\mathbb R}
+\newcommand{\tr}{\operatorname{tr}}\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\rank}{\operatorname{rank}}\newcommand{\spec}{\operatorname{spec}}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}[proposition]{Corollary}
+\title{Detailed Independent Referee Report\\\large Second Draft: The Face-Adjacency Graph\\of the Truncated Octahedron}
+\author{AI-assisted mathematical audit prepared for Pablo Moscato}
+\date{6 October 2026}
+\begin{document}
+\maketitle
+\begin{center}\small
+Luke Martin, October 2026, Draft 2, 8 pages.\\
+Reviewed attachment: \texttt{face\_graph\_truncated\_octahedron-1-2.pdf}.\\
+Scope: the standalone mathematical paper, independently of UFFT.
+\end{center}
+
+\section{Recommendation and principal findings}
+\textbf{Recommendation: targeted revision, with a favorable assessment of the mathematical core as a short spectral-graph note.} Draft 2 has resolved the principal mathematical error identified in the first review and has substantially improved the proofs, scope, and interpretation. I found no counterexample to any of its displayed spectral factorizations. Both linked verification scripts were retrieved at a fixed repository commit and executed; the ordinary and magnetic spectra also passed independently written checks.
+
+The deeper examination yields two findings that deserve particular attention:
+\begin{enumerate}
+\item \textbf{The quarter-flux ``unexplained persistence'' can be explained.} An explicit gauge gives an incidence block $B$ satisfying
+\[
+ B^*B=\frac{9I-C^2}{2},\qquad BB^*=4I,
+\]
+where $C$ is the ordinary cube adjacency matrix. These identities reduce the complete $q=6$ problem to two types of $2\times2$ blocks and two one-dimensional blocks. They prove the factorization by hand, construct the requested intertwiner, and identify a genuine magnetic rotation representation. This is additional analysis developed in this review, not a result already proved in Draft 2.
+\item \textbf{The ordinary verification script's success message is unreliable.} Some checks only print results, and the final \texttt{ALL PASS} is unconditional. A controlled alteration of an expected polynomial produced a printed \texttt{False}, exit status zero, and \texttt{ALL PASS}. This is a real test-harness defect. It does not falsify the independently confirmed spectral formulas.
+\end{enumerate}
+A short correction cycle should address the verification claims, replace or qualify Remark 6.2, and repair a visible filename overflow. Acceptance still depends on the venue's novelty threshold: a correct, well-explained finite example is not automatically a substantial research advance. The new structural proof would improve the case appreciably. This report does not certify priority or give permission for a personal endorsement.
+
+\section{Response to the first review}
+The revisions have been examined in their current context, rather than inferred from the author's acknowledgements.
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.26\linewidth}>{\raggedright\arraybackslash}p{0.52\linewidth}>{\raggedright\arraybackslash}p{0.12\linewidth}}
+\toprule
+Earlier issue & Draft 2 response & Status\\\midrule
+\endhead
+Adjacency splitting field & Abstract and Corollary 3.3 now give $\Q(\sqrt{17},\sqrt{57})$, of degree four. & Resolved\\
+Automorphism proof & Proposition 2.1 now proves injective restriction to the cube and extension of all cube symmetries. & Resolved\\
+Source of discriminants & Remark 3.4 gives normalized adjacency and Laplacian blocks. & Resolved\\
+Trace explanation & The $T_{1u}$ trace is correctly written $4+(6-1)$. & Resolved\\
+Eigenvalue-seven weight & Proposition 4.1 explicitly separates the $A_{1g}$ weight $4/7$ from its eigenspace average $1/7$. & Resolved\\
+Domain of $K^2=-4I$ & Theorem 5.1 adds $K^2=-12I$ on the $A_{1g}$ plane and uses ``orthogonal'' over the reals. & Resolved\\
+Half-flux proof & Theorem 6.1 now derives the result from $D+A$. & Resolved\\
+Flux and magnetic symmetry & Quantized flux, gauge equivalence, and compensated rotations are distinguished. & Improved\\
+Lieb/extremality wording & Unsupported extremality language and the associated citation are removed. & Resolved\\
+Novelty and standalone scope & Catalogued data and prior magnetic construction are identified; priority is qualified. & Improved\\
+Scripts and exact arithmetic & Public scripts are named and arbitrary-precision polynomial arithmetic is described; execution reveals remaining harness gaps. & Partial\\
+Acknowledgement and Kelvin history & Named endorsement is removed; curved Kelvin faces are distinguished from the regular solid. & Resolved\\\bottomrule
+\end{longtable}
+``Improved'' is not a finding that an existing formula is false. The magnetic section is now broadly correct but can be made substantially more informative; the novelty statement is appropriately cautious but remains a matter for literature assessment.
+
+\section{Materials and level of verification}
+The supplied eight-page PDF was read locally, including visual inspection of the magnetic figure and the reproducibility page. The first report and its independent checker were used as a comparison baseline. The two scripts linked in Section 8 were downloaded from
+\begin{center}\small
+\url{https://github.com/ufft-info/UFFT}\\
+commit \texttt{8c8073029db3314b0e6c3b4549b8281764943313}.
+\end{center}
+This is the repository version inspected during this review, not a claim that the PDF is permanently bound to that commit. Source hashes and execution logs are included in the supporting archive. The runtime used Python 3.12.14, NumPy 2.3.5, SymPy 1.14.0, and NetworkX 3.7.
+
+The verification has four distinct levels:
+\begin{enumerate}
+\item Exact independent characteristic polynomials for the ordinary graph, both special magnetic cases, and all five Table 1 graphs.
+\item Exact symbolic identities for the new quarter-flux incidence matrix, its intertwiner, weighted blocks, and all 24 proper rotations, including all $24^2=576$ group products.
+\item Execution and source inspection of the author's two scripts, with independent interpretation of their printed outputs.
+\item A numerical regeneration of the 25 integer-charge spectra underlying Figure 1, using a gauge obtained by an exact integer/rational solve. These general-charge checks are numerical, not exact algebraic factorizations.
+\end{enumerate}
+The all-charge calculation verifies trace identities, conjugation symmetry, and positivity away from trivial flux. It does not establish how the author's individual plotted lines were associated across different charges; that plotting code was not among the two named scripts.
+
+\section{Ordinary graph and Laplacian: detailed assessment}
+\subsection{Construction and automorphisms}
+Label the square vertices by $(a,\sigma)$, with $a\in\{1,2,3\}$ and $\sigma\in\{\pm1\}$, and the hexagonal vertices by $h\in\{\pm1\}^3$. The adjacency rules are
+\[
+ (a,\sigma)\sim h\iff h_a=\sigma,\qquad
+ h\sim h'\iff d_H(h,h')=1.
+\]
+Let $B_0$ be the resulting real $6\times8$ incidence matrix and $C$ the cube adjacency matrix. Then
+\[
+ A_0=\begin{pmatrix}0&B_0\\B_0^T&C\end{pmatrix},\quad
+ L_0=\begin{pmatrix}4I&-B_0\\-B_0^T&6I-C\end{pmatrix}.
+\]
+The graph counts, degree partition, 24 triangles, and 42 simple four-cycles are correct. The revised automorphism proof is sufficient: degree distinguishes the two orbits; restriction to the induced cube is injective because square neighborhoods are distinct; every cube automorphism permutes the six coordinate half-cubes and extends. Thus $\operatorname{Aut}(\Gamma)\cong O_h$, of order 48. This no longer depends on an unexplained computer search.
+
+For slightly fuller exposition, Proposition 2.1 could explain why there are no additional nonfacial triangles: the cube is triangle-free, squares are independent, and every triangle is a square together with one of the four cube edges in its neighborhood. This gives $6\cdot4=24$ directly. It is a proof-polishing suggestion, not a disputed count.
+
+\subsection{Representation reduction and splitting fields}
+The monomial basis on cube vertices gives
+\[
+ W_k=\operatorname{span}\{h_{a_1}\cdots h_{a_k}:a_1<\cdots<a_k\},
+ \qquad C|_{W_k}=(3-2k)I,
+\]
+with dimensions $1,3,3,1$. The representation labels in Lemma 3.2 are correct. Together with the square orbit they yield
+\[
+ \R^{14}\cong2A_{1g}\oplus E_g\oplus2T_{1u}\oplus T_{2g}\oplus A_{2u}.
+\]
+The normalized Laplacian multiplicity blocks are
+\[
+ \begin{pmatrix}4&-\sqrt{12}\\-\sqrt{12}&3\end{pmatrix},\qquad
+ \begin{pmatrix}4&-2\\-2&5\end{pmatrix},
+\]
+and the other scalar blocks are $4,7,9$. Theorem 3.1 follows. The corresponding adjacency blocks explain the discriminants 57 and 17 separately. The revised field statements are correct:
+\[
+ \operatorname{Split}_{\Q}(\chi_{L_0})=\Q(\sqrt{17}),\qquad
+ \operatorname{Split}_{\Q}(\chi_{A_0})=\Q(\sqrt{17},\sqrt{57}).
+\]
+The latter is genuinely biquadratic, since the distinct square-free radicands generate distinct quadratic fields. No further correction of this point is needed.
+
+The abstract nevertheless says that each eigenspace is labelled by \emph{an irreducible representation}. The eigenvalue-seven space carries the reducible representation $A_{1g}\oplus T_{2g}$. Prefer ``give the irreducible decomposition of each eigenspace.'' The body already has the right mathematics.
+
+\subsection{Orbit weights and the commutator}
+Proposition 4.1 is correct, including the definition as an average over an orthonormal basis. On either $T_{1u}$ eigenspace, the compressed square projector is a scalar, so the quoted weight also applies to every normalized vector in that eigenspace. On $E_7$ it is not scalar: its eigenvalues are $4/7,0,0,0$. The draft now makes that distinction explicit.
+
+Write
+\[
+ K=[P_s,L_0]=\begin{pmatrix}0&-B_0\\B_0^T&0\end{pmatrix}.
+\]
+A useful global identity is
+\[
+ K^2=-\diag(B_0B_0^T,B_0^TB_0).
+\]
+The nonzero singular values of $B_0$ are $\sqrt{12}$ once and $2$ three times. Consequently
+\[
+ \spec(K)=\{0^{(6)},\ (2i)^{(3)},\ (-2i)^{(3)},\ 2\sqrt3 i,\ -2\sqrt3 i\}.
+\]
+This confirms all parts of Theorem 5.1 at once and provides a useful global check. Its factor-two block follows from the elementary skew $2\times2$ block, as the revised introduction now candidly states. No extra physical interpretation is warranted or needed.
+
+\section{A hand proof of the quarter-flux spectrum}\label{sec:newproof}
+\textbf{The following argument is supplied by this review.} It resolves the precise finite-graph question left open in Remark 6.2. The computation is short enough to include in a revised paper and eliminates the need to present the $q=6$ factorization only as a determinant calculation.
+
+\subsection{A convenient gauge}
+For $q=6$, a cube face encloses four triangular plaquettes, so its holonomy is $i^4=1$. The connection restricted to the cube is therefore flat. Its edges can all be gauged to phase one, because cube face cycles generate its cycle space.
+
+An explicit extension to the square--hexagon edges is as follows. For cyclically ordered $(a,b,c)=(1,2,3),(2,3,1),(3,1,2)$, define
+\begin{equation}\label{eq:B}
+ B_{(a,\sigma),h}=
+ \begin{cases}
+ \displaystyle\frac{h_b-i\sigma h_c}{1-i\sigma},&h_a=\sigma,\\[4pt]
+ 0,&h_a\ne\sigma.
+ \end{cases}
+\end{equation}
+Every nonzero entry is one of $1,-1,i,-i$. Regard it as the phase from the square to the hexagon, take phase one on all cube edges, and use conjugate phases in reverse directions. The magnetic adjacency and Laplacian become
+\begin{equation}\label{eq:L6}
+ A_6=\begin{pmatrix}0&B\\B^*&C\end{pmatrix},\qquad
+ L_6=\begin{pmatrix}4I&-B\\-B^*&6I-C\end{pmatrix}.
+\end{equation}
+To check the sign of the flux, follow an outward-oriented edge on the cube face $h_a=\sigma$. A positive quarter-turn in its transverse coordinates sends
+\[
+ (h_b,h_c)\longmapsto(-\sigma h_c,\sigma h_b).
+\]
+Equation~\eqref{eq:B} then gives $B_{s,h'}=-iB_{s,h}$. The oriented triangular holonomy is
+\[
+ B_{s,h}\cdot1\cdot\overline{B_{s,h'}}=i.
+\]
+Thus this is specifically the $q=6$ convention, not merely a connection with the same unoriented spectrum. Reversing all orientations gives the conjugate $q=18$ case.
+
+\subsection{The decisive Gram identity}
+\begin{proposition}\label{prop:gram}
+Let $C$ and $B$ be as above. Then
+\begin{equation}\label{eq:gram}
+ B^*B=\frac{9I-C^2}{2}=4(P_1+P_2),\qquad BB^*=4I_6,
+\end{equation}
+where $P_k$ is the orthogonal projector onto the cube character space $W_k$.
+\end{proposition}
+\begin{proof}
+The diagonal entries of $B^*B$ are three, since each cube vertex touches three squares. Two cube vertices at Hamming distance two share one square, and the phases on its opposite corners differ by a minus sign; their Gram entry is $-1$. Adjacent cube vertices share two squares, whose imaginary contributions cancel. Opposite cube vertices share no square. If $C_2$ is the distance-two adjacency matrix, this proves
+\[
+ B^*B=3I-C_2.
+\]
+The cube identity $C^2=3I+2C_2$ gives the first expression in~\eqref{eq:gram}. Since $C$ has eigenvalues $3,1,-1,-3$ on $W_0,W_1,W_2,W_3$, respectively, $B^*B$ is zero on $W_0\oplus W_3$ and four on $W_1\oplus W_2$. Thus $B$ has rank six and all six nonzero singular values are two; hence $BB^*=4I_6$.
+\end{proof}
+This proof explains the cancellations geometrically and identifies the invariant subspaces without using a numerical eigenbasis.
+
+\subsection{Complete block reduction}
+For a unit vector $h\in W_1\oplus W_2$, put $u=Bh/2$. Proposition~\ref{prop:gram} shows that $u$ is a unit square vector; orthogonal choices of $h$ give orthogonal choices of $u$. If $Ch=\mu h$, the plane spanned by $(u,0)$ and $(0,h)$ has Laplacian block
+\begin{equation}\label{eq:q6block}
+ \begin{pmatrix}4&-2\\-2&6-\mu\end{pmatrix}.
+\end{equation}
+For $W_1$, $\mu=1$, giving three copies of
+\[
+ \begin{pmatrix}4&-2\\-2&5\end{pmatrix},\qquad
+ \chi(x)=x^2-9x+16.
+\]
+For $W_2$, $\mu=-1$, giving three copies of
+\[
+ \begin{pmatrix}4&-2\\-2&7\end{pmatrix},\qquad
+ \chi(x)=x^2-11x+24=(x-3)(x-8).
+\]
+Finally, $BW_0=BW_3=0$, so the two remaining hexagon-only eigenvalues are $6-3=3$ and $6-(-3)=9$. These subspaces exhaust all $14$ dimensions. Therefore
+\begin{equation}\boxed{
+ \chi_{L_6}(x)=(x-9)(x-8)^3(x-3)^4(x^2-9x+16)^3.}
+\end{equation}
+The persistent factor has a simple explanation: the degree-one cube sector retains the same cube eigenvalue and the same incidence singular value as at zero flux. The magnetic phases change its embedding into the square coordinates, while its $2\times2$ Laplacian block remains unchanged.
+
+\subsection{An explicit intertwiner}
+There is also a direct solution to the manuscript's request for more than an eigenbasis-defined intertwiner. For the ordinary incidence block,
+\begin{equation}
+ B_0^TB_0=\frac{(C+I)(C+3I)}2.
+\end{equation}
+In particular, $B_0^TB_0=4I$ on $W_1$. Define
+\[
+ J_0h=\frac12B_0h,\qquad J_6h=\frac12Bh,\qquad h\in W_1.
+\]
+Both are isometries. Between the two six-dimensional sectors define
+\begin{equation}\label{eq:F}
+ F:\ (J_0h,k)\longmapsto(J_6h,k),\qquad h,k\in W_1.
+\end{equation}
+It is unitary between those sectors and satisfies
+\[
+ L_6F=FL_0.
+\]
+Equivalently its square-coordinate component is $BB_0^T/4$ on $J_0W_1$, while its hexagon-coordinate component is the identity on $W_1$. This is an explicit incidence-based construction. It depends on the stated gauge, transforms accordingly under gauge changes, and is compatible with the rotation actions constructed next.
+
+\section{The magnetic rotation representation is explicit}
+Draft 2 correctly distinguishes ordinary permutation symmetry from magnetic, gauge-compensated symmetry. For the particular $q=6$ connection, the projective description can be strengthened to a genuine representation.
+
+Let $P(g)$ be the ordinary permutation action of a proper cube rotation on the eight hexagons, and put
+\begin{equation}\label{eq:rep}
+ R_s(g)=\frac14BP(g)B^*,\qquad
+ U(g)=\diag(R_s(g),P(g)).
+\end{equation}
+Because $P(g)$ commutes with $C$ and hence with $P_1+P_2$, Proposition~\ref{prop:gram} gives
+\[
+ R_s(g)B=BP(g),\qquad R_s(g)^*R_s(g)=I,
+\]
+and, crucially,
+\[
+ R_s(g)R_s(h)=R_s(gh).
+\]
+The last equality follows by inserting $B^*B=4(P_1+P_2)$ and using $B(P_1+P_2)=B$. Hence $U$ is an honest unitary representation of the proper octahedral group and $U(g)L_6=L_6U(g)$. Each $R_s(g)$ is monomial: it permutes the six square neighborhoods with compensating phases. This is a magnetic symmetry representation of the graph, not just an arbitrary action manufactured on its eigenspaces. The exact checker verifies its monomial form and every group product.
+
+Use the conventional $O$ labels, without inversion parity subscripts. On the hexagons the representation is $A_1\oplus T_1\oplus T_2\oplus A_2$; equation~\eqref{eq:rep} identifies the square space with $W_1\oplus W_2$, so it carries $T_1\oplus T_2$. Thus
+\begin{equation}
+ \C^{14}\cong A_1\oplus A_2\oplus2T_1\oplus2T_2
+\end{equation}
+in this magnetic representation, with eigenspace assignments
+\begin{center}
+\begin{tabular}{ccl}
+\toprule
+Eigenvalue & Dimension & Magnetic $O$ representation\\\midrule
+$(9-\sqrt{17})/2$ & 3 & $T_1$\\
+$3$ & 4 & $A_1\oplus T_2$\\
+$(9+\sqrt{17})/2$ & 3 & $T_1$\\
+$8$ & 3 & $T_2$\\
+$9$ & 1 & $A_2$\\\bottomrule
+\end{tabular}
+\end{center}
+The fourfold eigenvalue $3$ is an accidental equality of a singlet and a triplet, not an irreducible four-dimensional representation of $O$. The intertwiner~\eqref{eq:F} respects the zero-flux and magnetic $T_1$ actions. It therefore supplies the structural, symmetry-compatible relation sought in Remark 6.2.
+
+Calling this representation ``projective'' is not false in the broad sense that genuine representations have trivial multiplier. It is incomplete if it suggests a nontrivial projective obstruction that remains to be calculated. The gauge above explicitly trivializes that issue at $q=6$. This conclusion is specific to the stated flux and does not assert that every charge admits the same construction. Inversion and other improper operations require the antiunitary/gauge qualifications in the draft; the $q=0$ $g/u$ labels should not simply be carried over as ordinary linear magnetic labels.
+
+\section{Robustness: the shared factor survives a weighted family}
+The explanation is stronger than an isolated numerical coincidence. Give square--hexagon edges weight $a>0$ and cube edges weight $b>0$, retaining their magnetic phases and the weighted degree diagonal. The diagonal values are $4a$ on squares and $3a+3b$ on hexagons.
+
+At both zero flux and quarter flux, the degree-one cube sector has the same block
+\[
+ \begin{pmatrix}4a&-2a\\-2a&3a+2b\end{pmatrix}.
+\]
+Consequently the common cubic factor is
+\begin{equation}
+ f_1(x)^3,\qquad
+ f_1(x)=x^2-(7a+2b)x+8a(a+b).
+\end{equation}
+Its discriminant is $17a^2-4ab+4b^2$, reducing to 17 when $a=b=1$. The complete quarter-flux polynomial is
+\begin{equation}\label{eq:weighted}
+ \chi_{L_6(a,b)}(x)=(x-3a)(x-3a-6b)f_1(x)^3f_2(x)^3,
+\end{equation}
+where
+\[
+ f_2(x)=x^2-(7a+4b)x+8a(a+2b).
+\]
+For comparison, the zero-flux polynomial is
+\[
+ \chi_{L_0(a,b)}(x)=x(x-7a)(x-4a)^2(x-3a-4b)^3
+ (x-3a-6b)f_1(x)^3.
+\]
+These statements follow from the same invariant planes and have been checked symbolically at the block level. They do not claim stability under arbitrary nonuniform edge perturbations.
+
+The coincidence producing a fourfold eigenvalue at equal weights is also transparent:
+\[
+ f_2(3a)=4a(b-a).
+\]
+Thus, for positive weights, the singlet eigenvalue $3a$ coincides with a $W_2$-sector eigenvalue precisely when $a=b$. This cleanly separates symmetry-enforced triplicity from the extra equal-weight degeneracy. The weighted statement is an optional strengthening for publication, not a correction required to rescue any displayed theorem in Draft 2.
+
+\section{Other magnetic checks and interpretation}
+\subsection{Half flux and gauge classification}
+The new signless-Laplacian proof is correct and sufficient. With every edge phase $-1$, all triangular holonomies are $-1$, and $L_{12}=D+A_0$. Its blocks give
+\[
+ \chi_{L_{12}}=(x-8)^3(x-5)^3(x-4)^2(x-3)^4(x^2-13x+24).
+\]
+The discriminant 73 arises from the orbit-constant block. At this charge the all-negative gauge has full ordinary $O_h$ symmetry. There is no need to frame the result as an application of a half-filled-band extremality theorem.
+
+The sphere assumption is essential to the statement that face holonomies determine the gauge class: a surface of positive genus would also require independent noncontractible-cycle holonomies. The manuscript restricts to the sphere, so the claim is correct. For complete precision, local edge-angle representatives have a globally cancelling real boundary sum; the nonzero integer total flux is recovered from chosen lifts of the face fluxes modulo $2\pi$. The revised text has the right quantization conclusion, but a one-sentence clarification about representatives would prevent a reader from confusing an exact cancellation of edge angles with vanishing monopole charge.
+
+\subsection{Moment identities and the full flux plot}
+All charges obey two flux-independent checks and one flux-dependent check:
+\begin{align}
+ \tr L_q&=72,\\
+ \tr L_q^2&=456,\\
+ \tr L_q^3&=3264-144\cos(2\pi q/24).
+\end{align}
+Indeed $\sum d_i^2=384$, $\sum d_i^3=2112$, and the 24 triangles contribute $\tr A_q^3=144\cos(2\pi q/24)$. Expanding the trace of $(D-A_q)^3$ gives $2112+3(384)-144\cos(2\pi q/24)$.
+
+The independent 25-charge numerical sweep satisfies these identities, with maximum observed moment residual approximately $3.2\times10^{-12}$, and satisfies $\spec L_q=\spec L_{24-q}$ to $10^{-12}$. Every nontrivial charge has strictly positive smallest eigenvalue in the calculation. This also follows analytically: the quadratic form is
+\[
+ f^*L_qf=\sum_{\{i,j\}\in E}|f_i-U_{ij}f_j|^2.
+\]
+On a connected graph, a zero mode requires a flat connection. A nontrivial uniform triangular holonomy prevents it. The positive-semidefinite convention is therefore consistent throughout Section 6.
+
+Figure 1 joins values at successive integer charges. Its caption should state that connecting segments are visual guides; they do not define a continuously varying uniform-flux family on this closed triangulation. The numerical plotting code or a CSV should be archived along with the exact special-flux certificates. The present audit includes its own CSV, but it is not the author's original plot data.
+
+\section{The five Fedorov graphs}
+The five factorizations in Table 1 remain correct. The geometric classification is a cited prior theorem; this review verifies the graph constructions and their spectra, not a new proof of the classification. The table is useful comparative context.
+
+The arithmetic descriptors in Proposition 7.1 are true within the stated five-element list. The warning that they are not a canonical selection principle should remain. The perfect-square root sum and parity of a polynomial discriminant do little to explain the graph, whereas the incidence-block identities explain why the particular quadratics occur. The paper would gain focus by emphasizing the latter and keeping the descriptive comparison short.
+
+For proof-oriented exposition, the other spectra need not all be black-box determinant calculations. The cube face graph is complete tripartite, the prism graph is the join of $C_6$ with two independent vertices, and the rhombic-dodecahedron graph is the line graph of the cube. Their standard elementary reductions give the stated spectra directly. Adding a small derivation for the elongated-dodecahedron graph, or at least its explicit adjacency list, would finish that presentation. This is an optional improvement once the exact certificate checks are made executable.
+
+\section{Audit of the supplied verification scripts}\label{sec:software}
+\subsection{What actually ran successfully}
+The ordinary script constructs the graph from polyhedron vertices, reproduces the two main characteristic polynomials, gives the correct weights numerically, and enumerates 48 automorphisms with NetworkX. Its arbitrary-precision polynomial recursion uses \texttt{dtype=object}, as claimed. The magnetic script produces the correct $q=0,6,12$ factorizations with SymPy and writes a gauge certificate. Both completed successfully in the inspected environment.
+
+That evidence resolves the first review's concern that the scripts were unavailable in the supplied package: they are now publicly retrievable. A permanent release archive tied to the submitted manuscript is still preferable to a moving branch URL.
+
+\subsection{The unconditional success message}
+In \texttt{verify\_face\_graph\_paper\_2026-10-06.py}, the adjacency and Laplacian polynomial comparisons are printed Boolean expressions rather than assertions. The final \texttt{print("ALL PASS")} is unconditional. Counts are generally printed rather than checked against expectations. The Table 1 helper calculates an exact polynomial but returns it without asserting the claimed factorization; most of those returned values are not used.
+
+To test the practical consequence, I ran a temporary in-memory copy in which only the \emph{expected} Laplacian factor $(x-9)$ was changed to $(x-10)$. The graph and computed polynomial were unchanged. The resulting output included
+\begin{verbatim}
+Laplacian charpoly == ...: False
+ALL PASS
+\end{verbatim}
+and the process exited with status zero. The archived source was not modified. This establishes that the success banner does not currently mean all advertised claims have passed.
+
+\textbf{Required repair:} accumulate failures or use explicit assertions for every expected count, polynomial, multiplicity, and numerical tolerance. A failed check must return a nonzero exit status. The script should distinguish expected negative checks---for example, the correct statement that $K$ does not annihilate the constant vector---from failed positive assertions.
+
+\subsection{Exact versus numerical checks}
+The raw-vector tests described as exact create arrays using \texttt{np.zeros} with its default floating-point type, and use \texttt{np.allclose}. The entries and small integer operations happen to be exactly representable here, so this observation does not refute the identities. Nevertheless, a tolerance-based comparison is not the stated exact certificate. Use integer/object arrays and exact equality, or relabel these as numerical checks and rely explicitly on the hand proof.
+
+Similarly, the weights are printed to six decimal places and the closed forms are printed separately; the script does not actually assert their agreement at $10^{-12}$ as Section 8 says. Add an explicit dimension check and a comparison of every projector weight to its expected value with the declared tolerance. Also test the complete $K$ assertions, including annihilation of the $T_{2g}$ summand and the $A_{1g}$ exchange, rather than relying only on printed norms.
+
+The characteristic-polynomial recursion uses integer division. For clarity, assert divisibility before each division. In this correct algorithm integrality is theoretically guaranteed, but an explicit remainder check makes implementation failures visible rather than silently truncating them.
+
+\subsection{The magnetic certificate is stronger, but can be cleaner}
+The magnetic script solves the gauge equations numerically, rounds the solution to integer exponents, checks holonomies, and then computes the determinant exactly with SymPy. This is a legitimate candidate-generation plus certificate-checking design. Numerical discovery does not invalidate an exact certificate.
+
+Its incidence array is nevertheless stored as floating point, and the holonomy helper rounds again. For the tiny integer values in this run, the sums are exactly representable, and an independent exact check validates the resulting connection. Still, use an integer incidence matrix and check modular residues using integer arithmetic after rounding. This would make the certificate boundary explicit and robust.
+
+The JSON key \texttt{vertex\_order} refers to the 24 vertices of the original polyhedron; the magnetic matrix has 14 vertices indexed by the face list. This is reconstructible from the file, but should be documented or renamed to avoid confusion. Include the 14 face labels, matrix-vertex convention, orientation convention, and source/version information in the certificate. The simpler formula~\eqref{eq:B} could replace much of the quarter-flux gauge machinery while leaving the tree-gauge implementation as an independent check.
+
+\section{Presentation, scope, and priority}
+The revised abstract is accurate in its field comparison but dense. It is trying to summarize the graph, ordinary spectra, field correction, commutator, magnetic examples, Fedorov comparison, and software in one long paragraph. The magnetic block theorem would provide a clearer central result: an exactly solvable nonregular magnetic graph whose quarter-flux sector shares an explicitly intertwined ordinary sector.
+
+The corrected adjacency polynomial is catalogued \cite{mw}, and the spherical magnetic construction is prior work \cite{al}. The latter treats other graph families and provides the background for tree gauges and flux sectors; it should not be cited as proving this graph's factorization. A targeted search during this review did not establish priority for the exact formulas here. This absence is not evidence of novelty, and the draft appropriately avoids an absolute priority claim. ``Rarely written down'' should be softened or supported if retained.
+
+There is a visible typesetting defect on page 8: the first verification filename extends beyond the right edge and is clipped. This was confirmed in a rendered page, not inferred from a TeX warning. Put each filename in its own breakable \verb|\path{...}| or \verb|\url{...}| entry, or provide a short labeled link. A reader must be able to recover the exact file name.
+
+The scope separation from UFFT is appropriate. No scientific inference from a preferred arithmetic discriminant is needed to justify this graph calculation. The neutral acknowledgement of the first AI-assisted audit is also an improvement. Any new argument adopted from this second report should be verified and attributed transparently; that is distinct from attributing personal endorsement to the requester.
+
+\section{Concrete revision requests and final judgment}
+\textbf{Necessary before relying on the submission as a reproducible note:}
+\begin{enumerate}
+\item Make \texttt{ALL PASS} conditional on every advertised check; assert all five table factorizations and the stated weight tolerances; return nonzero on failure.
+\item Align the exact/numerical descriptions with the actual code, and bind the submission to a versioned supplementary archive.
+\item Correct the abstract's ``an irreducible representation'' wording and repair the clipped filename.
+\item Update Remark 6.2 in light of an explicit solution: either incorporate the incidence proof, intertwiner, and magnetic decomposition above after checking them, or accurately delimit what is left open beyond these results.
+\end{enumerate}
+\textbf{Recommended to improve significance and exposition:} make the hand proof at quarter flux central; distinguish the singlet--triplet coincidence at eigenvalue three from irreducible degeneracy; include the two-weight extension if it fits the intended length; and archive the full plotted spectral data.
+
+The second draft is a substantial improvement. Its principal formulas are correct, its scope is appropriately restricted, and its main first-round mathematical error has been fixed. The remaining concrete weakness is the overstatement of software certification. The deeper calculation turns its most interesting unexplained observation into a short structural theorem. With those points addressed, I would view the work favorably as a concise mathematical/computational contribution, while leaving the venue-specific novelty decision to the editor.
+
+\appendix
+\small
+\section{Reproduction instructions and limits}
+The supporting archive contains:
+\begin{itemize}
+\item this self-contained \LaTeX\ source and compiled PDF;
+\item \texttt{verify\_baseline.py}, covering the original graph, table, weights, and special-flux polynomials;
+\item \texttt{verify\_deeper.py}, checking the explicit incidence matrix, all oriented triangular holonomies, exact Gram identities, block reductions, intertwiner, weighted blocks, and rotation representation;
+\item \texttt{verify\_flux\_sweep.py} and \texttt{magnetic\_sweep.csv}, for the 25-charge numerical checks;
+\item machine-readable results, author-script execution logs, the controlled failure-injection log, and a source provenance manifest.
+\end{itemize}
+Install NumPy and SymPy, then run in order:
+\begin{verbatim}
+python3 verify_baseline.py
+python3 verify_deeper.py
+python3 verify_flux_sweep.py
+python3 check_author_certificate.py
+\end{verbatim}
+The author's ordinary script additionally uses NetworkX for the automorphism enumeration. The baseline checker uses exact Python integers for polynomial arithmetic and floating-point projector weights; the deeper checker uses exact SymPy matrices. The general-charge sweep solves a unimodular reduced face-incidence system exactly, then evaluates roots of unity and eigenvalues numerically. Its output is not represented as an exact algebraic certificate for every charge.
+
+A double invocation of \texttt{pdflatex Draft2\_Detailed\_Referee\_Report.tex} builds the report. No external bibliography file is required. The review verifies the supplied standalone paper and the inspected scripts; it does not certify uninspected repository content, priority, all possible generalizations, or any physical programme.
+
+\begin{thebibliography}{9}
+\bibitem{draft} L.~Martin, \emph{The Face-Adjacency Graph of the Truncated Octahedron: Laplacian Spectrum, Symmetry Decomposition, an Inter-Orbit Operator, and the Magnetic Laplacian}, October 2026, Draft 2, supplied PDF, 8 pp.
+\bibitem{code} L.~Martin, verification scripts in the UFFT repository, inspected commit \texttt{8c8073029db3314b0e6c3b4549b8281764943313}, accessed 6 October 2026. \url{https://github.com/ufft-info/UFFT/tree/8c8073029db3314b0e6c3b4549b8281764943313/verification}.
+\bibitem{mw} E.~W.~Weisstein, \emph{Tetrakis Hexahedral Graph}, MathWorld, accessed 6 October 2026. \url{https://mathworld.wolfram.com/TetrakisHexahedralGraph.html}.
+\bibitem{al} Y.~Avishai and J.~M.~Luck, \emph{Tight-binding electronic spectra on graphs with spherical topology I: the effect of a magnetic charge}, J.~Stat.~Mech. (2008), P06007. \url{https://doi.org/10.1088/1742-5468/2008/06/P06007}; \url{https://arxiv.org/abs/0801.1460}.
+\end{thebibliography}
+\end{document}
