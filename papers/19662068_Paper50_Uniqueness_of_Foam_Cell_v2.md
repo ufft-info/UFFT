@@ -100,7 +100,7 @@ Quadratic: λ²−9λ+16 = 0.
 - Discriminant: Δ = 81 − 64 = **17**
 - 17 is **prime**. ✓
 - Product: r₁r₂ = **16** = 17 − 1 = Δ − 1. ✓
-- Sum: r₁+r₂ = **9** = 3² = **C_A²** (where C_A = F_hx/F − 1 in the natural normalisation). ✓
+- Sum: r₁+r₂ = **9** = 3² = **C_A²** (where C_A = 3 = dim(T₂g) is the colour number; an earlier printing wrote C_A = F_hx/F − 1, which does not evaluate to 3 and was withdrawn 2026-10-06). ✓
 
 All three conditions hold. **Unique among all five Fedorov parallelohedra.**
 
@@ -120,7 +120,7 @@ All three conditions hold. **Unique among all five Fedorov parallelohedra.**
 
 1. **A prime discriminant Δ** (the discriminant of the irrational quadratic factor of the characteristic polynomial)
 2. **Irrational eigenvalue product r₁r₂ = Δ − 1**
-3. **Irrational eigenvalue sum r₁ + r₂ = C_A²** (where C_A = F_hx/F − 1 = 3 is the framework's colour number, *not* an arbitrary perfect square)
+3. **Irrational eigenvalue sum r₁ + r₂ = C_A²** (where C_A = 3 = dim(T₂g) is the framework's colour number; the formula F_hx/F − 1 printed here earlier does not evaluate to 3 and was withdrawn 2026-10-06; *not* an arbitrary perfect square)
 
 It is also the unique convex parallelohedron in this list with exactly two types of regular faces.
 

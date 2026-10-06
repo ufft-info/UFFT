@@ -13,7 +13,7 @@
 | Series | Unified Foam Field Theory |
 | Paper | #76 of 76 |
 | Framework | v10 |
-| Status | Complete |
+| Status | Complete; input lineage of the Rydberg figure corrected 2026-10-06 (measured m_e was used, not the walk-formula value) |
 | Tier | 2 (conditional on the framework's derived alpha and m_e; the lattice results of Sections 2-4 and 6 are unconditional) |
 | DOI | 10.5281/zenodo.21339706 |
 | GitHub | https://github.com/ufft-info/UFFT |
@@ -24,7 +24,7 @@
 
 ## Abstract
 
-We construct the hydrogen atom directly from cell dynamics on the BCC lattice of truncated octahedra, with no continuum potential written in by hand. Four results. (1) The lattice Green's function of the scalar (A1g) channel is Coulombic: G(r) fits A/r with tail strength A = 1/(4pi) exact, box-stable and isotropic to five digits. The 1/r law is a property of cell adjacency. (2) Electric charge is the A1g content of a defect. A bare matter-pattern (T1u) defect is foam-neutral, with no monopole tail; the A1g x T1u cross-coupling vanishes identically (parity selection rule, verified to 1e-17 in both inter-cell coupling conventions); a charged particle is a T1u defect dressed with a unit of the A1g mode. (3) A light dressed defect bound in the well of a heavy one reproduces the hydrogen ladder, including the near-degeneracy of 2s and 2p at the same rung (spread below 1 percent), the fingerprint of the hidden SO(4) symmetry of a true 1/r force. With the framework's derived fine-structure constant [2] and electron mass [3], the Rydberg energy is alpha^2 m_e c^2 / 2 = 13.605693 eV against CODATA 13.605693 eV, and the reduced-mass ground state is 13.598287 eV against the measured 13.598434 eV; the 1.1e-5 residual is the relativistic and QED structure a Schrodinger-level calculation is supposed to leave behind. The bound-state problem introduces no new parameter. (4) The foam leaves a derived signature: the ground state deviates from ideal Coulomb by delta = -K/a_B^2 with both the exponent (contact mechanism from the quartic lattice term) and the coefficient K = 256(D0 - Dnn - 7/320) = 3.810 in closed form. At the physical scale a_B/l_P ~ 3.3e24 this gives |delta| ~ 3e-49: the medium computes its own invisibility. Three verification scripts accompany the paper.
+We construct the hydrogen atom directly from cell dynamics on the BCC lattice of truncated octahedra, with no continuum potential written in by hand. Four results. (1) The lattice Green's function of the scalar (A1g) channel is Coulombic: G(r) fits A/r with tail strength A = 1/(4pi) exact, box-stable and isotropic to five digits. The 1/r law is a property of cell adjacency. (2) Electric charge is the A1g content of a defect. A bare matter-pattern (T1u) defect is foam-neutral, with no monopole tail; the A1g x T1u cross-coupling vanishes identically (parity selection rule, verified to 1e-17 in both inter-cell coupling conventions); a charged particle is a T1u defect dressed with a unit of the A1g mode. (3) A light dressed defect bound in the well of a heavy one reproduces the hydrogen ladder, including the near-degeneracy of 2s and 2p at the same rung (spread below 1 percent), the fingerprint of the hidden SO(4) symmetry of a true 1/r force. With the framework's derived fine-structure constant [2] and the measured electron mass, the Rydberg energy is alpha^2 m_e c^2 / 2 = 13.605693 eV against CODATA 13.605693 eV (correction 2026-10-06: the earlier abstract said the electron mass was the framework's derived value; the computation used the CODATA mass. With the walk-formula mass of [3], 510963.7 eV, which is 69 ppm below the measured value, the Rydberg is 13.60476 eV, 69 ppm low. The precision quoted here is therefore not inherited from the mass formula), and the reduced-mass ground state is 13.598287 eV against the measured 13.598434 eV; the 1.1e-5 residual is the relativistic and QED structure a Schrodinger-level calculation is supposed to leave behind. The bound-state problem introduces no new parameter. (4) The foam leaves a derived signature: the ground state deviates from ideal Coulomb by delta = -K/a_B^2 with both the exponent (contact mechanism from the quartic lattice term) and the coefficient K = 256(D0 - Dnn - 7/320) = 3.810 in closed form. At the physical scale a_B/l_P ~ 3.3e24 this gives |delta| ~ 3e-49: the medium computes its own invisibility. Three verification scripts accompany the paper.
 
 ---
 
@@ -64,9 +64,11 @@ The foam potential produces a hydrogen-like ladder, and it passes the sharp test
 
 ## 5. The scale: 13.6 eV with nothing left to choose
 
-Two prior results set the scale: the fine-structure constant from the single-cell heat kernel [2] and the electron mass from the walk action [3]. Neither is adjusted here. Given the two, the Rydberg energy is fixed:
+Two prior results set the scale: the fine-structure constant from the single-cell heat kernel [2] and the electron mass from the walk action [3]. Given the two, the Rydberg energy is fixed. The figure below, however, was computed with the measured electron mass (see the correction that follows):
 
-**Ry = alpha^2 m_e c^2 / 2 = 13.605693 eV   (CODATA: 13.605693 eV)**
+**Ry = alpha^2 m_e c^2 / 2 = 13.605693 eV   (CODATA: 13.605693 eV), using the measured m_e = 510998.95 eV**
+
+*Correction 2026-10-06.* The script `explore_unit_map_2026-07.py` assigns the CODATA electron mass directly; it does not evaluate the walk formula of [3]. Evaluating that formula, m_e = r₁ M_P exp(−(E−F)(2Δ+√Δ)/16) with the unreduced Planck mass 1.220890 × 10¹⁹ GeV, gives 510963.74 eV (69 ppm below CODATA), and then Ry = 13.60476 eV. The claim that the Rydberg scale is inherited from the framework's mass formula at the precision shown above is withdrawn; what this section establishes is that the lattice gives a Coulomb well with the right ladder, and that the scale follows once α and m_e are supplied.
 
 One step further, with the finite proton mass, the ground state is 13.598287 eV against the measured 13.598434 eV. The residual of 1.1e-5 is the relativistic fine structure and Lamb shift, exactly the layer a non-relativistic substrate calculation is supposed to leave behind.
 

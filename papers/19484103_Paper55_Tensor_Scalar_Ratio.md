@@ -13,7 +13,7 @@
 | Series | Unified Foam Field Theory |
 | Paper | #55 of 63 |
 | Framework | v10 |
-| Status | Complete |
+| Status | Complete; n_t arithmetic corrected 2026-10-06 (−0.008 → −0.0010) |
 | Tier | 2 |
 | DOI | 10.5281/zenodo.19484103 |
 | GitHub | https://github.com/ufft-info/UFFT |
@@ -166,9 +166,9 @@ The UFFT cascade consistency relation is:
 
 This differs from the standard inflationary consistency relation r = −8n_t (where n_t is the tensor spectral index). In the UFFT cascade model, there is no slow-roll field, so the standard relation does not apply directly. The UFFT tensor spectral index is:
 
-**n_t = −r/8 × [ln(r₂/r₁)/ln(r₁r₂)] = −r × ln(r₂/r₁)/[8 ln(16)] = −r × 0.357**
+**n_t = −r/8 × [ln(r₂/r₁)/ln(r₁r₂)] = −r × ln(r₂/r₁)/[8 ln(16)] = −r × 0.0446**
 
-This gives n_t ≈ −0.008 for r = 0.0225, a slightly steeper tensor tilt than standard inflation (which gives n_t = −r/8 = −0.0028). This is a prediction testable by future B-mode polarisation experiments with sufficient sensitivity.
+This gives n_t ≈ −0.0010 for r = 0.0225, a shallower tensor tilt than standard inflation (which gives n_t = −r/8 = −0.0028). *Correction 2026-10-06: an earlier printing evaluated the bracket as 0.357 and quoted n_t ≈ −0.008; ln(r₂/r₁)/(8 ln 16) = 0.990/22.18 = 0.0446. The formula is unchanged; the arithmetic was wrong.* Note also that r = 0.0225 is obtained with the observed n_s as input; the framework's own n_s gives r ≈ 0.0243, and the product form replaced an earlier ratio form after the r ≈ 0.063 value met observational tension, so this is a revised hypothesis frozen for future tests, not a confirmation by the existing limit. This is a prediction testable by future B-mode polarisation experiments with sufficient sensitivity.
 
 ---
 
@@ -195,7 +195,7 @@ The sharpened prediction is:
 Falsification conditions:
 - If LiteBIRD establishes r > 0.032 at >2σ: product formula disfavoured
 - If r < 0.001 at >3σ: cascade amplification suppressed beyond UFFT prediction
-- If n_t ≠ −0.008 ± 0.002 (requiring future precision): UFFT tensor spectral index falsified
+- If n_t ≠ −0.0010 ± 0.0003 (requiring future precision far beyond current B-mode sensitivity): UFFT tensor spectral index falsified (value corrected 2026-10-06)
 
 The prediction r ≈ 0.022 is **directly testable by LiteBIRD around 2032** at >20σ significance. This is one of the cleanest near-term tests of the foam cosmology model.
 

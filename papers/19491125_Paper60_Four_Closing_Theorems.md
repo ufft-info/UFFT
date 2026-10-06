@@ -1,4 +1,4 @@
-# UFFT Paper #60 — UFFT Paper #60 — Part LXXI
+# UFFT Paper #60 — Four Closing Theorems: Anomaly, Generations, Gravity, and the Continuum Limit (Part LXXI)
 
 **Unified Foam Field Theory**
 
@@ -9,16 +9,33 @@
 | Location | Newcastle, New South Wales, Australia |
 | Email | hello@ufft.info |
 | ORCID | 0009-0006-3716-5951 |
-| Date | April 2026 |
+| Date | April 2026 (v2.0: October 2026) |
 | Series | Unified Foam Field Theory |
 | Paper | #60 of 63 |
 | Framework | v10 |
-| Status | Complete |
-| Tier | 1 |
+| Status | WITHDRAWN AS PROOF (October 2026). None of the four theorems is established by the supplied calculation; the audit of 6 October 2026 found an explicit contradictory limit in 60.1, a multiplicity error in 60.2, a vanishing-curvature metric and a misapplied theorem in 60.3, and a non-Hermitian verification in 60.4. Retained as the record of the claims and their correction. |
+| Version | 2.0 |
+| Tier | none of 60.1–60.4 is Tier 1; each is OPEN |
 | DOI | 10.5281/zenodo.19491125 |
 | GitHub | https://github.com/ufft-info/UFFT |
 
 **Keywords:** UFFT, truncated octahedron, foam field theory
+
+## Changes in this version (2.0): withdrawal of all four theorems
+
+The referee audit of 6 October 2026 (prepared for Prof. Pablo Moscato, University of Newcastle; one automated reviewer) examined this paper at full depth. Its findings are correct and are accepted. The original text is retained below, marked at the affected passages.
+
+**Theorem 60.1 (chiral anomaly) is not proved.** §2.1 computes {T, Γ₅} = 4iI exactly, from Γ₅ = T/2i and T² = −4I, and then states that this anticommutator tends to zero as a → 0. It does not: the operators displayed are fixed matrices with no dependence on a, and the Frobenius norm of {T, Γ₅} on the six-dimensional T₁u sector is 4√6 ≈ 9.80 at every a. No spacing-dependent operator family is supplied that would make the limit meaningful. Beyond that, a Ginsparg–Wilson relation does not by itself remove doublers; the section conflates the axial anomaly with gauge-anomaly cancellation; and no enumeration of the chiral hypercharge content is given, so "coefficients {3, 2, 1}" is a statement of the Standard Model's answer, not a calculation. A Laplacian zero mode is not an anomaly computation. **Withdrawn.**
+
+**Theorem 60.2 (three generations) rests on a multiplicity error.** §3.2 says T₁u "appears with multiplicity 3 = dim(T₁u)". The multiplicity of T₁u in the 14-dimensional face space is two (once at r₁, once at r₂), and its dimension is three. A threefold eigenvalue degeneracy is three components of one irrep, not three copies of it. Identifying the three spatial components of a vector irrep as three flavour generations requires an argument that ordinary rotations do not mix physically distinct flavours and that distinct generation masses are compatible with rotational invariance; Schur's lemma gives degeneracy, which is the opposite of the observed mass splitting. The exhaustion of the 14-dimensional single-cell space also cannot exclude multi-cell or collective sectors, which this paper itself invokes for the graviton in §4.1. **Withdrawn as a theorem**; the count N_gen = 3 remains an identification (dim T₁u = 3) and is labelled as such in the Core Framework.
+
+**Theorem 60.3 (general relativity) is not established.** §4.2 sets h_ij = ∂_i u_j + ∂_j u_i. About flat space that is a pure coordinate transformation; its linearised Riemann tensor vanishes identically, so the elastic energy of that displacement is not a curvature action and does not yield the Einstein–Hilbert term. §4.3 cites Weinberg–Witten as guaranteeing nonlinear GR from a massless spin-2 mode; the theorem is an obstruction under stated assumptions (Weinberg and Witten, Phys. Lett. B 96, 59, 1980), which GR evades, and an emergent model must show how. Removing Eg from the SO(3) spin-2 representation because it is assigned elsewhere does not leave a spin-2 multiplet; counting a T₂g shear component is not a proof of two massless helicities. §4.4 mixes reduced and unreduced Planck masses (G = ℏc/M_P² is incompatible with M_P = √(ℏc/8πG)), and the overall scale is an input in any case. **Withdrawn.**
+
+**Theorem 60.4 (continuum completeness) is not established.** The Bloch expansion of §5 relies on `verification/Symanzik_Matching_BCC.py`, whose builder is not Hermitian (see Paper #59 v3.0, item R6); cubic symmetry constrains the quadratic scalar dispersion to be isotropic but does not impose Lorentz symmetry, a common limiting speed across sectors, or diffeomorphism invariance; and asymptotic freedom of one gauge sector is not uniqueness of SM+GR. **Withdrawn.**
+
+The dependency this paper claimed to discharge, "Paper #59 established the Central Theorem", is also withdrawn (Paper #59 v3.0). Sections 6 to 9 below, which build a proof chain and a status table on the four theorems, are superseded by this notice in their entirety.
+
+---
 
 ## Abstract
 
@@ -44,6 +61,8 @@ We address each in turn.
 ## 2. Theorem 60.1 — Chiral Anomaly Coefficients Are Correct
 
 ### 2.1 Setup: the foam's modified Ginsparg-Wilson relation
+
+*[Withdrawn in v2.0: the anticommutator computed below is 4iI and does not tend to zero; see the notice at the top of this paper.]*
 
 The standard Ginsparg-Wilson (GW) relation (1982) for a lattice Dirac operator D is:
 
@@ -126,6 +145,8 @@ The face Laplacian of the Kelvin cell has T₁u appearing with multiplicity **tw
 
 ### 3.2 Why one copy per chirality, not more
 
+*[Withdrawn in v2.0: the multiplicity of T₁u is two and its dimension is three; the paragraph below conflates them; see the notice at the top of this paper.]*
+
 The eigenvalue multiplicity of the 14×14 face Laplacian L is fixed by the Kelvin cell geometry. The spectrum is:
 
 **Spec(L) = {0¹, r₁³, 4², r₂³, 7⁴, 9¹}**
@@ -187,6 +208,8 @@ The T₂g irrep already appears in the face Laplacian at eigenvalue 7 with multi
 
 ### 4.2 The Einstein-Hilbert action from foam elasticity
 
+*[Withdrawn in v2.0: h_ij = ∂_i u_j + ∂_j u_i is pure gauge about flat space and has zero linearised curvature; see the notice at the top of this paper.]*
+
 The long-wavelength elastic theory of a BCC lattice of Kelvin cells is determined by symmetry. The elastic energy density for an isotropic elastic medium (which the BCC lattice becomes in the long-wavelength limit, since O_h → O(3)) is:
 
 **E_elastic = (λ/2)(∂_i u_i)² + μ (∂_i u_j + ∂_j u_i)²/2**
@@ -206,6 +229,8 @@ where the Ricci scalar R encodes the curvature from the metric perturbation h_μ
 with ℓ_P = a = Planck length (the cell size, by construction of the foam). Since a = ℓ_P, M_P is the natural mass scale of the foam, no separate input is required.
 
 ### 4.3 Full nonlinear GR
+
+*[Withdrawn in v2.0: Weinberg–Witten is an obstruction theorem, not a guarantee; see the notice at the top of this paper.]*
 
 The linearised derivation above yields GR at leading order. The full nonlinear Einstein equations follow from the standard argument: the Weinberg-Witten theorem (1980) states that any Lorentz-covariant theory with a massless spin-2 particle necessarily has interactions governed by GR to leading order in derivatives. Since the foam produces a massless spin-2 T₂g mode (Step 4.1) and the continuum is Lorentz-covariant (Paper #59 §6.2), the Weinberg-Witten theorem guarantees the full nonlinear GR structure.
 
@@ -236,6 +261,8 @@ They are orthogonal in the spectrum: the gluon mode has k ~ 1/a (UV), the gravit
 ## 5. Theorem 60.4 — Lattice-to-Continuum Completeness
 
 ### 5.1 The Bloch expansion
+
+*[Withdrawn in v2.0: the supporting script builds a non-Hermitian matrix; see the notice at the top of this paper.]*
 
 The foam action S = Σ_cells ψ†L_Tψ, expanded in the Bloch basis ψ(r) = e^{ik·r} u(k), gives:
 
@@ -337,6 +364,8 @@ Every link is now either a mathematical theorem or a standard result of quantum 
 
 ## 7. Complete Theorem Status
 
+*[Superseded in v2.0: every row marked "This paper" is withdrawn; 59.S is withdrawn; 57.1 and 57.2 are identifications, not Tier 1 (Paper #57 v2.0).]*
+
 | Theorem | Content | Status | Paper |
 |---------|---------|--------|-------|
 | 4.1 | O_h irrep decomposition of face space | Tier 1 | Core Framework |
@@ -384,7 +413,7 @@ The axiom is one line. The cell is one object. The theorem is the Standard Model
 
 *Priority Date: 20 February 2026 · UFFT Paper #60 · April 2026*
 
-*AI Disclosure: Proof structure verification, numerical checks, and document composition performed with Claude (Anthropic). All theoretical arguments, physical identifications, and the axiom B+V=D: Luke Martin.*
+*AI Disclosure: Proof structure verification, numerical checks, and document composition performed with Claude (Anthropic). All theoretical arguments, physical identifications, and the axiom B+V=D: Luke Martin. The v2.0 withdrawal responds to an automated referee audit run by Prof. Pablo Moscato (University of Newcastle), 6 October 2026.*
 
 **B + V = D**
 

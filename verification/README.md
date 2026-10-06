@@ -8,7 +8,8 @@ by a script here, that is a defect: please report it.
 
 ## Quick start
 
-    pip install -r requirements.txt      # numpy, sympy, scipy
+    pip install -r requirements.txt      # numpy, scipy; sympy only for the scripts that say so in their header
+    # Every script that checks a corpus claim should run with numpy alone; the ones that still import sympy are listed below and are being converted.
     python UFFT_Master_Verification_v10.py
 
 Python 3.10+. No network access required. Runtimes on a laptop range from
@@ -33,9 +34,9 @@ seconds to about one minute per script.
 | `verify_Paper69_Rb_denominator.py` | #69 R_b denominator from operator perturbation theory |
 | `verify_Paper70_interior_projector.py` | #70 interior-projector 6/7 identity |
 | `verify_Paper71_solar_angle_NLO.py` | #71 solar-angle NLO self-energy |
-| `verify_Paper72_Oh_irreps.py` | #72 Dirac operator, generation count, Pauli structure |
+| `verify_Paper72_Oh_irreps.py` | #72 Dirac operator, generation count, Pauli structure (V11 wording corrected 2026-10-06: 12,800 total triples, one match consistent with chance; m₃ reference is √Δm²₃₁) |
 | `Quark_Walk_Action_Reproducibility.py` | quark walk-action exponents |
-| `Symanzik_Matching_BCC.py` | lattice-to-continuum matching orders |
+| `Symanzik_Matching_BCC_RETIRED.py` | RETIRED 2026-10-06: non-Hermitian Bloch builder (external audit); kept for inspection, results void |
 
 ## Open-problem verifiers (negative results and constraints)
 
@@ -53,7 +54,7 @@ seconds to about one minute per script.
 | `verify_ml3_njl_2026-07-03.py` | ML3 step 2 (interaction-driven chirality). The canonical Nambu-Jona-Lasinio mechanism for generating the torsion condensate <T>: torsion susceptibility chi = mean(1/|d|) is finite (gapped), so a critical coupling g_c = 1/chi ~ 2.06 exists; the NJL gap equation gives chiral-symmetric below g_c and a torsion condensate above. g_c ~ mean|d| ~ |T| = 2 (near-flat band), so the foam sits near its own critical coupling (suggestive, not claimed). Open (step 3): the foam's actual torsion coupling from the B+V=D vertex, and whether it exceeds g_c | ~30 s |
 | `verify_ml3_chirality_2026-07-03.py` | ML3 (the chiral vacuum; the A1-Weinberg odd part and the Paper #59 chiral-fermion problem are one object). The foam T1u chirality is NOT band-topological: the single-particle Bloch block is real (d_y=0) and gapped (no Dirac points), and the Chern number is 0 for every single-particle torsion term (uniform mass and Wilson k-dependent alike; the Wilson curvature cancels in +-pairs, Nielsen-Ninomiya). Single-particle topology is ruled out; the chirality is necessarily interaction-driven, order parameter = the inter-type torsion condensate <T>. Geometric root of the P4-P14 obstruction chain | ~30 s |
 | `verify_void_network_speed_2026-10-05.py` | The withdrawn c√(3/2) void-network speed (record 19079502 v1.0): BCC octahedral-site geometry built from scratch (spacing a/2, 3 sites per lattice site), propagation fronts of the bubble and void networks by closed form and by breadth-first search under both hop models (ratio ≤ 1 in every direction), and the experimental/theorem exclusion of any finite influence speed (Salart 2008, Bancal 2012). 9 checks | ~5 s |
-| `verify_tetrakis_charpoly_2026-10-06.py` | Independent confirmation of the face spectrum: the face-adjacency graph of the cell is the tetrakis hexahedral graph, whose tabulated adjacency characteristic polynomial x²(x+1)³(x+3)(x²−3x−12)(x²−x−4)³ (MathWorld) is reproduced from the cell built from scratch; the face-Laplacian polynomial x(x−9)(x−7)⁴(x−4)²(x²−9x+16)³ follows, and both irrational factors have discriminant 17. 9 checks. | ALL PASS |
+| `verify_tetrakis_charpoly_2026-10-06.py` | Independent confirmation of the face spectrum: the face-adjacency graph of the cell is the tetrakis hexahedral graph, whose tabulated adjacency characteristic polynomial x²(x+1)³(x+3)(x²−3x−12)(x²−x−4)³ (MathWorld) is reproduced from the cell built from scratch; the face-Laplacian polynomial x(x−9)(x−7)⁴(x−4)²(x²−9x+16)³ follows, and both irrational factors have discriminant 17. 10 checks, NumPy only (exact integer Faddeev–LeVerrier; converted from sympy 2026-10-06 after the audit could not run sympy). | ALL PASS |
 | `verify_higgs_quartic_2026-07-03.py` | B1/B2 (Higgs quartic), reconciled with book Section 12.3: lambda_tree = 1/F_hx = 1/8 (the forced on-site A2u quartic) plus the universal NLO sqrtD/((V-F)(E-V)) = sqrt17/120 gives lambda = (120+sqrt17)/960 = 0.12930 at -0.25 sigma. Match-Gate FAIL-standalone (214 rivals); weight rests on the universal sqrtD/N overdetermination. The earlier -2/147 A1g7-exchange "bare quartic" framing is withdrawn (it is a distinct sub-channel, not the NLO) | ~5 s |
 
 ## Exploration scripts

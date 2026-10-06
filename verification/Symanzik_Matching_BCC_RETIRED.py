@@ -1,4 +1,18 @@
 """
+RETIRED 2026-10-06. DO NOT CITE.
+
+The Bloch builder below (build_bloch_hamiltonian) adds -t*exp(i k.delta) to each
+diagonal entry without the reverse-hop conjugate, so H(k) is not Hermitian:
+||H - H^dag||_F ~ 2.10 at k = (0.2, 0.3, 0.4), max |Im diag| ~ 0.43.
+numpy.linalg.eigvalsh then silently uses only the real diagonal, so every matching
+number this script printed is void. Several coefficients are also stated rather
+than extracted. Found by the external referee audit of 6 October 2026 and
+confirmed by the author. The file is kept unmodified below so the defect can be
+inspected; Paper #59 section 7 and Paper #60 Theorem 60.4, which relied on it, are
+withdrawn. A replacement would need a Hermitian inter-cell operator with explicit
+reverse hops and a stated effective-operator basis.
+"""
+"""
 Symanzik Matching for the BCC Truncated Octahedron Lattice
 ===========================================================
 

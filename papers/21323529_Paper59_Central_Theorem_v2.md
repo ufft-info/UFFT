@@ -9,17 +9,39 @@
 | Location | Newcastle, New South Wales, Australia |
 | Email | hello@ufft.info |
 | ORCID | 0009-0006-3716-5951 |
-| Date | April 2026 (v2.0: July 2026) |
+| Date | April 2026 (v2.0: July 2026; v3.0: October 2026) |
 | Series | Unified Foam Field Theory |
 | Paper | #59 of 75 |
 | Framework | v10 |
-| Version | 2.0 |
-| Status | Complete (composite statement: proof-sketch pending external audit) |
-| Tier | 1 (step-lemmas) · proof-sketch (composite) |
+| Version | 3.0 |
+| Status | WITHDRAWN AS PROOF (October 2026). The composite five-step argument does not establish its conclusion; the external audit it was pending (Moscato, 6 October 2026) found explicit algebraic errors in Steps 2, 3 and 4 and an unproved premise in Steps 1 and 5. Retained as the record of the claim and its correction. The step-lemmas that are graph theorems (Theorem 4.1, 56.1, 56.2) stand. |
+| Tier | 1 (graph-theorem step-lemmas only) · composite statement: OPEN, not established |
 | DOI | 10.5281/zenodo.21323529 (v2.0; v1: 10.5281/zenodo.19491095) |
 | GitHub | https://github.com/ufft-info/UFFT |
 
 **Keywords:** UFFT, truncated octahedron, foam field theory
+
+## Changes in this version (3.0): withdrawal of the composite theorem
+
+On 6 October 2026 an adversarial referee audit of the public repository (prepared for Prof. Pablo Moscato, University of Newcastle; one automated reviewer, not a human panel) examined this paper at full depth. Its findings on the five-step argument are correct and are accepted in full. Each is stated here with what it does to the paper. The original text is retained below, marked at the affected passages, so that the record of the claim and the record of its failure sit in one place.
+
+**R1, Step 1 and Step 5 (gauge groups are supplied, not derived).** §2.1 and §6.4(ii) take the inter-cell link variables to be elements of SU(2) (and SU(3)), and then recover SU(2) Yang–Mills from the Wilson plaquette action. That derives SU(2) Yang–Mills from SU(2) links; it does not derive SU(2) from the face graph. The single-cell structure established in Paper #58 is the finite group D₃ on the Eg subspace, and nothing in this paper turns a finite internal group into a continuous local gauge redundancy. The stated quadratic action also lacks a temporal discretisation, a full inter-cell coupling prescription, a fermionic measure and gravitational variables; plaquette, Yukawa and quartic terms are added, not obtained by integrating out stated degrees of freedom. **Steps 1 and 5 are withdrawn as derivations.** They stand only as the statement of what a microscopic model would need to contain.
+
+**R2, Step 2 (the displayed gamma matrices are not a Clifford algebra).** §3.3 sets γ⁰ = σ_z, γⁱ = σ_x ∂_i and γ⁵ = σ_z. A gamma matrix is not a differential operator; the same σ_x for all three spatial directions does not anticommute between directions; and γ⁵ = γ⁰ does not anticommute with γ⁰. The 2 × 2 block of §3.2 therefore does not define a 3+1-dimensional Dirac operator. The positive square root of Paper #72 is valid spectral mathematics but supplies neither spinor indices, Lorentz spin, statistics nor a chiral gauge representation, and its "chirality involution" cannot relate the positive and negative roots by unitary conjugation, which preserves the spectrum. **Step 2 is withdrawn.** No lattice fermion operator with a spinor space, Clifford relations and a treatment of doublers has been constructed.
+
+**R3, Step 3 (the displayed Yukawa vertex is identically zero).** §4.2 writes ⟨T₁u(r₂)| T · P_A₂u · T |T₁u(r₁)⟩ ∝ −4I. The same section, corrected in v2.0, states that the inter-type operator T annihilates A₂u. Then T P_A₂u = P_A₂u T = 0 and the product vanishes identically; the referee's direct reconstruction gives ‖T P_A₂u T‖ = 0, and so does ours. The −1 charge of A₂u under T_hex cannot be inserted into a product mediated by a different operator. There is also a selection-rule obstruction: two odd T₁u fields and an odd A₂u field do not form an even O_h invariant by ordinary tensor product. **Step 3 is withdrawn.** The walk-action masses of Chapter 23 are a separate identification and are not affected by this paragraph, but no Yukawa vertex connecting them to the A₂u mode has been derived.
+
+**R4, Step 4 (the Higgs mass-squared has the wrong sign as printed).** §5.1 writes μ² = −(λ_A₂u × τ_A₂u) × M_P² e^{−2S_H} and calls it negative. With λ_A₂u = 9 and τ_A₂u = −1 the bracket is −(9 × −1) = +9, so μ² is positive and the potential has a stable origin: no symmetry breaking follows. Independently of the sign, a negative T_hex eigenvalue does not imply a negative physical mass-squared (Paper #57 v2.0 already records that mapping as a premise, not a theorem), and a one-dimensional spatial irrep does not supply the four real components of a complex SU(2) doublet or its three Goldstone directions. **Step 4 is withdrawn.**
+
+**R6 (the Symanzik matching script is not Hermitian).** §7 rests on `verification/Symanzik_Matching_BCC.py`. Its Bloch builder adds −t e^{ik·δ} to each diagonal entry without the reverse-hop conjugate, so H(k) is not Hermitian (‖H − H†‖_F ≈ 2.10 at k = (0.2, 0.3, 0.4)); `numpy.linalg.eigvalsh` then silently discards the imaginary diagonal. The script validates nothing about the matrix it builds, and several matching coefficients in it are stated rather than extracted. **§7 is withdrawn and the script is retired** (renamed `Symanzik_Matching_BCC_RETIRED.py` with a header note; it is kept so that the defect can be seen).
+
+**R7 (D₃ is not a subgroup of SU(2)).** §6.4(i) says D₃ ≅ S₃ embeds in SU(2) through the binary dihedral lift. SU(2) has exactly one element of order two, −I; S₃ has three, so S₃ has no faithful embedding in SU(2). The binary dihedral group 2D₃ embeds, and S₃ is its quotient. Elementary, and it leaves the emergence problem of R1 untouched.
+
+**What stands.** Theorem 4.1 (O_h decomposition of the face space, ρ = 2A₁g ⊕ Eg ⊕ 2T₁u ⊕ T₂g ⊕ A₂u), Theorems 56.1 and 56.2 (T² = −4I on T₁u; T₂₁ = 2U), the face-content table of Paper #57, and the spectrum itself are graph theorems and are confirmed by the audit. The particle–irrep map, the chirality labelling, the walk-action masses and every "derived" observable that depends on them are identifications conditional on premises (1)–(4) of the Core Framework's axiomatic accounting, and are now labelled that way throughout the framework. The sentence "all 26 Standard Model parameters determined by seven cell integers" is withdrawn as a theorem statement.
+
+**What would be needed.** One complete microscopic model: all variables, the full action with time, inter-cell coupling, measure and interactions, and a derivation of its interacting continuum limit with a Hermitian lattice operator, an actual spinor structure, gauge anomaly cancellation with the complete chiral content, and a stated mechanism for continuous gauge redundancy. None of that is supplied by correcting the arithmetic above.
+
+---
 
 ## Abstract
 
@@ -54,6 +76,8 @@ The proof proceeds in five steps.
 ## 2. Step 1 — Gauge Kinetic Terms
 
 ### 2.1 The gauge link variables
+
+*[Withdrawn in v3.0, item R1: the links are assigned values in the gauge group rather than derived; see the notice at the top of this paper.]*
 
 On each edge of the face graph, the torsion phase T_{ij} = exp(igA_μ^a τ^a · Δx_μ) serves as the lattice gauge link. The 36 edges of the face graph carry 36 link variables. Under a local gauge transformation Ω_i at face i:
 
@@ -113,6 +137,8 @@ where c_sq, c_hx are the band curvatures (computable from the BCC second-neighbo
 
 ### 3.3 Continuum identification
 
+*[Withdrawn in v3.0, item R2: the matrices displayed below do not satisfy the Clifford relations; see the notice at the top of this paper.]*
+
 Defining the Dirac spinor ψ = (ψ_L, ψ_R)ᵀ where ψ_L is the T₁u(r₁) component (left-handed, 62% square, Paper #57) and ψ_R is the T₁u(r₂) component (right-handed, 38% square):
 
 **H(k) → iγ^μ ∂_μ + m_f**
@@ -141,6 +167,8 @@ On the foam, this vertex is the trilinear coupling T₁u(r₁) × A₂u × T₁u
 
 ### 4.2 The torsion cross-block
 
+*[Withdrawn in v3.0, item R3: since T annihilates A₂u, the matrix element displayed below is identically zero; see the notice at the top of this paper.]*
+
 Paper #56 proved that the inter-type torsion operator T has off-diagonal block T₂₁ = 2U where U is unitary (all singular values = 2). This operator connects the two T₁u eigenspaces through the A₂u channel:
 
 **⟨T₁u(r₂)| T · P_{A₂u} · T |T₁u(r₁)⟩ ∝ T₂₁ × (−1) × T₁₂ = −4I**
@@ -156,6 +184,8 @@ The walk action S_f = (R_f + I_f √17)/16 involves cell-integer combinations sp
 ## 5. Step 4 — Spontaneous Symmetry Breaking
 
 ### 5.1 The Higgs potential from A₂u
+
+*[Withdrawn in v3.0, item R4: with λ_A₂u = 9 and τ_A₂u = −1 the printed μ² is +9 × (positive), not negative; see the notice at the top of this paper.]*
 
 The A₂u mode (Laplacian eigenvalue 9, T_hex charge −1) generates the Higgs potential:
 
@@ -218,6 +248,8 @@ No additional sectors can appear without increasing F beyond 14, which would req
 
 ### 6.4 D₃ → SU(2) emergence
 
+*[Withdrawn in v3.0, items R1 and R7: (i) is false (S₃ does not embed in SU(2)); (ii)–(iv) assume SU(2)-valued links and so assume the conclusion; see the notice at the top of this paper.]*
+
 Paper #58 showed that the Eg subspace carries the dihedral group D₃ ≅ S₃ at the single-cell level, not SU(2). The emergence of the continuous gauge group proceeds by the standard lattice mechanism:
 
 (i) D₃ is a subgroup of SU(2) (via the binary dihedral embedding BD₃ ↪ SU(2)).
@@ -234,6 +266,8 @@ The same argument applies to SU(3) via the T₂g sector, where the discrete D₃
 ---
 
 ## 7. The Symanzik Matching — Computed
+
+*[Withdrawn in v3.0, item R6: the script this section relies on builds a non-Hermitian Bloch matrix; see the notice at the top of this paper.]*
 
 The five steps above constitute the proof. The Symanzik matching — the one caveat identified in the original formulation — has now been computed explicitly.
 
@@ -319,7 +353,7 @@ The Standard Model is not postulated. It is the unique continuum limit of the si
 [7] Luke Martin, *UFFT Paper #60, Four Closing Theorems*. DOI: 10.5281/zenodo.19491125.
 [8] Luke Martin, *UFFT Paper #59, The Central Theorem (v1, superseded)*. DOI: 10.5281/zenodo.19491095.
 
-*AI Disclosure: Numerical computations and proof structure verification performed with Claude (Anthropic). All theoretical arguments, physical identifications, and the axiom B+V=D: Luke Martin.*
+*AI Disclosure: Numerical computations, proof structure verification and document composition performed with Claude (Anthropic). All theoretical arguments, physical identifications, and the axiom B+V=D: Luke Martin. The v3.0 withdrawal responds to an automated referee audit run by Prof. Pablo Moscato (University of Newcastle), 6 October 2026.*
 
 **B + V = D**
 

@@ -81,8 +81,8 @@
 | LXVII ★ | The Inter-Type Torsion Operator on T₁u: T² = −4·I and Maximal Generation Symmetry | Preprint |
 | LXVIII ★ | The Necessity of the Standard Model: Placement Theorems for the Higgs and Fermion Chirality | Preprint |
 | LXIX ★ | Placement Theorems for the Gauge Sector: Necessity of SU(3)×SU(2)×U(1) | Preprint |
-| LXX ★ | The Central Theorem: From Foam to the Standard Model | Preprint |
-| LXXI ★ | Four Closing Theorems: Anomaly, Generations, Gravity, and the Continuum Limit | Preprint |
+| LXX | The Central Theorem: From Foam to the Standard Model | WITHDRAWN AS PROOF (v3.0, Oct 2026) |
+| LXXI | Four Closing Theorems: Anomaly, Generations, Gravity, and the Continuum Limit | WITHDRAWN AS PROOF (v2.0, Oct 2026) |
 | LXXII ★ | NLO Baryon Asymmetry: Closing the Last Numerical Gap | Preprint |
 | LXXIII | Reserved (withheld pending patent review) | Reserved |
 | LXXIV ★ | Independent Convergence with the Holographic Mass Framework: r_p and ρ_Λ (Paper #62) | Preprint |
@@ -166,8 +166,8 @@ All papers published on Zenodo under Creative Commons Attribution 4.0 Internatio
 | 56 | LXVII | The Inter-Type Torsion Operator on T₁u: T² = −4·I and Maximal Generation Symmetry | [10.5281/zenodo.19484354](https://zenodo.org/records/19484354) |
 | 57 | LXVIII | The Necessity of the Standard Model: Placement Theorems for the Higgs and Fermion Chirality | [10.5281/zenodo.19484509](https://zenodo.org/records/19484509) |
 | 58 | LXIX | Placement Theorems for the Gauge Sector: Necessity of SU(3)×SU(2)×U(1) | [10.5281/zenodo.19484967](https://zenodo.org/records/19484967) |
-| 59 | LXX | The Central Theorem: From Foam to the Standard Model | [10.5281/zenodo.19491095](https://zenodo.org/records/19491095) |
-| 60 | LXXI | Four Closing Theorems: Anomaly, Generations, Gravity, and the Continuum Limit | [10.5281/zenodo.19491125](https://zenodo.org/records/19491125) |
+| 59 | LXX | The Central Theorem: From Foam to the Standard Model (withdrawn as proof, v3.0 Oct 2026) | [10.5281/zenodo.19491095](https://zenodo.org/records/19491095) |
+| 60 | LXXI | Four Closing Theorems: Anomaly, Generations, Gravity, and the Continuum Limit (withdrawn as proof, v2.0 Oct 2026) | [10.5281/zenodo.19491125](https://zenodo.org/records/19491125) |
 | 61 | LXXII | NLO Baryon Asymmetry: Closing the Last Numerical Gap | [10.5281/zenodo.19491332](https://zenodo.org/records/19491332) |
 | 62 | LXXIV | Independent Convergence with the Holographic Mass Framework (r_p, ρ_Λ) | [10.5281/zenodo.19624911](https://zenodo.org/records/19624911) |
 | 63 | LXIII | Pure Mathematics of the Kelvin Cell (standalone foundations) | [10.5281/zenodo.19624955](https://zenodo.org/records/19624955) |
@@ -2357,9 +2357,21 @@ We distinguish three levels of completion within the framework:
 
 **IDENTIFIED AND DERIVED:** Electron, muon, tau as face Laplacian eigenmodes (T₁u) with masses from exp(−(E−F)(2Δ+√Δ)/16) + Koide (0.006–0.009%). All six quarks as m_e × exp((A+B√Δ)/C) with A, B cell integers (0.08–0.23%). Neutrinos as chiral foam modes. Proton/neutron as colour-neutral torsion bound states. Higgs as A₂u mode (eigenvalue −1 under torsion, SSB forced).
 
-The framework is structurally complete. Every sector of the Standard Model maps to a specific component of the truncated octahedron: square faces carry the weak force (Eg), hexagonal faces carry the Higgs (A₂u), the T₁u doubling carries generations, the master equation carries mixing angles and mass ratios, the boundary topology (V−F, E−F) carries coupling constants, and the BCC lattice carries the generation count and particle spectrum. All 15 fermion masses are derived from cell integers (0.006–0.75%), completing the particle spectrum. Former open items now closed: Feynman diagram matching (24 triangles + 42 four-cycles, exhaustive), g-2 C₂ walk sum (all 5 coefficients = cell-integer ratios), ρ̄ CKM (sector-specific NLO, 0.04σ combined), Higgs quartic (NLO foam correction, 0.25σ), n−p mass difference (NLO, 0.41σ). The remaining open items — cosmological initial conditions (H₀, pre-bounce), tensor-to-scalar ratio r (inside bound, not yet sharp), and ongoing ISF collaboration — are computations or processes within this identified structure, not searches for new structure. The baryon asymmetry gap is now closed (NLO, Paper #61, 0.09σ).
+The framework is structurally complete as an *identification scheme*, not as a derivation: every sector of the Standard Model is assigned to a specific component of the truncated octahedron (the assignments are premises (1)–(4) above, and the attempted derivation of the Standard Model Lagrangian from the lattice action, Papers #59 and #60, was withdrawn as proof in October 2026; see "Referee Audit of October 2026" below): square faces carry the weak force (Eg), hexagonal faces carry the Higgs (A₂u), the T₁u doubling carries generations, the master equation carries mixing angles and mass ratios, the boundary topology (V−F, E−F) carries coupling constants, and the BCC lattice carries the generation count and particle spectrum. All 15 fermion masses are derived from cell integers (0.006–0.75%), completing the particle spectrum. Former open items now closed: Feynman diagram matching (24 triangles + 42 four-cycles, exhaustive), g-2 C₂ walk sum (all 5 coefficients = cell-integer ratios), ρ̄ CKM (sector-specific NLO, 0.04σ combined), Higgs quartic (NLO foam correction, 0.25σ), n−p mass difference (NLO, 0.41σ). The remaining open items — cosmological initial conditions (H₀, pre-bounce), tensor-to-scalar ratio r (inside bound, not yet sharp), and ongoing ISF collaboration — are computations or processes within this identified structure, not searches for new structure. The baryon asymmetry gap is now closed (NLO, Paper #61, 0.09σ).
 
 ---
+
+## Referee Audit of October 2026
+
+On 6 October 2026 Prof. Pablo Moscato (School of Computer and Information Sciences, University of Newcastle) ran an automated adversarial referee audit over the public repository at commit 78f9a28 and sent the report to the author. It was produced by one automated reviewer, not by human referees, and it says so. Its recommendation, verbatim: "Do not accept the present claim that UFFT derives the Standard Model and general relativity from one axiom with no fitted parameters." The author accepts that recommendation. What the audit confirmed, what it found, and what was done:
+
+**Confirmed.** The face graph (14 vertices, 36 edges, 24 triangles, 42 four-cycles), its Laplacian spectrum x(x−9)(x−7)⁴(x−4)²(x²−9x+16)³, the O_h decomposition ρ = 2A₁g ⊕ Eg ⊕ 2T₁u ⊕ T₂g ⊕ A₂u, the Pauli form of the inter-orbit block, the rank-12 projector fraction 6/7, and the five-cell spectral comparison, all reproduced independently. The withdrawal of the void-speed mechanism was noted as a responsible correction.
+
+**Found, and accepted.** Papers #59 and #60 contained explicit algebraic errors (items R1–R8, listed in each paper's withdrawal notice) and are withdrawn as proofs. The neutrino mass m₃ had been compared with √Δm²₃₂ instead of √Δm²₃₁, which is the correct reference when m₁ = 0; the pull moves from 0.1σ to −2.4σ and the entry is now Tier 3. The Symanzik matching script built a non-Hermitian Bloch matrix and is retired. The tensor-tilt formula of Paper #55 evaluates to n_t ≈ −0.0010 at r = 0.0225, not −0.008 as printed. The hydrogen Rydberg of Paper #76 was computed with the measured electron mass; with the walk-formula mass (510963.7 eV, 69 ppm low) it is 13.60476 eV, not 13.605693 eV. The standalone Fedorov note's eigenvalue-7 square content is 1/7, not 1.6%. Paper #50's printed C_A = F_hx/F − 1 does not evaluate to 3 and must be restated. D₃ ≅ S₃ is not a subgroup of SU(2). The papers index overstated its count. Each of these is corrected in the file concerned, with the correction dated.
+
+**Reframed.** Everything in this document labelled DERIVED or CLOSED that depends on the particle–irrep map is a consequence of premises (1)–(4) in the axiomatic accounting above, and is not a derivation from the axiom alone. The audit's phrase for the mass and mixing results is "postdiction"; this document keeps its own tier labels but the reader should understand Tier 2 to mean exactly that: an algebraic consequence of an identification, matched to data after the fact. Prospective tests remain prospective only where an exact formula and acceptance rule were frozen before the data; the audit's table of what must be frozen for each is adopted as the standard for the predictions register.
+
+**Not changed.** The graph mathematics; the Born-rule and twin-state constructions (conditional, as the audit says); the honesty rules of this document. The audit report is held by the author and will be published alongside the response when its author agrees.
 
 ## Observables Not Yet Addressed
 
@@ -2378,7 +2390,7 @@ Two measured quantities have no treatment anywhere in this framework, and are li
 Every claim in the framework falls into one of four categories for each of three dimensions. This table makes the status of each result explicit.
 
 **Derivation status** (within the framework):
-- **Tier 1 — Mathematical theorem** (proven from axioms, no physical identification needed): Face Laplacian spectrum, total torsion identity, three-generation lattice theorem, Eg annihilation by torsion, A₂u = −1 under T_hex (the hexagonal-subgraph operator defined in §"Definition of T"; the inter-type operator T annihilates A₂u — the two operators must not be conflated, see Papers #57/#58 v2.0), Schur's lemma on T₁u blocks, Euler series termination, complementary mixing angles, m₁ = 0 (T₁u mass matrix eigenvalue theorem), normal neutrino hierarchy (consequence of m₁ = 0), Dirac neutrinos (T₁u structure forbids Majorana mass term), T²|_{T₁u} = −4·I (Paper #56), T_cross = 2·U unitary (Paper #56), **Higgs = A₂u uniquely** (only scalar irrep with negative T_hex charge: A₁g carries +1, Paper #57 v2.0), **chiral structure on T₁u** (eigenvalues ±2i, purely cross-block; chirality eigenstates are 50/50 superpositions of the two bands — the band labelling T₁u(r₁) = left, T₁u(r₂) = right is Corollary 57.2a, conditional on B+V=D plus the Eg-coupling identification), SSB is forced (not assumed), Yukawa coupling = torsion cross-block T₂₁, **Eg = electroweak sector uniquely** (only even doublet with torsion annihilation and 100% square content, Paper #58 Thm 58.1), **T₂g = colour sector uniquely** (only even triplet, torsion-active, 100% hex-confined, Paper #58 Thm 58.2). The Weinberg angle formula sin²θ_W = (17−3√17)/20 = 0.23153 is **Tier 2** (exact match, 0.00σ LEP effective; satisfies the exact identity cos²θ_W = 2C_A√Δ·s₁/(Δ+C_A); the mixing-weight derivation is open — Result 58.3, Paper #58 v2.0). The complete particle–irrep map is closed by exhaustion given the stated selection criteria: all six eigenspaces are uniquely assigned (Papers #57 + #58, v2.0). **Central Theorem — proof-sketch** (Paper #59, preprint; awaits independent verification): the claimed statement is that the continuum limit of S = Σ ψ†L_Tψ on the BCC lattice is the Standard Model coupled to GR, with all parameters determined by seven cell integers. The preprint organises the argument in five steps: gauge kinetic terms from 24 triangles + 42 four-cycles, Dirac from T₁u Wilson mechanism, Yukawa from torsion cross-block T₂₁ = 2U, SSB from the A₂u T_hex charge −1, uniqueness from asymptotic freedom + irrelevant O_h artefacts. Symanzik-style matching for each step gives corrections that scale as (E/M_P)² ~ 10⁻³⁵ and are numerically negligible. The individual step-lemmas are theorem-strength; the composite statement is a proof-sketch pending external audit and is listed here as a working theorem rather than a fully-refereed result.
+- **Tier 1 — Mathematical theorem** (proven from axioms, no physical identification needed): Face Laplacian spectrum, total torsion identity, Eg annihilation by torsion, A₂u = −1 under T_hex (the hexagonal-subgraph operator defined in §"Definition of T"; the inter-type operator T annihilates A₂u — the two operators must not be conflated, see Papers #57/#58 v2.0), Schur's lemma on T₁u blocks, Euler series termination, complementary mixing angles, m₁ = 0 (T₁u mass matrix eigenvalue theorem), normal neutrino hierarchy (consequence of m₁ = 0), Dirac neutrinos (T₁u structure forbids Majorana mass term), T²|_{T₁u} = −4·I (Paper #56), T_cross = 2·U unitary (Paper #56), **Higgs = A₂u uniquely** (only scalar irrep with negative T_hex charge: A₁g carries +1, Paper #57 v2.0), **chiral structure on T₁u** (eigenvalues ±2i, purely cross-block; chirality eigenstates are 50/50 superpositions of the two bands — the band labelling T₁u(r₁) = left, T₁u(r₂) = right is Corollary 57.2a, conditional on B+V=D plus the Eg-coupling identification), **Eg = electroweak sector uniquely** (only even doublet with torsion annihilation and 100% square content, Paper #58 Thm 58.1), **T₂g = colour sector uniquely** (only even triplet, torsion-active, 100% hex-confined, Paper #58 Thm 58.2). The Weinberg angle formula sin²θ_W = (17−3√17)/20 = 0.23153 is **Tier 2** (exact match, 0.00σ LEP effective; satisfies the exact identity cos²θ_W = 2C_A√Δ·s₁/(Δ+C_A); the mixing-weight derivation is open — Result 58.3, Paper #58 v2.0). The complete particle–irrep map is closed by exhaustion given the stated selection criteria: all six eigenspaces are uniquely assigned (Papers #57 + #58, v2.0). **Central Theorem — WITHDRAWN AS PROOF (October 2026)** (Paper #59 v3.0, Paper #60 v2.0): the claimed statement was that the continuum limit of S = Σ ψ†L_Tψ on the BCC lattice is the Standard Model coupled to GR, with all parameters determined by seven cell integers. The preprint organises the argument in five steps: gauge kinetic terms from 24 triangles + 42 four-cycles, Dirac from T₁u Wilson mechanism, Yukawa from torsion cross-block T₂₁ = 2U, SSB from the A₂u T_hex charge −1, uniqueness from asymptotic freedom + irrelevant O_h artefacts. Symanzik-style matching for each step gives corrections that scale as (E/M_P)² ~ 10⁻³⁵ and are numerically negligible. The external audit of 6 October 2026 found the composite argument fails at every step that is not a graph theorem: the gauge group is assumed in the link variables (R1), the displayed gamma matrices are not a Clifford algebra (R2), the displayed Yukawa vertex is identically zero because T annihilates A₂u (R3), the printed Higgs μ² is +9 × positive, not negative (R4), the anomaly anticommutator is 4iI and does not vanish (R5), the Symanzik script builds a non-Hermitian matrix (R6), S₃ does not embed in SU(2) (R7), and the elastic metric h_ij = ∂_i u_j + ∂_j u_i has zero linearised curvature (R8). Only the graph-theorem step-lemmas (Theorems 4.1, 56.1, 56.2) survive. The three-generation count, SSB and the Yukawa vertex, previously listed in this tier, are identifications and are now listed under the axiomatic accounting above, not here.
 - **Tier 2 — Derived given identifications** (algebraic consequence of the physical identifications, matched to experiment within 1σ): α (0.3σ from Cs), sin²θ_W^eff (Tier 2; 0.00σ LEP / 7.75σ MS-bar scheme shift; mixing derivation open, Result 58.3 Paper #58 v2.0), m_H/M_Z (0.14%), m_e (0.002%), m_μ (0.004%), m_τ (0.009%), all quark masses (0.08–0.23%), v/M_P hierarchy (0.009%), δ_CKM (0.25σ), δ_PMNS (0.08σ), sin(2β) (0.42σ), ρ̄ (0.01σ NLO), η̄ (0.04σ NLO), tan²θ₁₂ NLO (0.074σ, Paper #71), Koide θ = 2/9 (exact), Bekenstein ≈ F (4%), Kerr metric (exact structure), Schwarzschild (exact), Maxwell/Friedmann (exact structure), λ_Cabibbo NLO (0.07σ), sin²θ₂₃ NLO (0.2σ), sin²θ₁₃ NLO (0.2σ), M_W (0.3σ), m₃ neutrino (0.11σ), m₂ neutrino (0.72%), α_s(M_Z) (0.01σ), λ_H = (120+√17)/960 (0.25σ), n−p mass difference NLO (0.41σ, Paper #52), η_B baryon asymmetry NLO (0.09σ, Paper #61), Bekenstein area quantum k = C_A = 3 (exact identification), dark energy 6/7 (0.47%, Paper #53), Δm²₃₁/Δm²₂₁ = 33 (0.8σ, Paper #54), tensor-to-scalar ratio r = 0.0225 inside BK18 bound (Paper #55), n_s (0.7σ, cascade statistics).
 - **Tier 3 — Numerically close but >1.5σ tension** (formula identified, discrepancy exceeds statistical expectation): No entries remain. [Note: n−p mass difference formerly at 2.1σ (LO) is now 0.41σ at NLO via ×(1+α√17/360) (Paper #52). ρ̄ formerly at 1.3σ (LO) is now **−0.002σ** via the exact theorem R_b = r₁²/(r₁ r₂ − 1) = (49 − 9√17)/30 (Paper #64), which supersedes the earlier empirical √17/144 ansatz. A formerly at 0.9σ is now **−0.015σ** via A = (F − r₁)/F = (19 + √17)/28 (Paper #66).]
 - **Tier 4 — Suggestive or speculative** (pattern match without clean derivation, or unfalsifiable claims): Visible spectrum mapping, infinite nesting/layered universe, consciousness/pineal connections.
@@ -2463,7 +2475,7 @@ Every claim in the framework falls into one of four categories for each of three
 | A₂u = pure hexagonal faces | Exact (eigenvector theorem) | Reproducible + preprint | Structural |
 | A₂u = −1 (SSB forced) | Exact (torsion eigenvalue) | Reproducible + preprint | Structural (Higgs mechanism derived) |
 | T·v_Eg = 0 (torsion annihilation) | Exact (face adjacency theorem) | Reproducible + preprint | Structural |
-| N_gen = F_sq/2 = 3 | Exact (BCC lattice theorem) | Reproducible + preprint | Postdiction (3 generations) |
+| N_gen = dim(T₁u) = 3 | Identification (T₁u has multiplicity 2 and dimension 3 in the face space; the three spatial components are *identified* with generations; Theorem 60.2 withdrawn Oct 2026) | Reproducible + preprint | Postdiction (3 generations) |
 | θ₁+θ₂ = 90° (complementary) | Exact (algebraic identity) | Reproducible + preprint | Structural |
 | 24δ_sh+12δ_hh = F_sq×2π (δ = π − θ, Regge) | Exact (algebraic proof) | Reproducible + preprint | Structural |
 | τ = (9+√17)/32 × t_P | Exact (spectral gap) | Reproducible + preprint | Prediction (sub-Planck) |
@@ -2483,7 +2495,7 @@ The coincidence that O_h has four non-trivial irrep dimension-types (1, 2, 3, 3)
 | g-2 leading order = α/(2π) | Derived (foam → QED in IR limit) | Preprint | Postdiction (exact structure) |
 | g-2 two-loop C₂ structure | Derived (foam topology → QED integrals) | Preprint | Postdiction (exact structure) |
 | S-matrix, LSZ, Compton | Derived (foam wave mechanics) | Preprint | Postdiction (standard results) |
-| Full lattice-to-continuum limit | **Preprint proof-sketch (Paper #59) — awaits independent verification** | Preprint | Symanzik matching computed: ~10⁻³⁵ (negligible) |
+| Full lattice-to-continuum limit | **OPEN. Papers #59/#60 withdrawn as proof (Oct 2026, external audit); no microscopic action with time, measure and interactions has been specified** | Withdrawn | Symanzik script retired (non-Hermitian builder) |
 
 ### Quantum Foundations (added July 2026)
 
@@ -2532,7 +2544,7 @@ The coincidence that O_h has four non-trivial irrep dimension-types (1, 2, 3, 3)
 | Neutron EDM = 0 exactly | 0 | n2EDM at PSI | Any nonzero nEDM |
 | δ_PMNS/δ_CKM = 3 exactly | 3.000 | DUNE + precision CKM (~2035) | Ratio ≠ 3 at >3σ |
 | NS core sound speed > c/√3 | c_s > 0.577c | NICER + LIGO merger data | c_s < c/√3 confirmed |
-| Σm_ν = 58.1 meV | m₁=0, m₂=8.6 meV, m₃=49.5 meV | CMB-S4, Euclid, DESI (σ ≈ 15–20 meV) | Σm_ν excluded at >58.1 meV or inconsistent with normal hierarchy |
+| Σm_ν = 58.1 meV | m₁=0, m₂=8.6 meV, m₃=49.5 meV (note: m₃ is 2.4σ below √Δm²₃₁ = 50.28 meV; the sum prediction stands as stated) | CMB-S4, Euclid, DESI (σ ≈ 15–20 meV) | Σm_ν excluded at >58.1 meV or inconsistent with normal hierarchy |
 | First-order EW phase transition | v_c/T_c = 1.12 > 1 | LISA gravitational wave background | Crossover confirmed (SM-like), no GW signal |
 | No neutrinoless double beta decay | Dirac neutrinos only | LEGEND, nEXO, CUPID | 0νββ signal detected |
 
@@ -2586,7 +2598,7 @@ All results use only the topological integers of the truncated octahedron (|O_h|
 | t | m_e exp((2E+1+7√Δ)/8) | 173053 MeV | 172760 MeV | 0.17% |
 | ν₁ | T₁u mass matrix theorem (exact) | 0 | < 0.45 eV | Exact |
 | ν₂ | m₃/√33 | 8.615 meV | 8.678 meV | 0.72% |
-| ν₃ | m_e exp(−(11+13√17)/4) | 49.491 meV | 49.528 ± 0.333 meV | 0.11σ |
+| ν₃ | m_e exp(−(11+13√17)/4) | 49.491 meV | 50.282 ± 0.329 meV (√Δm²₃₁ = √(Δm²₃₂+Δm²₂₁), the correct reference when m₁ = 0; the earlier 49.528 was √Δm²₃₂) | −2.4σ (Tier 3, tension; corrected Oct 2026) |
 | W± (tree-level, foam only) | M_Z cos θ_W with tree-level sin²θ_W = 3/13 | **79.94 GeV** | 80.3692 GeV | **33σ discrepancy** (honest tree-level — see note) |
 | W± (on-shell with SM obliques) | M_Z√(1−sin²θ_W^eff/κ), κ=1.037 | 80.366 GeV | 80.3692 GeV | 0.005% (0.3σ) — **κ imports SM oblique corrections, not foam-derived** |
 | Z⁰ | M_W/cosθ_W | 90.8 GeV | 91.2 GeV | 0.4% |
@@ -2612,7 +2624,7 @@ All results use only the topological integers of the truncated octahedron (|O_h|
 | sin²θ₁₃ | (√Δ/C_A³)²(1−√Δ/(2C_A⁴))² (NLO) | 0.02215 | 0.02203 ± 0.00056 | 0.2 |
 | m₁ | T₁u mass matrix theorem | 0 | < 0.45 eV | Exact |
 | m₂ | m₃/√(2Δ−1) = m₃/√33 | 8.615 meV | 8.678 meV | 0.72% |
-| m₃ | m_e exp(−(11+13√17)/4) | 49.491 meV | 49.528 ± 0.333 meV | 0.11 |
+| m₃ | m_e exp(−(11+13√17)/4) | 49.491 meV | 50.282 ± 0.329 meV (√Δm²₃₁; corrected Oct 2026) | −2.4 (Tier 3) |
 | Σm_ν | m₂+m₃ (m₁=0) | 58.1 meV | < 120 meV | Novel prediction |
 | |Δm²₃₂|/Δm²₂₁ | 2Δ−1 = 33 | 33 | 32.6 ± 0.9 | 0.5 |
 | δ_CP | C_A × πR = 3πR | 200.7° | 197° ± 25° | 0.15 |
@@ -2775,7 +2787,7 @@ All eleven neutrino-sector parameters are now derived from cell integers:
 | Parameter | Formula | UFFT | σ | Tier |
 |---|---|---|---|---|
 | m₁ | 0 (T₁u theorem) | 0 | — | **1** |
-| m₃ | m_e · exp(−(11 + 13√17)/4) | 49.49 meV | −0.11 | 2 |
+| m₃ | m_e · exp(−(11 + 13√17)/4) | 49.49 meV | −2.4 (vs √Δm²₃₁; corrected Oct 2026) | 3 |
 | m₂ | m₃ / √33 | 8.615 meV | −0.61 | 2 |
 | **m₃² / m₂²** | **(r₁+r₂)² − C_A·r₁r₂ = S² − 3P** | **33** | **−0.63** | **2** (Tier 4→2 promotion) |
 | Σm_ν | m₃ (1 + 1/√33) | 58.11 meV | — | 2 |
@@ -3041,7 +3053,7 @@ GitHub: github.com/ufft-info/UFFT
 
 - `verification/19079730_UFFT_Spectrum_Verification.py` — face Laplacian spectrum, O_h irrep decomposition, master-equation roots r₁, r₂.
 - `verification/UFFT_Master_Verification_v10.py` — end-to-end reproduction of the major observable table, lepton masses via Koide, quark-mass PDG comparison.
-- `verification/Symanzik_Matching_BCC.py` — O(a²) matching corrections for the BCC lattice (confirms ~10⁻³⁵ at EW scale).
+- `verification/Symanzik_Matching_BCC_RETIRED.py` — retired October 2026: its Bloch builder is not Hermitian, so its matching numbers are void. Kept so the defect can be inspected.
 - `verification/Quark_Walk_Action_Reproducibility.py` — reproduces all six quark masses from the Theorem 36.2 walk-action formulas using only cell integers {V,E,F,|G|,C_A,Δ,F_hx,F_sq} plus M_P. Mean |deviation| from PDG: 0.14%.
 - `verification/LookElsewhere_Harness.py` — brute-force enumeration of candidate formulas in the cell vocabulary (rational in √17, rational multiples of π in sin/cos). Computes hit-density for each UFFT target so a reader can quantify what "0.1% agreement" is worth in this search space. Addresses the external peer-review concern about look-elsewhere degrees of freedom (§3.4 of `peer_review.md`).
 

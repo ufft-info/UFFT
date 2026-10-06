@@ -209,12 +209,12 @@ The eigenvectors of L carry information about which faces participate in each mo
 | (9−√17)/2 | ≈ 62.1% | ≈ 37.9% | Square-dominant, mixed |
 | 4 | 100% | 0% | Pure square |
 | (9+√17)/2 | ≈ 37.9% | ≈ 62.1% | Hexagonal-dominant, mixed |
-| 7 | ≈ 1.6% | ≈ 98.4% | Nearly pure hexagonal |
+| 7 | 1/7 ≈ 14.3% (basis-invariant trace fraction over the 4-dimensional eigenspace; the T₂g component alone has 0%, the A₁g component supplies the rest; an earlier printing gave ≈ 1.6%, corrected 2026-10-06) | 6/7 ≈ 85.7% | Hexagonal-dominant |
 | 9 | 0% | 100% | Pure hexagonal |
 
 **Proposition 7.** *The Eg eigenspace (λ = 4) is entirely supported on square faces. The A₂u eigenspace (λ = 9) is entirely supported on hexagonal faces.*
 
-*Proof.* The Eg representation of O_h acts trivially on the hexagonal face orbit (since the 8 hexagonal faces carry A₁g ⊕ T₂g ⊕ A₂u under O_h, which does not contain Eg). Therefore the Eg eigenvectors must vanish on all hexagonal faces. Similarly, A₂u does not appear in the square face representation (6 squares carry A₁g ⊕ Eg ⊕ T₁u under O_h). □
+*Proof.* The Eg representation of O_h acts trivially on the hexagonal face orbit (since the 8 hexagonal faces carry A₁g ⊕ T₁u ⊕ T₂g ⊕ A₂u under O_h, which does not contain Eg; T₁u was omitted in an earlier printing, corrected 2026-10-06). Therefore the Eg eigenvectors must vanish on all hexagonal faces. Similarly, A₂u does not appear in the square face representation (6 squares carry A₁g ⊕ Eg ⊕ T₁u under O_h). □
 
 This face-type segregation is a consequence of the *bipartite-like* structure of the face adjacency graph: no square face is adjacent to another square face.
 
@@ -246,7 +246,7 @@ The Fedorov classification is specific to R³. In R⁴ there are 52 combinatoria
 
 ### 8.2 Connection to Kelvin's conjecture
 
-The truncated octahedron was proposed by Lord Kelvin (1887) as the solution to the isoperimetric problem for space-filling cells: it minimises surface area per unit volume among all cells that tile by translation. Weaire and Phelan (1993) found a counter-example with lower surface area using two cell types, but the truncated octahedron remains optimal among *monohedral* (single-cell) tilings. The spectral properties established here provide a new algebraic characterisation of this geometrically distinguished cell.
+The truncated octahedron was proposed by Lord Kelvin (1887) as the solution to the isoperimetric problem for space-filling cells: it minimises surface area per unit volume among all cells that tile by translation. Weaire and Phelan (1993) found a counter-example with lower surface area using two cell types, and whether the truncated octahedron is optimal among *monohedral* (single-cell) tilings is, to our knowledge, not proved; nothing in this note depends on it. The spectral properties established here provide a new algebraic characterisation of this geometrically distinguished cell.
 
 ### 8.3 Spectral gap
 
@@ -256,7 +256,7 @@ The spectral gap of L (the smallest nonzero eigenvalue) is (9 − √17)/2 ≈ 2
 
 ## 9. Conclusion
 
-We have shown that the truncated octahedron occupies a distinguished position among Fedorov parallelohedra: it is the unique member whose face Laplacian has prime discriminant, and it satisfies two additional algebraic relations (product-discriminant and sum-square) that fail for every other space-filling cell. These results provide a new spectral characterisation of a polyhedron already known to be exceptional on geometric grounds (Kelvin's conjecture, optimal BCC tiling).
+We have shown that the truncated octahedron occupies a distinguished position among Fedorov parallelohedra: it is the unique member whose face Laplacian has prime discriminant, and it satisfies two additional algebraic relations (product-discriminant and sum-square) that fail for each of the other four Fedorov parallelohedra (the five combinatorial types of convex translational space-fillers; multi-cell foams and non-convex tiles are outside the scope of this note). These results provide a new spectral characterisation of a polyhedron already known to be exceptional on geometric grounds (Kelvin's conjecture, optimal BCC tiling).
 
 The computations are entirely elementary and can be verified by diagonalising small integer matrices (at most 14 × 14). We hope this note encourages further study of face Laplacians of polytopes, a topic that appears to be largely unexplored.
 
