@@ -1,0 +1,54 @@
+#!/usr/bin/env python3
+"""Exact spectra of the magnetic face Laplacian at flux pi/2 and pi per vertex-plaquette.
+Builds a tree gauge with edge phases in {1,i,-1,-i} (resp. {+1,-1}) and computes the
+characteristic polynomial exactly with sympy over Gaussian integers."""
+import itertools, math, numpy as np, sympy as sp
+import io, contextlib
+with contextlib.redirect_stdout(io.StringIO()):
+    import importlib.util, os
+    _spec = importlib.util.spec_from_file_location("vf", os.path.join(os.path.dirname(os.path.abspath(__file__)), "verify_face_graph_paper_2026-10-06.py"))
+    _vf = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(_vf)
+    faces_truncated_octahedron, face_graph = _vf.faces_truncated_octahedron, _vf.face_graph
+    # (was: from verify_face_graph_paper import faces_truncated_octahedron, face_graph
+V, F = faces_truncated_octahedron(); A = face_graph(V, F); n = 14
+Vn = np.array(V, float); cent = [Vn[f].mean(0) for f in F]
+# plaquettes: vertices of the cell; faces around a vertex, ordered counterclockwise seen from outside
+plaq = []
+for v in range(24):
+    fs = [i for i in range(n) if v in F[i]]; nrm = Vn[v]/np.linalg.norm(Vn[v])
+    a = np.array([1,0,0.]) if abs(nrm[0]) < 0.9 else np.array([0,1,0.])
+    u = np.cross(nrm, a); u /= np.linalg.norm(u); w = np.cross(nrm, u)
+    fs.sort(key=lambda i: math.atan2(np.dot(cent[i]-Vn[v], w), np.dot(cent[i]-Vn[v], u))); plaq.append(fs)
+edges = sorted({tuple(sorted((i, j))) for i in range(n) for j in range(n) if A[i, j]}); eidx = {e: k for k, e in enumerate(edges)}
+M = np.zeros((24, 36))
+for p, fs in enumerate(plaq):
+    for a in range(3):
+        i, j = fs[a], fs[(a+1) % 3]; M[p, eidx[tuple(sorted((i, j)))]] = 1 if i < j else -1
+# spanning tree (BFS)
+import collections
+tree = set(); seen = {0}; q = collections.deque([0])
+while q:
+    x = q.popleft()
+    for y in range(n):
+        if A[x, y] and y not in seen: seen.add(y); tree.add(tuple(sorted((x, y)))); q.append(y)
+free = [k for k, e in enumerate(edges) if e not in tree]
+def gauge(units_per_plaq, modulus):
+    """solve M k = units_per_plaq on the free edges (tree edges = 0); return integer k mod modulus"""
+    b = np.full(24, float(units_per_plaq)); b[0] -= 24*units_per_plaq   # Dirac string: total flux 0, each plaquette still ≡ 1 unit mod the modulus
+    Mf = M[:, free]
+    k, res, rank, _ = np.linalg.lstsq(Mf, b, rcond=None)
+    assert np.allclose(Mf @ k, b), "inconsistent"
+    kf = np.round(k); assert np.allclose(k, kf, atol=1e-8), "non-integer gauge"
+    kk = np.zeros(36, int); kk[free] = kf.astype(int) % modulus
+    assert np.all((M @ kk - b) % modulus == 0)
+    return kk
+x = sp.symbols('x')
+def exact_charpoly(kk, unit):
+    H = sp.zeros(n, n)
+    for (i, j), k in zip(edges, kk):
+        H[i, j] = unit**int(k); H[j, i] = sp.conjugate(unit**int(k))
+    Lm = sp.diag(*[int(d) for d in A.sum(1)]) - H
+    return sp.factor(sp.expand(Lm.charpoly(x).as_expr()))
+print("flux pi per plaquette (signs +-1):", exact_charpoly(gauge(1, 2), sp.Integer(-1)))
+print("flux pi/2 per plaquette (phases i^k):", exact_charpoly(gauge(1, 4), sp.I))
+print("flux 0:", exact_charpoly(np.zeros(36, int), sp.Integer(1)))
