@@ -1234,7 +1234,7 @@ The operative inter-cell operator, used in every lattice verification script sin
 
 **H(q) = L + η(I − V(q))**
 
-with V(q) the antipodal partner-face map carrying the Bloch phase. This is the B + V = D form: it annihilates the uniform (A₁g) mode for every η, so the photon stays massless, and it is the sign under which the void-protection theorem holds. The form H = L + ηV written in Paper #45 and in earlier versions of this chapter has the opposite sign on the odd sector, lifts the zero mode, and is not the operator the framework computes with.
+with V(q) the antipodal partner-face map carrying the Bloch phase. This is the B + V = D form: it annihilates the uniform (A₁g) mode for every η, so the photon stays massless, and it is the sign under which the void-protection theorem holds. The form H = L + ηV written in Paper #45 v1/v2 (corrected in v3, 10.5281/zenodo.23199477) and in earlier versions of this chapter has the opposite sign on the odd sector, lifts the zero mode, and is not the operator the framework computes with.
 
 Under H = L + η(I − V(q)) the single-cell eigenvalues are exact eigenvalues of the foam at specific points of the Brillouin zone, independently of η_sq and η_hx: the even levels 0, 4, 7 at the zone centre; r₁ and r₂ (hence √17, r₁ + r₂ = 9 and r₁r₂ = 16) at the zone face-centres; and the A₂u level 9 at the zone corner. This is the void-protection theorem, verified symbolically in η. In particular the Higgs level receives **no** void correction. The Higgs-to-Z ratio stands at its leading-order value
 
