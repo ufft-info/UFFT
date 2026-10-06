@@ -96,13 +96,13 @@ Schur's lemma forces L to decompose under O_h into irreducible blocks. The assig
 
 **Step 7.** Corrections are Planck-suppressed: the leading lattice artefact is O(a²k²) ~ O(E²/M_P²).
 
-> *Note added in amendment (19 April 2026).* Steps 3, 5, and 6 as currently written are argumentative, not rigorous. Step 3 (continuum limit via Bloch expansion) is sketch-level; full dispersion computation for the T₁u sector is the subject of Paper #72 (see §5.2 and `verification/peer_review_deliverables/D6_Paper72_Scope.md`). Step 5 (all coefficients determined by L_T entries) holds for some sectors and is contingent for others, as §5 now makes explicit. Step 6 (completeness) rests on Σ dim = F = 14, which is exact. The seven-step structure is a correct programmatic outline; the present paper closes Steps 1, 2, 6 and the §6 uniqueness corollary rigorously, and closes Steps 3, 4, 5, 7 at the identification level only.
+> *Note added in amendment (19 April 2026).* Steps 3, 5, and 6 as currently written are argumentative, not rigorous. Step 3 (continuum limit via Bloch expansion) is sketch-level; full dispersion computation for the T₁u sector is the subject of Paper #72 (see §5.2; an internal scope note on Paper #72, unpublished, is not cited as evidence). Step 5 (all coefficients determined by L_T entries) holds for some sectors and is contingent for others, as §5 now makes explicit. Step 6 (completeness) rests on Σ dim = F = 14, which is exact. The seven-step structure is a correct programmatic outline; the present paper closes Steps 1, 2, 6 and the §6 uniqueness corollary rigorously, and closes Steps 3, 4, 5, 7 at the identification level only.
 
 ---
 
 ## 5. Sector-Specific Identifications with Varying Derivational Status
 
-Three results previously presented as "forward derivations" from L_T are reclassified here by their current epistemological status (see `verification/peer_review_deliverables/D1_Methodological_Note.md`, Sections E and F, for the full methodological argument). The labels used below are: **Identification (fit)**, numerical match contingent on a sector-specific input choice not derived from L_T elsewhere in the paper; **Identification (pending)**, integer selection depends on a computation not yet performed (Paper #72); **Identification (post-hoc)**, NLO factor supplied after observing the LO result and the target.
+Three results previously presented as "forward derivations" from L_T are reclassified here by their current epistemological status (see the internal review notes, unpublished; references [10], [11]; formerly cited as an internal note, Sections E and F, for the full methodological argument). The labels used below are: **Identification (fit)**, numerical match contingent on a sector-specific input choice not derived from L_T elsewhere in the paper; **Identification (pending)**, integer selection depends on a computation not yet performed (Paper #72); **Identification (post-hoc)**, NLO factor supplied after observing the LO result and the target.
 
 ### 5.1 α_s(M_Z) — Identification (fit), not forward derivation
 
@@ -110,13 +110,13 @@ Three results previously presented as "forward derivations" from L_T are reclass
 
 The T₂g sector has dim = C_A = 3 and eigenvalue 7. The discrete one-loop self-energy on C_A degenerate modes replaces ln(Λ/μ) → ln(C_A), giving α_s⁻¹(M_Z) = 9 − 3ln(3)/(2π) = 8.4755.
 
-**Status.** The identification of the bare coupling with β₀(n_f = C_A) = 9 is a *condition*, not a derivation from L_T. The QCD β-function coefficient β₀ = (11C_A − 2n_f)/3 equals 9 only when n_f = C_A = 3, whereas MS-bar evaluation at μ = M_Z with the top decoupled uses n_f = 5 (giving β₀ = 23/3). UFFT offers no derivation of why the foam-intrinsic flavour count is C_A rather than the physical 5 at M_Z, and the formula does not generalise to SU(2) (Paper #47 §4.1 acknowledges this explicitly). Absent a derived principle connecting n_f to C_A at the relevant scale, §5.1 is a one-integer fit whose 0.01σ match is striking but not a prediction. Disposition and full argument: `verification/peer_review_deliverables/D4_n_f_Resolution.md` (binary answer: (b), concede fit).
+**Status.** The identification of the bare coupling with β₀(n_f = C_A) = 9 is a *condition*, not a derivation from L_T. The QCD β-function coefficient β₀ = (11C_A − 2n_f)/3 equals 9 only when n_f = C_A = 3, whereas MS-bar evaluation at μ = M_Z with the top decoupled uses n_f = 5 (giving β₀ = 23/3). UFFT offers no derivation of why the foam-intrinsic flavour count is C_A rather than the physical 5 at M_Z, and the formula does not generalise to SU(2) (Paper #47 §4.1 acknowledges this explicitly). Absent a derived principle connecting n_f to C_A at the relevant scale, §5.1 is a one-integer fit whose 0.01σ match is striking but not a prediction. Disposition and full argument: an internal, unpublished review note (April 2026; AI-assisted; not cited as evidence) (binary answer: (b), concede fit).
 
 The numerical claim α_s = 0.11799 remains falsifiable and testable against future world-average refinements. What is withdrawn is the "forward derivation" label, not the number.
 
 ### 5.2 m₃ — Derivation (T72.1, T72.2, T72.3a as theorems; T72.3b conjecture; T72.4 best-match primitive triple)
 
-**Identification.** m₃ = m_e · exp(−(11 + 13√17)/4) = 49.49 meV (obs: 49.53 ± 0.33 meV, matches at 0.12σ).
+**Identification.** m₃ = m_e · exp(−(11 + 13√17)/4) = 49.49 meV (obs: √Δm²₃₁ = 50.28 ± 0.33 meV, −2.4σ; corrected 2026-10-06, earlier compared with √Δm²₃₂ = 49.53 meV).
 
 The neutrino is a T₁u mode without colour charge. Paper #72 (DOI 10.5281/zenodo.19658759) establishes the structure at the following status, verified by scripts V1–V5 and V8 to machine precision:
 
@@ -142,7 +142,7 @@ The T₂g↔A₂u coupling through shared hexagonal faces drives the electroweak
 
 **Theorem.** Among the five convex parallelohedra in R³ (Fedorov 1885), the truncated octahedron is the unique cell whose face Laplacian has (i) prime discriminant Δ, (ii) integer eigenvalue product r₁r₂ = Δ − 1, and (iii) irrational-eigenvalue sum equal to C_A² (where C_A = 3 is the colour number F_hx/F − 1 in the natural normalisation).
 
-**Scope.** The uniqueness statement is restricted to Fedorov's five convex parallelohedra. The Weaire-Phelan structure (a non-convex two-cell foam) and other non-parallelohedral space-fillings are not contained in this theorem and are excluded by the UFFT axiom of single-cell parallelohedral foam (see Core Framework v9 and `verification/peer_review_deliverables/D3_Uniqueness_Restriction.md`). What the theorem rules out within its domain: any other convex parallelohedron satisfying all three criteria.
+**Scope.** The uniqueness statement is restricted to Fedorov's five convex parallelohedra. The Weaire-Phelan structure (a non-convex two-cell foam) and other non-parallelohedral space-fillings are not contained in this theorem and are excluded by the UFFT axiom of single-cell parallelohedral foam (see Core Framework v9 and the Scope paragraph of Paper #50 v2). What the theorem rules out within its domain: any other convex parallelohedron satisfying all three criteria.
 
 **Proof.** Fedorov (1885) proved there are exactly five combinatorial types of convex parallelohedra in R³. Their face Laplacian spectra:
 
@@ -163,7 +163,7 @@ All five computed exhaustively. Within Fedorov's five convex parallelohedra, the
 | Quantity | Formula | UFFT | Observed | Match | Status |
 |---------|---------|------|----------|-------|--------|
 | α_s(M_Z) | 1/(C_A²−C_A ln C_A/(2π)) | 0.11799 | 0.1180±0.0009 | 0.01σ | Identification (fit) — §5.1 |
-| m₃ | m_e exp(−(11+13√17)/4) | 49.49 meV | 49.53±0.33 | 0.12σ | Derivation (T72.1, T72.2, T72.3a theorems); T72.3b conjecture; T72.4 best-match primitive triple — §5.2, Paper #72 (DOI 10.5281/zenodo.19658759) |
+| m₃ | m_e exp(−(11+13√17)/4) | 49.49 meV | 50.28±0.33 (√Δm²₃₁, corrected 2026-10-06) | −2.4σ | Derivation (T72.1, T72.2, T72.3a theorems); T72.3b conjecture; T72.4 best-match primitive triple — §5.2, Paper #72 (DOI 10.5281/zenodo.19658759) |
 | η_B | α³/(C_A F_sq³) | 6.00×10⁻¹⁰ | 6.10×10⁻¹⁰ | 1.8% | Identification (post-hoc) — §5.3 |
 
 The three rows above are sector-specific identifications with varying derivational status, not forward derivations from S = ψ† L_T ψ as presented in earlier drafts. The uniqueness claim of §6 and the dimensional completeness of §3 are unaffected and remain Tier 1.
@@ -202,8 +202,8 @@ Both follow from standard lattice→continuum expansion with the face Laplacian 
 [7] NuFIT 5.2 (2022). Esteban et al. JHEP 09, 178.
 [8] Planck Collaboration (2020). A&A 641, A6.
 [9] Martin, L. (2026). *Paper #72, Dirac Operator, Doubler Spectrum, Chirality Assignment, and the m₃ Integer*. Zenodo. DOI: 10.5281/zenodo.19658759.
-[10] Martin, L. (2026). *Verification/peer_review_deliverables/D1_Methodological_Note.md*, methodological clarification, epistemological tier table, look-elsewhere audit. Documents the empirical case as 12 pre-registered predictions plus a forthcoming joint-χ² defense (D1 Supplement) rather than "60+ observables with zero free parameters."
-[11] Martin, L. (2026). *Verification/peer_review_deliverables/D4_n_f_Resolution.md*, binary disposition on n_f = C_A.
+[10] Martin, L. (2026). Internal methodological note: epistemological tier table and look-elsewhere discussion (April 2026; AI-assisted, unpublished).
+[11] Martin, L. (2026). Internal note on the n_f = C_A condition (April 2026; AI-assisted, unpublished; its disposition is stated in the Status paragraph above).
 
 ---
 

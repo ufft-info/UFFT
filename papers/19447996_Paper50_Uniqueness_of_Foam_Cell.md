@@ -22,7 +22,7 @@
 
 ## Abstract
 
-We compute the face adjacency Laplacian for all five Fedorov parallelohedra (the complete list of convex polyhedra that tile three-dimensional Euclidean space by translation alone. The truncated octahedron is the unique member whose face Laplacian has (a) a prime discriminant (Δ = 17), (b) irrational eigenvalue products equal to Δ−1 (r₁r₂ = 16), and (c) irrational eigenvalue sum equal to C_A² (r₁+r₂ = 9 = 3² = C_A², where C_A = F_hx/F − 1 in the natural normalisation is the framework's colour number). It is also the only member with two distinct types of regular faces. This exhaustive computation requires no physical assumptions) it is a theorem of combinatorial geometry, restricted to Fedorov's five convex parallelohedra. Non-parallelohedral space-fillings (notably the two-cell Weaire-Phelan structure) are outside the scope of this theorem; UFFT excludes them axiomatically by restriction to single-cell parallelohedral foams (see §6 and `verification/peer_review_deliverables/D3_Uniqueness_Restriction.md`).
+We compute the face adjacency Laplacian for all five Fedorov parallelohedra (the complete list of convex polyhedra that tile three-dimensional Euclidean space by translation alone. The truncated octahedron is the unique member whose face Laplacian has (a) a prime discriminant (Δ = 17), (b) irrational eigenvalue products equal to Δ−1 (r₁r₂ = 16), and (c) irrational eigenvalue sum equal to C_A² (r₁+r₂ = 9 = 3² = C_A², where C_A = F_hx/F − 1 in the natural normalisation is the framework's colour number). It is also the only member with two distinct types of regular faces. This exhaustive computation requires no physical assumptions) it is a theorem of combinatorial geometry, restricted to Fedorov's five convex parallelohedra. Non-parallelohedral space-fillings (notably the two-cell Weaire-Phelan structure) are outside the scope of this theorem; UFFT excludes them axiomatically by restriction to single-cell parallelohedral foams (see §6 and an internal, unpublished review note (April 2026; AI-assisted; not cited as evidence)).
 
 **Keywords:** face Laplacian, truncated octahedron, Fedorov parallelohedra, space-filling polyhedra, spectral graph theory, uniqueness
 
@@ -126,7 +126,7 @@ It is also the unique convex parallelohedron in this list with exactly two types
 
 The proof is exhaustive: all five cases checked. □
 
-**Sharpening note.** Criterion 3 was stated in earlier drafts of this paper as "a perfect square," which is post-hoc, any square integer would satisfy it. The sharpened "= C_A²" statement ties the test to a quantity already fixed elsewhere in the framework (the natural-normalisation colour number) and is therefore a derivation-style criterion rather than a retrofit. See `verification/peer_review_deliverables/D3_Uniqueness_Restriction.md` §4 for the full scope-restriction argument.
+**Sharpening note.** Criterion 3 was stated in earlier drafts of this paper as "a perfect square," which is post-hoc, any square integer would satisfy it. The sharpened "= C_A²" statement ties the test to a quantity already fixed elsewhere in the framework (the natural-normalisation colour number) and is therefore a derivation-style criterion rather than a retrofit. See an internal, unpublished review note (April 2026; AI-assisted; not cited as evidence) for the full scope-restriction argument.
 
 ## 6. Scope and Axiomatic Exclusions
 
@@ -153,7 +153,7 @@ No alternative exists *within UFFT's axiomatic scope*. Outside that scope (Weair
 [3] Kelvin, Lord (1887). On the division of space with minimum partitional area. Phil. Mag. 24, 503.
 [4] Weaire, D. & Phelan, R. (1994). A counter-example to Kelvin's conjecture on minimal surfaces. Phil. Mag. Lett. 69, 107.
 [5] Delgado-Friedrichs, O. & O'Keeffe, M. (2003). Identification of and symmetry computation for crystal nets. Acta Cryst. A59, 351.
-[6] Martin, L. (2026). *Verification/peer_review_deliverables/D3_Uniqueness_Restriction.md*, uniqueness-language restriction, Weaire-Phelan axiomatic exclusion, criterion 3 sharpening.
+[6] Martin, L. (2026). Internal review note on uniqueness-language restriction and Weaire–Phelan scope (April 2026; AI-assisted, unpublished; its content is incorporated in the Scope paragraph above).
 
 ---
 

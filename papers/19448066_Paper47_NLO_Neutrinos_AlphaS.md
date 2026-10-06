@@ -13,7 +13,7 @@
 | Series | Unified Foam Field Theory |
 | Paper | #47 of 63 |
 | Framework | v10 |
-| Status | Complete |
+| Status | Complete; m₃ reference corrected 2026-10-06 (√Δm²₃₁, −2.4σ, Tier 3) |
 | Tier | 2 |
 | DOI | 10.5281/zenodo.19448066 |
 | GitHub | https://github.com/ufft-info/UFFT |
@@ -123,6 +123,8 @@ All fermion masses in UFFT follow m_f = m_e × exp((A+B√Δ)/C) where A, B are 
 
 Observed (from √|Δm²₃₂|): 49.53 ± 0.33 meV. **Deviation: 0.1σ.**
 
+*Correction 2026-10-06 (external audit).* With m₁ = 0 the correct reference is √Δm²₃₁ = √(Δm²₃₂ + Δm²₂₁) = 50.28 ± 0.33 meV, not √Δm²₃₂ = 49.53 meV; against it the prediction sits at −2.4σ (Tier 3, tension). The index relation is not a convention choice.
+
 ### 3.2 Why these integers
 
 **A = −(F−C_A) = −11.** The neutrino carries no colour. Its mass-generating foam interaction involves only the F−C_A = 11 non-colour face modes.
@@ -147,7 +149,7 @@ The lightest neutrino is massless. This is not an assumption, it is a theorem of
 |------|------|----------|---|
 | m₁ | 0 (exact) | < 0.45 eV (KATRIN) | consistent |
 | m₂ | m₃/√(2Δ−1) = 8.62 meV | √Δm²₂₁ = 8.68 meV | 0.7% |
-| m₃ | 49.49 meV | √|Δm²₃₂| = 49.53 meV | 0.1σ |
+| m₃ | 49.49 meV | √Δm²₃₁ = 50.28 ± 0.33 meV (corrected 2026-10-06; earlier √Δm²₃₂ = 49.53) | −2.4σ (Tier 3) |
 | Σm_ν | 58.1 meV | < 120 meV (Planck+BAO) | consistent |
 
 ### 3.5 Implications
@@ -230,7 +232,7 @@ All 15 Standard Model fermions from cell integers:
 |----------|------|----------|----------|
 | ν₁ | 0 (exact) | — | theorem |
 | ν₂ | 8.62 meV | 8.68 meV | 0.7% |
-| ν₃ | 49.49 meV | 49.53 meV | 0.08% |
+| ν₃ | 49.49 meV | 50.28 meV (√Δm²₃₁, corrected 2026-10-06) | −1.6% (−2.4σ) |
 | e | 511.01 keV | 511.00 keV | 0.002% |
 | μ | 105.66 MeV | 105.66 MeV | 0.004% |
 | τ | 1777.0 MeV | 1776.9 MeV | 0.009% |

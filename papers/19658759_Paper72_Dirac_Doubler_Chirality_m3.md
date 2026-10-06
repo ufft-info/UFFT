@@ -235,7 +235,7 @@ What V11 does establish:
 
 1. **(11, 13, 4) is the single primitive match at 1-sigma.** Under a small-denominator ansatz `c ≤ 16` and integer bounds `a, b ∈ [1, 40]`, the search space contains exactly one primitive triple landing within 1 sigma of the PDG reference.
 2. **(11, 13, 4) is the #1 ranked match by accuracy across the full 2% window.** Among 9 primitive matches within 4 sigma of PDG, (11, 13, 4) achieves the smallest relative error (0.019%).
-3. **The match is convention-dependent.** Against NuFIT 5.2 NH (50.26 meV), (11, 13, 4) lands at 1.53% rel-err, outside 1 sigma. The 0.019% accuracy claim holds specifically against PDG 2024 NH (49.50 meV). UFFT Framework v9's quoted 0.075% accuracy is consistent with the PDG convention.
+3. **The match depended on the wrong reference.** *Correction 2026-10-06 (external audit):* with m₁ = 0, m₃² = Δm²₃₁ = Δm²₃₂ + Δm²₂₁, so the PDG 2024 reference is 50.28 ± 0.33 meV, not 49.50 meV (which is √Δm²₃₂). This is an index relation, not a convention. Against the correct reference (11, 13, 4) is at −2.4σ, consistent with the NuFIT figure already noted above (50.26 meV, 1.53% off). The "0.019%" and "single primitive match at 1σ" statements in items 1 and 2 refer to the wrong reference and are withdrawn; the enumeration itself stands, and one primitive match in the window is consistent with the chance expectation of about 1.4 stated in §V11.
 
 What V11 does not establish:
 
