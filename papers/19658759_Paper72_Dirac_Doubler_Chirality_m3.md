@@ -15,7 +15,7 @@
 | Framework | v10 |
 | Status | T72.1, T72.2, T72.3a are theorems with proofs supported by `verify_Paper72_Oh_irreps.py`. T72.3b (physical chirality identification) is a conjecture with V10 heuristic support (T_2g hex-only necessary condition under the standard SM embedding). T72.4 (integer triple (11, 13, 4) in the m₃ exponent) is the best-matching primitive triple under a principled search-space ansatz, pending a closed-form counting rule. |
 | Tier | T72.1, T72.2, T72.3a: Tier 1 (theorems). T72.3b: Tier 2 (conjecture with V10 heuristic support). T72.4: Tier 2 (best-match primitive triple in a principled search space). |
-| DOI | 10.5281/zenodo.19658759 |
+| DOI | 10.5281/zenodo.23176439 (v2.0); v1.0: 10.5281/zenodo.19658759 |
 | Verification | `/verification/verify_Paper72_Oh_irreps.py` — V1–V11, reproduces every numerical claim from raw cell integers; runs in under 10 seconds. |
 | GitHub | https://github.com/ufft-info/UFFT |
 

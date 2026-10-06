@@ -10,6 +10,8 @@ hello@ufft.info
 
 **Keywords:** face Laplacian, parallelohedron, truncated octahedron, spectral graph theory, Fedorov classification
 
+**Version 2.0, 6 October 2026.** DOI 10.5281/zenodo.23176575 (v1.0: 10.5281/zenodo.19625142). Corrections in this version: eigenvalue-7 square content is 1/7, not 1.6%; the hexagonal-orbit decomposition in the proof of Proposition 7 includes T₁u; optimality among monohedral tilings is not asserted; uniqueness statements are limited to the five Fedorov parallelohedra. Following an external referee audit.
+
 ---
 
 ## 1. Introduction

@@ -15,7 +15,7 @@
 | Framework | v10 |
 | Status | Complete; n_t arithmetic corrected 2026-10-06 (−0.008 → −0.0010) |
 | Tier | 2 |
-| DOI | 10.5281/zenodo.19484103 |
+| DOI | 10.5281/zenodo.23176514 (v2.0); v1.0: 10.5281/zenodo.19484103 |
 | GitHub | https://github.com/ufft-info/UFFT |
 
 **Keywords:** tensor-to-scalar ratio, primordial gravitational waves, spectral index, master equation, Big Bang cascade, T₁u eigenvalues, foam cosmology, UFFT, LiteBIRD

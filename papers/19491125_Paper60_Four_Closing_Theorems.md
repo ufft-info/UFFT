@@ -16,7 +16,7 @@
 | Status | WITHDRAWN AS PROOF (October 2026). None of the four theorems is established by the supplied calculation; the audit of 6 October 2026 found an explicit contradictory limit in 60.1, a multiplicity error in 60.2, a vanishing-curvature metric and a misapplied theorem in 60.3, and a non-Hermitian verification in 60.4. Retained as the record of the claims and their correction. |
 | Version | 2.0 |
 | Tier | none of 60.1–60.4 is Tier 1; each is OPEN |
-| DOI | 10.5281/zenodo.19491125 |
+| DOI | 10.5281/zenodo.23176311 (v2.0); v1.0: 10.5281/zenodo.19491125 |
 | GitHub | https://github.com/ufft-info/UFFT |
 
 **Keywords:** UFFT, truncated octahedron, foam field theory

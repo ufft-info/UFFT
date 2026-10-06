@@ -16,7 +16,7 @@
 | Version | 3.0 |
 | Status | WITHDRAWN AS PROOF (October 2026). The composite five-step argument does not establish its conclusion; the external audit it was pending (Moscato, 6 October 2026) found explicit algebraic errors in Steps 2, 3 and 4 and an unproved premise in Steps 1 and 5. Retained as the record of the claim and its correction. The step-lemmas that are graph theorems (Theorem 4.1, 56.1, 56.2) stand. |
 | Tier | 1 (graph-theorem step-lemmas only) · composite statement: OPEN, not established |
-| DOI | 10.5281/zenodo.21323529 (v2.0; v1: 10.5281/zenodo.19491095) |
+| DOI | 10.5281/zenodo.23176128 (v3.0); v2.0: 10.5281/zenodo.21323529; v1.0: 10.5281/zenodo.19491095 |
 | GitHub | https://github.com/ufft-info/UFFT |
 
 **Keywords:** UFFT, truncated octahedron, foam field theory

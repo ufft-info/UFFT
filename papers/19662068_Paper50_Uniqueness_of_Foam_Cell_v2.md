@@ -15,7 +15,7 @@
 | Framework | v10 · rev 1 |
 | Status | Amended 19 April 2026 — criterion (iii) sharpened to "= C_A²"; Weaire-Phelan axiomatic-exclusion scope note added following internal review |
 | Tier | 1 (within Fedorov parallelohedra) |
-| DOI | 10.5281/zenodo.19447996 |
+| DOI | 10.5281/zenodo.23176496 (v3.0); v2.0: 10.5281/zenodo.19662068; v1.0: 10.5281/zenodo.19447996 |
 | GitHub | https://github.com/ufft-info/UFFT |
 
 **Keywords:** face Laplacian, truncated octahedron, Fedorov parallelohedra, space-filling polyhedra, spectral graph theory, uniqueness

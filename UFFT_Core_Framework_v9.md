@@ -154,20 +154,20 @@ All papers published on Zenodo under Creative Commons Attribution 4.0 Internatio
 | 44 | LV | The Complete Particle Mass Spectrum from Cell Integers | [10.5281/zenodo.19307003](https://zenodo.org/records/19307003) |
 | 45 | LVI | The Void Channel: H = L + ηV | [10.5281/zenodo.19307111](https://zenodo.org/records/19307111) |
 | 46 | LVII | The Kerr Metric from Foam Incompressibility | [10.5281/zenodo.19307177](https://zenodo.org/records/19307177) |
-| 47 | LVIII | NLO Corrections, Neutrino Masses, and the Strong Coupling | [10.5281/zenodo.19448066](https://zenodo.org/records/19448066) |
-| 48 | LIX | The Standard Model from One Matrix: S = ψ†L_Tψ | v2 [10.5281/zenodo.19662029](https://zenodo.org/records/19662029) (v1: [10.5281/zenodo.19448024](https://zenodo.org/records/19448024)) |
+| 47 | LVIII | NLO Corrections, Neutrino Masses, and the Strong Coupling | [10.5281/zenodo.23176405](https://zenodo.org/records/23176405) (v1: 19448066) |
+| 48 | LIX | The Standard Model from One Matrix: S = ψ†L_Tψ | v3 [10.5281/zenodo.23176458](https://zenodo.org/records/23176458) (v2: 19662029) (v1: [10.5281/zenodo.19448024](https://zenodo.org/records/19448024)) |
 | 49 | LX | Baryon Asymmetry, Bekenstein Entropy, and Cosmological Predictions | [10.5281/zenodo.19448089](https://zenodo.org/records/19448089) |
-| 50 | LXI | The Uniqueness of the Foam Cell | v2 [10.5281/zenodo.19662068](https://zenodo.org/records/19662068) (v1: [10.5281/zenodo.19447996](https://zenodo.org/records/19447996)) |
+| 50 | LXI | The Uniqueness of the Foam Cell | v3 [10.5281/zenodo.23176496](https://zenodo.org/records/23176496) (v2: 19662068) (v1: [10.5281/zenodo.19447996](https://zenodo.org/records/19447996)) |
 | 51 | LXII | The NLO Mixing Correction: Why ε = √17/81 is Not a Free Parameter | [10.5281/zenodo.19477100](https://zenodo.org/records/19477100) |
 | 52 | LXIII | The Neutron–Proton Mass Difference from Foam Geometry: NLO Correction | [10.5281/zenodo.19477132](https://zenodo.org/records/19477132) |
 | 53 | LXIV | The Dark Energy 6/7 Factor from Face Laplacian Topology | [10.5281/zenodo.19483955](https://zenodo.org/records/19483955) |
 | 54 | LXV | The Neutrino Mass-Squared Ratio from T₁u Geometry: Δm²₃₁/Δm²₂₁ = 33 | [10.5281/zenodo.19484047](https://zenodo.org/records/19484047) |
-| 55 | LXVI | The Tensor-to-Scalar Ratio from Foam Cascade Geometry: r = 16/[9 ln(16)] × (1−n_s) | [10.5281/zenodo.19484103](https://zenodo.org/records/19484103) |
+| 55 | LXVI | The Tensor-to-Scalar Ratio from Foam Cascade Geometry: r = 16/[9 ln(16)] × (1−n_s) | [10.5281/zenodo.23176514](https://zenodo.org/records/23176514) (v1: 19484103) |
 | 56 | LXVII | The Inter-Type Torsion Operator on T₁u: T² = −4·I and Maximal Generation Symmetry | [10.5281/zenodo.19484354](https://zenodo.org/records/19484354) |
 | 57 | LXVIII | The Necessity of the Standard Model: Placement Theorems for the Higgs and Fermion Chirality | [10.5281/zenodo.19484509](https://zenodo.org/records/19484509) |
 | 58 | LXIX | Placement Theorems for the Gauge Sector: Necessity of SU(3)×SU(2)×U(1) | [10.5281/zenodo.19484967](https://zenodo.org/records/19484967) |
-| 59 | LXX | The Central Theorem: From Foam to the Standard Model (withdrawn as proof, v3.0 Oct 2026) | [10.5281/zenodo.19491095](https://zenodo.org/records/19491095) |
-| 60 | LXXI | Four Closing Theorems: Anomaly, Generations, Gravity, and the Continuum Limit (withdrawn as proof, v2.0 Oct 2026) | [10.5281/zenodo.19491125](https://zenodo.org/records/19491125) |
+| 59 | LXX | The Central Theorem: From Foam to the Standard Model (withdrawn as proof, v3.0 Oct 2026) | [10.5281/zenodo.23176128](https://zenodo.org/records/23176128) (v1: 19491095) |
+| 60 | LXXI | Four Closing Theorems: Anomaly, Generations, Gravity, and the Continuum Limit (withdrawn as proof, v2.0 Oct 2026) | [10.5281/zenodo.23176311](https://zenodo.org/records/23176311) (v1: 19491125) |
 | 61 | LXXII | NLO Baryon Asymmetry: Closing the Last Numerical Gap | [10.5281/zenodo.19491332](https://zenodo.org/records/19491332) |
 | 62 | LXXIV | Independent Convergence with the Holographic Mass Framework (r_p, ρ_Λ) | [10.5281/zenodo.19624911](https://zenodo.org/records/19624911) |
 | 63 | LXIII | Pure Mathematics of the Kelvin Cell (standalone foundations) | [10.5281/zenodo.19624955](https://zenodo.org/records/19624955) |
@@ -179,8 +179,8 @@ All papers published on Zenodo under Creative Commons Attribution 4.0 Internatio
 | 70 | LXX | A Graph-Fourier Companion to Paper #53: The 6/7 Dark-Energy Factor as the Interior-Spectrum Projector Trace | [10.5281/zenodo.19626516](https://zenodo.org/records/19626516) |
 | 71 | LXXI | The PMNS Solar Angle NLO from Gauge-Loop Self-Energy Shifts on the T₁u Eigenvalue Pair | [10.5281/zenodo.19626978](https://zenodo.org/records/19626978) |
 | 68 | LXXIII | Cell-Integer Identities of the Truncated Octahedron and the Single-Cell Obstruction to 197/144 | [10.5281/zenodo.19658979](https://zenodo.org/records/19658979) |
-| 72 | LXXII | Dirac Operator, Generation Count, Chirality Structure, and the m₃ Integer | [10.5281/zenodo.19658759](https://zenodo.org/records/19658759) |
-| MN | Math Note | Spectral Uniqueness of the Truncated Octahedron Among Fedorov Parallelohedra (standalone pure-math preprint) | [10.5281/zenodo.19625142](https://zenodo.org/records/19625142) |
+| 72 | LXXII | Dirac Operator, Generation Count, Chirality Structure, and the m₃ Integer | [10.5281/zenodo.23176439](https://zenodo.org/records/23176439) (v1: 19658759) |
+| MN | Math Note | Spectral Uniqueness of the Truncated Octahedron Among Fedorov Parallelohedra (standalone pure-math preprint) | [10.5281/zenodo.23176575](https://zenodo.org/records/23176575) (v2.0; v1: 19625142) |
 
 All papers (#1–#72 and the standalone math note) are live on Zenodo with permanent DOIs as of 2026-04-20.
 
@@ -2982,7 +2982,7 @@ An 8× tightening from +0.56σ to +0.074σ. **All six PMNS mixing parameters now
 
 ## Math Note — Spectral Uniqueness of the Truncated Octahedron Among Fedorov Parallelohedra
 
-*Standalone mathematics preprint · DOI: [10.5281/zenodo.19625142](https://zenodo.org/records/19625142) · Published April 2026*
+*Standalone mathematics preprint · DOI: [10.5281/zenodo.23176575](https://zenodo.org/records/23176575) (v2.0, October 2026; v1 19625142, April 2026)*
 
 ### MN.1 Statement
 
@@ -3020,19 +3020,19 @@ The framework's entire physical content — Axiom Zero B + V = D applied to a tr
 *Reserved (working material withheld pending patent review; see Part LXXIII).*
 
 Most recent publications (April 2026):
-- Paper #47 — NLO Corrections, Neutrino Masses, Strong Coupling: 10.5281/zenodo.19448066
-- Paper #48 — The Standard Model from One Matrix: v2 10.5281/zenodo.19662029 (v1 10.5281/zenodo.19448024)
+- Paper #47 — NLO Corrections, Neutrino Masses, Strong Coupling: 10.5281/zenodo.23176405 (v2.0; v1: 19448066)
+- Paper #48 — The Standard Model from One Matrix: v3 10.5281/zenodo.23176458 (v2 10.5281/zenodo.19662029, v1 10.5281/zenodo.19448024)
 - Paper #49 — Baryon Asymmetry, Bekenstein Entropy, Cosmology: 10.5281/zenodo.19448089
-- Paper #50 — Uniqueness of the Foam Cell: v2 10.5281/zenodo.19662068 (v1 10.5281/zenodo.19447996)
+- Paper #50 — Uniqueness of the Foam Cell: v3 10.5281/zenodo.23176496 (v2 10.5281/zenodo.19662068, v1 10.5281/zenodo.19447996)
 - Paper #52 — The Neutron–Proton Mass Difference NLO: 10.5281/zenodo.19477132
 - Paper #53 — Dark Energy 6/7 Factor: 10.5281/zenodo.19483955
 - Paper #54 — Neutrino Mass Ratio 33: 10.5281/zenodo.19484047
-- Paper #55 — Tensor-to-Scalar Ratio: 10.5281/zenodo.19484103
+- Paper #55 — Tensor-to-Scalar Ratio: 10.5281/zenodo.23176514 (v2.0; v1: 19484103)
 - Paper #56 — Torsion T₁u Theorems: 10.5281/zenodo.19484354
 - Paper #57 — Necessity of the Standard Model (Higgs + Chirality): 10.5281/zenodo.19484509
 - Paper #58 — Gauge Sector Placement (Eg + T₂g by exhaustion): 10.5281/zenodo.19484967
-- Paper #59 — The Central Theorem: From Foam to the Standard Model: 10.5281/zenodo.19491095
-- Paper #60 — Four Closing Theorems: Anomaly, Generations, Gravity, and the Continuum Limit: 10.5281/zenodo.19491125
+- Paper #59 — The Central Theorem: From Foam to the Standard Model (withdrawn as proof): 10.5281/zenodo.23176128 (v1: 19491095)
+- Paper #60 — Four Closing Theorems: Anomaly, Generations, Gravity, and the Continuum Limit (withdrawn as proof): 10.5281/zenodo.23176311 (v1: 19491125)
 - Paper #61 — NLO Baryon Asymmetry: Closing the Last Numerical Gap: 10.5281/zenodo.19491332
 
 **April 2026 upload cycle (all live on Zenodo):**
@@ -3045,7 +3045,7 @@ Most recent publications (April 2026):
 - Paper #69 — The R_b NLO Denominator 2V−F=34 from Fermion-Walk Operator Perturbation Theory (Part LXXIX): 10.5281/zenodo.19626475
 - Paper #70 — A Graph-Fourier Companion to Paper #53: The 6/7 Dark-Energy Factor as the Interior-Spectrum Projector Trace (Part LXXX): 10.5281/zenodo.19626516
 - Paper #71 — The PMNS Solar Angle NLO from Gauge-Loop Self-Energy Shifts on the T₁u Eigenvalue Pair (Part LXXXI): 10.5281/zenodo.19626978
-- Spectral Uniqueness of the Truncated Octahedron Among Fedorov Parallelohedra (standalone Math Note): 10.5281/zenodo.19625142
+- Spectral Uniqueness of the Truncated Octahedron Among Fedorov Parallelohedra (standalone Math Note): 10.5281/zenodo.23176575 (v2.0; v1: 19625142)
 
 GitHub: github.com/ufft-info/UFFT
 

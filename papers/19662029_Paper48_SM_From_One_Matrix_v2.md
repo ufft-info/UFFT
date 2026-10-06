@@ -15,7 +15,7 @@
 | Framework | v10 · rev 1 |
 | Status | Amended 19 April 2026 — §5 and abstract revised following internal review |
 | Tier | Mixed (see §5 subsection labels) |
-| DOI | 10.5281/zenodo.19448024 |
+| DOI | 10.5281/zenodo.23176458 (v3.0); v2.0: 10.5281/zenodo.19662029; v1.0: 10.5281/zenodo.19448024 |
 | GitHub | https://github.com/ufft-info/UFFT |
 
 **Keywords:** Standard Model, lattice action, face Laplacian, torsion, truncated octahedron, irreducible representation, uniqueness, Fedorov parallelohedra, epistemological status, UFFT

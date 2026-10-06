@@ -15,7 +15,7 @@
 | Framework | v10 |
 | Status | Complete; m₃ reference corrected 2026-10-06 (√Δm²₃₁, −2.4σ, Tier 3) |
 | Tier | 2 |
-| DOI | 10.5281/zenodo.19448066 |
+| DOI | 10.5281/zenodo.23176405 (v2.0); v1.0: 10.5281/zenodo.19448066 |
 | GitHub | https://github.com/ufft-info/UFFT |
 
 **Keywords:** NLO corrections, neutrino mass, mass hierarchy, Dirac neutrino, strong coupling, Higgs quartic, Weinberg angle, Cabibbo angle, mixing angles, truncated octahedron, foam field theory, UFFT

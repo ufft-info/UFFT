@@ -15,7 +15,7 @@
 | Framework | v10 |
 | Status | Complete; input lineage of the Rydberg figure corrected 2026-10-06 (measured m_e was used, not the walk-formula value) |
 | Tier | 2 (conditional on the framework's derived alpha and m_e; the lattice results of Sections 2-4 and 6 are unconditional) |
-| DOI | 10.5281/zenodo.21339706 |
+| DOI | 10.5281/zenodo.23176551 (v2.0); v1.0: 10.5281/zenodo.21339706 |
 | GitHub | https://github.com/ufft-info/UFFT |
 
 **Keywords:** UFFT, truncated octahedron, face Laplacian, foam lattice, hydrogen atom, Coulomb law, lattice Green's function, Rydberg constant, charge quantisation, bound states
