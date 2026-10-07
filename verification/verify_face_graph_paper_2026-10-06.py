@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-verify_face_graph_paper_2026-10-06.py  (revision 2, 2026-10-07)
+verify_face_graph_paper_2026-10-06.py  (revision 3, 2026-10-07)
 
 Every numerical statement in "The face graph of the truncated octahedron" (Draft 2/3),
 checked as a test harness: every advertised claim is an explicit check, failures are
 accumulated, and the exit status is nonzero if any positive assertion fails.
 
-Revision 2 answers the referee's software audit of 2026-10-07:
+Revision 2 answers the referee's software audit of 2026-10-07 (revision 3 sets rtol=0 on every declared 1e-12 check, per the third audit):
   * ALL PASS is now conditional on every check; exit status 1 on any failure.
   * Claims labelled EXACT use integer (Python int) arithmetic and exact equality;
     claims labelled NUMERIC state their tolerance.
@@ -136,7 +136,7 @@ note("K does not annihilate the constant vector (expected negative; not a claim 
      f"K 1 = {mv(K, [1]*n)}")
 
 # ================================================================ 4. numerical spectral checks
-print("\n== 4. eigenspaces and projector weights (NUMERIC, tolerance 1e-12 unless stated) ==")
+print("\n== 4. eigenspaces and projector weights (NUMERIC, absolute tolerance 1e-12, relative tolerance 0) ==")
 Lf = np.array(L, float); w, U = np.linalg.eigh(Lf)
 r1, r2 = (9-17**.5)/2, (9+17**.5)/2
 def eigspace(val, tol=1e-9):
@@ -150,18 +150,18 @@ for val, (dim, wsq) in expected.items():
 Kf = np.array(K, float)
 E1, E2 = eigspace(r1), eigspace(r2); B = np.hstack([E1, E2])
 K6 = B.T @ Kf @ B
-check("K^2 = -4 I on T1u(r1) + T1u(r2)", np.allclose(K6 @ K6, -4*np.eye(6), atol=1e-12))
-check("K maps T1u(r1) into T1u(r2) and back", np.allclose(E2 @ E2.T @ (Kf @ E1), Kf @ E1, atol=1e-12)
-      and np.allclose(E1 @ E1.T @ (Kf @ E2), Kf @ E2, atol=1e-12))
-check("K annihilates Eg (lambda=4)", np.allclose(Kf @ eigspace(4), 0, atol=1e-12))
-check("K annihilates A2u (lambda=9)", np.allclose(Kf @ eigspace(9), 0, atol=1e-12))
+check("K^2 = -4 I on T1u(r1) + T1u(r2)", np.allclose(K6 @ K6, -4*np.eye(6), atol=1e-12, rtol=0))
+check("K maps T1u(r1) into T1u(r2) and back", np.allclose(E2 @ E2.T @ (Kf @ E1), Kf @ E1, atol=1e-12, rtol=0)
+      and np.allclose(E1 @ E1.T @ (Kf @ E2), Kf @ E2, atol=1e-12, rtol=0))
+check("K annihilates Eg (lambda=4)", np.allclose(Kf @ eigspace(4), 0, atol=1e-12, rtol=0))
+check("K annihilates A2u (lambda=9)", np.allclose(Kf @ eigspace(9), 0, atol=1e-12, rtol=0))
 E7 = eigspace(7); u7 = np.array(v7, float); u7 /= np.linalg.norm(u7)
 T2g = E7 - np.outer(u7, u7 @ E7)          # lambda=7 space minus its A1g (orbit-uniform) line
-check("K annihilates the T2g summand of the lambda=7 space", np.allclose(Kf @ T2g, 0, atol=1e-12))
+check("K annihilates the T2g summand of the lambda=7 space", np.allclose(Kf @ T2g, 0, atol=1e-12, rtol=0))
 E0 = eigspace(0)
-check("K sends A1g(0) into the lambda=7 space (A1g exchange)", np.allclose(E7 @ E7.T @ (Kf @ E0), Kf @ E0, atol=1e-12))
+check("K sends A1g(0) into the lambda=7 space (A1g exchange)", np.allclose(E7 @ E7.T @ (Kf @ E0), Kf @ E0, atol=1e-12, rtol=0))
 sv = np.linalg.svd(E2.T @ Kf @ E1, compute_uv=False)
-check("singular values of K_21 are (2,2,2): K_21 = 2U", np.allclose(sv, 2, atol=1e-12), f"{np.round(sv, 12)}")
+check("singular values of K_21 are (2,2,2): K_21 = 2U", np.allclose(sv, 2, atol=1e-12, rtol=0), f"{np.round(sv, 12)}")
 
 # ================================================================ 5. the five Fedorov parallelohedra
 print("\n== 5. Fedorov face-graph Laplacians (EXACT factorizations) ==")

@@ -1,0 +1,13 @@
+PASS  every polyhedron vertex lies on exactly three faces (triangular plaquettes)
+PASS  36 edges
+PASS  spanning tree has 13 edges, 23 free edges
+== magnetic certificate ==
+PASS  holonomy, flux pi   (q=12): every plaquette residue = 1 mod 2  [integer check]
+PASS  holonomy, flux pi/2 (q=6):  every plaquette residue = 1 mod 4  [integer check]
+PASS  q=12 charpoly = (x-8)^3 (x-5)^3 (x-4)^2 (x-3)^4 (x^2-13x+24)  [exact, sympy over Z]
+PASS  q=6  charpoly = (x-9) (x-8)^3 (x-3)^4 (x^2-9x+16)^3           [exact, sympy over Z[i]]
+PASS  q=0  charpoly = x (x-9) (x-7)^4 (x-4)^2 (x^2-9x+16)^3        [exact]
+PASS  q=6 characteristic polynomial has integer coefficients (Hermitian over Z[i])
+certificate written: /workspace/scratch/28ab7c3512cb/audit_work/draft3_author/flux_gauge_certificate.json
+
+ALL PASS  (conditional; exit status 0)

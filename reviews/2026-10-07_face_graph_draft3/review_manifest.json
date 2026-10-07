@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-07",
+  "input_sha256": {
+    "face_graph_truncated_octahedron_draft3-1.pdf": "1d4a35bf408c3c81caa1dc3974d97f7ffb7c27a461426ea9db04388ae3d93d3a",
+    "Pasted text(20261007-020720).txt": "5e3d2e9085cf91014370a0320a82eeeefdcb0e808a2c17e3ea90ca73c6e0e977"
+  },
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "sympy": "1.14.0",
+  "networkx": "3.7",
+  "author_code_commit": "c1d95bad8d7e42b6a4a94f6dd3b1eb21f4d7718d",
+  "claimed_tag_status": "not publicly found on inspection date; scripts reviewed at pinned public-main commit",
+  "independence": "Separate implementations, not independent discovery of the prior reviewer-supplied quarter-flux proof."
+}
