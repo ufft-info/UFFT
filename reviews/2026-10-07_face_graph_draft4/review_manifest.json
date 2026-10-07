@@ -1,0 +1,32 @@
+{
+  "review": "Draft 4",
+  "inspected_on": "2026-10-07",
+  "input_file": "face_graph_truncated_octahedron_draft4.pdf",
+  "input_sha256": "2da8d68216695ce718b0879269d5b11f2237bc6b82e5dc2d2315773d596a7ce2",
+  "tag": "face-graph-note-v4",
+  "tag_object": "265c55a0fd8c0cb6c0adb3af2ec520567a34161f",
+  "commit": "8df0e0b3a62457c8904181fa8412a3e949473d5d",
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "sympy": "1.14.0",
+    "networkx": "3.5"
+  },
+  "author_sources": [
+    {
+      "path": "verification/verify_face_graph_flux_exact_2026-10-06.py",
+      "sha256": "2d45221469a85121cc516191671eb125c206230836540db1400c7611d3ffc390",
+      "url": "https://raw.githubusercontent.com/ufft-info/UFFT/8df0e0b3a62457c8904181fa8412a3e949473d5d/verification/verify_face_graph_flux_exact_2026-10-06.py"
+    },
+    {
+      "path": "verification/verify_face_graph_paper_2026-10-06.py",
+      "sha256": "cd4497065aabe440b1f7d7c57f9abdb2f986148a8122b1cc4bdb967a944d17f5",
+      "url": "https://raw.githubusercontent.com/ufft-info/UFFT/8df0e0b3a62457c8904181fa8412a3e949473d5d/verification/verify_face_graph_paper_2026-10-06.py"
+    }
+  ],
+  "limitations": [
+    "No priority certification",
+    "Original Figure 1 rendering pipeline not identified",
+    "General-charge eigenvalues checked numerically, not all characteristic polynomials certified exactly"
+  ]
+}

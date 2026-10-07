@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-verify_face_graph_flux_exact_2026-10-06.py  (revision 2, 2026-10-07)
+verify_face_graph_flux_exact_2026-10-06.py  (revision 3, 2026-10-08)
 
 Exact spectra of the magnetic face Laplacian of the truncated octahedron at flux pi/2 (q=6)
 and pi (q=12) per vertex-plaquette. Design: numerical candidate generation for the gauge
@@ -12,6 +12,10 @@ integer modular holonomy check (no floating rounding in the certificate step), d
 certificate keys (the 14 magnetic-matrix vertices are the FACES of the polyhedron; the 24
 polyhedron vertices are the plaquettes), source/version fields, conditional PASS, nonzero
 exit on failure. Imports the ordinary script from the same directory.
+Revision 3 (fourth audit, R4): the certificate's gauge convention now says precisely what the
+Dirac string is: the chosen real-valued lift of the face phases sums to zero, with a
+compensating multiple of 2 pi at plaquette 0; the uniform face holonomies still represent
+the stated q sector. No computation changed.
 """
 import itertools, math, sys, os, json, collections, io, contextlib
 import numpy as np, sympy as sp
@@ -95,13 +99,13 @@ check("q=0  charpoly = x (x-9) (x-7)^4 (x-4)^2 (x^2-9x+16)^3        [exact]", sp
 check("q=6 characteristic polynomial has integer coefficients (Hermitian over Z[i])", all(c.is_integer for c in sp.Poly(c6, x).all_coeffs()))
 
 certificate = {
-    "source": "verify_face_graph_flux_exact_2026-10-06.py revision 2 (2026-10-07), github.com/ufft-info/UFFT verification/",
+    "source": "verify_face_graph_flux_exact_2026-10-06.py revision 3 (2026-10-08), github.com/ufft-info/UFFT verification/",
     "conventions": {
         "magnetic_matrix_vertices": "the 14 FACES of the truncated octahedron, indexed as in 'faces' (0-5 squares, 6-13 hexagons)",
         "plaquettes": "the 24 POLYHEDRON vertices; each is a triangle of the face graph (three faces meet at a vertex)",
         "plaquette_orientation": "faces listed counterclockwise as seen from outside the polyhedron",
         "edge_orientation": "edge (i,j) with i<j carries phase unit^k from i to j and its conjugate from j to i",
-        "gauge": "spanning tree from face 0 carries exponent 0; Dirac string at plaquette 0 (total flux zero on the sphere)",
+        "gauge": "spanning tree from face 0 carries exponent 0; Dirac string at plaquette 0: the chosen real-valued lift of the face phases sums to zero, with a compensating multiple of 2 pi at plaquette 0, so every oriented plaquette (plaquette 0 included) carries the holonomy of the stated q sector",
         "unit": "q=6: unit = i (flux pi/2 per plaquette); q=12: unit = -1 (flux pi per plaquette)",
     },
     "polyhedron_vertices": [list(map(int, v)) for v in V],

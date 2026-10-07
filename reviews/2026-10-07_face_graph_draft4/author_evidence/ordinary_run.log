@@ -1,0 +1,47 @@
+== 1. graph (EXACT) ==
+PASS  24 vertices, 14 faces
+PASS  36 edges
+PASS  degrees 4^6 6^8
+PASS  24 square-hexagon, 12 hexagon-hexagon, 0 square-square adjacencies
+PASS  24 triangles
+PASS  42 four-cycles
+PASS  automorphism group order 48   found 48
+
+== 2. characteristic polynomials (EXACT) ==
+PASS  adjacency charpoly = x^2 (x+1)^3 (x+3) (x^2-3x-12) (x^2-x-4)^3
+PASS  Laplacian charpoly = x (x-9) (x-7)^4 (x-4)^2 (x^2-9x+16)^3
+PASS  signless Laplacian charpoly = (x-8)^3 (x-5)^3 (x-4)^2 (x-3)^4 (x^2-13x+24)
+PASS  discriminants 57 and 17 (adjacency), 17 (Laplacian), 73 (signless)
+
+== 3. orbit blocks on raw coordinate vectors (EXACT) ==
+PASS  K = P_sq L P_hx - P_hx L P_sq is antisymmetric
+PASS  A1g plane: K 1_sq = 3 1_hx, K 1_hx = -4 1_sq  (so K^2 = -12 I there)
+PASS  Delta_A1g block: L(1_sq + 1_hx) = 0 and L 1_sq = 4 1_sq - 3 1_hx
+PASS  T1u blocks, all three axes: L s = 4s - h, L h = -4s + 5h, K^2 s = -4s, K^2 h = -4h
+PASS  orbit-uniform vector (4,..,4,-3,..,-3) has L-eigenvalue 7
+PASS  its square content is 6*16/(6*16+8*9) = 4/7
+NOTE  K does not annihilate the constant vector (expected negative; not a claim of the paper)   K 1 = [-4, -4, -4, -4, -4, -4, 3, 3, 3, 3, 3, 3, 3, 3]
+
+== 4. eigenspaces and projector weights (NUMERIC, absolute tolerance 1e-12, relative tolerance 0) ==
+PASS  lambda=0.0000: multiplicity 1, square weight 0.428571   got mult 1, weight 0.428571428571
+PASS  lambda=2.4384: multiplicity 3, square weight 0.621268   got mult 3, weight 0.621267812518
+PASS  lambda=4.0000: multiplicity 2, square weight 1.000000   got mult 2, weight 1.000000000000
+PASS  lambda=6.5616: multiplicity 3, square weight 0.378732   got mult 3, weight 0.378732187482
+PASS  lambda=7.0000: multiplicity 4, square weight 0.142857   got mult 4, weight 0.142857142857
+PASS  lambda=9.0000: multiplicity 1, square weight 0.000000   got mult 1, weight 0.000000000000
+PASS  K^2 = -4 I on T1u(r1) + T1u(r2)
+PASS  K maps T1u(r1) into T1u(r2) and back
+PASS  K annihilates Eg (lambda=4)
+PASS  K annihilates A2u (lambda=9)
+PASS  K annihilates the T2g summand of the lambda=7 space
+PASS  K sends A1g(0) into the lambda=7 space (A1g exchange)
+PASS  singular values of K_21 are (2,2,2): K_21 = 2U   [2. 2. 2.]
+
+== 5. Fedorov face-graph Laplacians (EXACT factorizations) ==
+PASS  cube                   x (x-4)^3 (x-6)^2
+PASS  hexagonal prism        x (x-3)^2 (x-5)^2 (x-6)^2 (x-8)
+PASS  rhombic dodecahedron   x (x-2)^3 (x-4)^3 (x-6)^5
+PASS  elongated dodecahedron x (x-2) (x-4)^2 (x-6)^3 (x-8) (x^2-10x+20)^2
+PASS  truncated octahedron   x (x-9) (x-7)^4 (x-4)^2 (x^2-9x+16)^3
+
+ALL PASS  (every line above marked PASS is a conditional assertion; exit status 0)

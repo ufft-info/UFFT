@@ -1,0 +1,199 @@
+
+RUN verify_baseline.py
+All assertions passed. Exact characteristic polynomials; numerical projector weights.
+
+RUN verify_deeper.py
+ALL EXACT ASSERTIONS PASSED
+B^*B=(9I-C^2)/2; BB^*=4I
+24 proper rotations and 576 group products checked exactly; explicit intertwiner checked.
+
+RUN verify_flux_sweep.py
+25 charges checked numerically; all moment and conjugation tests passed. Worst moment residual: 3.183231456205249e-12
+
+RUN check_author_certificate.py
+Author certificate independently checked exactly: graph, outward orientations, q6 and q12 holonomies.
+
+RUN check_supplement.py
+{
+  "centroid": "h, not 3h/2",
+  "generators": {
+    "quarter_turn_z": [
+      {
+        "from": [
+          0,
+          -1
+        ],
+        "to": [
+          1,
+          -1
+        ],
+        "phase": "-I"
+      },
+      {
+        "from": [
+          0,
+          1
+        ],
+        "to": [
+          1,
+          1
+        ],
+        "phase": "I"
+      },
+      {
+        "from": [
+          1,
+          -1
+        ],
+        "to": [
+          0,
+          1
+        ],
+        "phase": "1"
+      },
+      {
+        "from": [
+          1,
+          1
+        ],
+        "to": [
+          0,
+          -1
+        ],
+        "phase": "1"
+      },
+      {
+        "from": [
+          2,
+          -1
+        ],
+        "to": [
+          2,
+          -1
+        ],
+        "phase": "I"
+      },
+      {
+        "from": [
+          2,
+          1
+        ],
+        "to": [
+          2,
+          1
+        ],
+        "phase": "-I"
+      }
+    ],
+    "third_turn_xyz": [
+      {
+        "from": [
+          0,
+          -1
+        ],
+        "to": [
+          1,
+          -1
+        ],
+        "phase": "1"
+      },
+      {
+        "from": [
+          0,
+          1
+        ],
+        "to": [
+          1,
+          1
+        ],
+        "phase": "1"
+      },
+      {
+        "from": [
+          1,
+          -1
+        ],
+        "to": [
+          2,
+          -1
+        ],
+        "phase": "1"
+      },
+      {
+        "from": [
+          1,
+          1
+        ],
+        "to": [
+          2,
+          1
+        ],
+        "phase": "1"
+      },
+      {
+        "from": [
+          2,
+          -1
+        ],
+        "to": [
+          0,
+          -1
+        ],
+        "phase": "1"
+      },
+      {
+        "from": [
+          2,
+          1
+        ],
+        "to": [
+          0,
+          1
+        ],
+        "phase": "1"
+      }
+    ]
+  },
+  "elongated_z_1": "x*(x - 6)*(x - 2)",
+  "elongated_z_I": "(x - 4)*(x**2 - 10*x + 20)",
+  "elongated_z_-1": "(x - 8)*(x - 6)**2",
+  "elongated_z_-I": "(x - 4)*(x**2 - 10*x + 20)",
+  "status": "ALL EXACT SUPPLEMENTARY CHECKS PASSED"
+}
+
+RUN check_flux_moments.py
+{
+  "exact_trace_A3_coefficients_mod_z24_minus_1": [
+    0,
+    72,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    72
+  ],
+  "exact_trace_L3": "3264 - 72*(z + z^23), z^24=1",
+  "distinct_spectra": "exactly 13, by strict monotonicity of cosine on [0,pi]",
+  "isospectral_classification": "q and p are isospectral iff q = p or -p modulo 24",
+  "max_numeric_moment_residual": 3.183231456205249e-12,
+  "status": "ALL MOMENT CHECKS PASSED"
+}
+
+ALL INDEPENDENT CHECKS PASSED

@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
 """
-verify_face_graph_paper_2026-10-06.py  (revision 3, 2026-10-07)
+verify_face_graph_paper_2026-10-06.py  (revision 4, 2026-10-08)
 
-Every numerical statement in "The face graph of the truncated octahedron" (Draft 2/3),
-checked as a test harness: every advertised claim is an explicit check, failures are
-accumulated, and the exit status is nonzero if any positive assertion fails.
+Test harness for "The face-adjacency graph of the truncated octahedron" (Draft 5): the graph
+counts, the exact characteristic polynomials (adjacency, Laplacian, signless Laplacian, the
+five Fedorov face graphs) and the stated numerical eigenspace and inter-orbit identities at
+declared tolerances. It does NOT cover the quarter-flux matrix identities, the magnetic
+rotation action or the all-charge sweep: those are checked by the flux script, by the
+auditors' checkers filed under reviews/, and by plot_face_graph_flux_sweep.py. Every
+advertised claim is an explicit check, failures are accumulated, and the exit status is
+nonzero if any positive assertion fails. Revision 4 (fourth audit, R4) changes this
+description only.
 
 Revision 2 answers the referee's software audit of 2026-10-07 (revision 3 sets rtol=0 on every declared 1e-12 check, per the third audit):
   * ALL PASS is now conditional on every check; exit status 1 on any failure.

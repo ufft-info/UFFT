@@ -1,0 +1,33 @@
+{
+  "exact_trace_A3_coefficients_mod_z24_minus_1": [
+    0,
+    72,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    72
+  ],
+  "exact_trace_L3": "3264 - 72*(z + z^23), z^24=1",
+  "distinct_spectra": "exactly 13, by strict monotonicity of cosine on [0,pi]",
+  "isospectral_classification": "q and p are isospectral iff q = p or -p modulo 24",
+  "max_numeric_moment_residual": 3.183231456205249e-12,
+  "status": "ALL MOMENT CHECKS PASSED"
+}

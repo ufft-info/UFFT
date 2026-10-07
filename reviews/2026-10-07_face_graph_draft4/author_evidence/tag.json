@@ -1,0 +1,24 @@
+{
+  "node_id": "TA_kwDOTWLIWNoAKDI2NWM1NWEwZmQ4YzBjYjZjMGFkYjNhZjJlYzUyMDU2N2EzNDE2MWY",
+  "sha": "265c55a0fd8c0cb6c0adb3af2ec520567a34161f",
+  "url": "https://api.github.com/repos/ufft-info/UFFT/git/tags/265c55a0fd8c0cb6c0adb3af2ec520567a34161f",
+  "tagger": {
+    "name": "Unified Foam Field Theory",
+    "email": "hello@ufft.info",
+    "date": "2026-10-07T02:37:46Z"
+  },
+  "object": {
+    "sha": "8df0e0b3a62457c8904181fa8412a3e949473d5d",
+    "type": "commit",
+    "url": "https://api.github.com/repos/ufft-info/UFFT/git/commits/8df0e0b3a62457c8904181fa8412a3e949473d5d"
+  },
+  "tag": "face-graph-note-v4",
+  "message": "",
+  "verification": {
+    "verified": false,
+    "reason": "unsigned",
+    "signature": null,
+    "payload": null,
+    "verified_at": null
+  }
+}

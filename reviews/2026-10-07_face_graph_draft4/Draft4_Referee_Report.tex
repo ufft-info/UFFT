@@ -1,0 +1,235 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=24mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,longtable,array,microtype,xurl,needspace}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\C}{\mathbb C}
+\newtheorem{proposition}{Proposition}
+\title{Referee Report on Draft 4\\[4pt]\large The Face-Adjacency Graph of the Truncated Octahedron:\\Laplacian Spectrum, Symmetry Decomposition,\\an Inter-Orbit Operator, and the Magnetic Laplacian}
+\author{AI-assisted mathematical audit prepared for Pablo Moscato}
+\date{7 October 2026}
+\begin{document}
+\maketitle
+\begin{center}\small
+Author: Luke Martin. Manuscript: October 2026, Draft 4, eleven pages.\\
+Reviewed attachment: \path{face_graph_truncated_octahedron_draft4.pdf}.
+\end{center}
+
+\section*{Recommendation}
+\textbf{Minor revision, now limited principally to reproducibility documentation and editorial precision.} Draft 4 resolves the substantive mathematical requests from the preceding report. I found no new error in the principal spectral formulas, the representation decomposition, the inter-orbit operator, the quarter-flux construction, or the Fedorov comparison table. The new proofs of gauge classification and monomiality are correct, and Appendix A supplies the previously requested derivations.
+
+The public release tag now exists, both author scripts pass at its resolved commit, the advertised strict numerical tolerances are implemented, and the archived supplementary suite passes. This is a materially stronger submission than the earlier drafts. I would not ask for another round of new mathematics as a condition of acceptance. The remaining corrections concern the tag description, a complete reproduction recipe and figure provenance, and accurate wording about the sequence of audits. Acceptance remains subject to the venue's assessment of the significance of a specialized example-driven note; correctness does not by itself establish priority.
+
+There is also a useful \emph{optional} strengthening: the paper's ``at most 13 distinct spectra'' can be sharpened to \textbf{exactly 13}. A short third-moment argument proves that two uniform-flux sectors are isospectral precisely when their charges agree up to sign modulo 24. Section~\ref{sec:moment} below supplies the proof. This is an addition from the present audit, not a correction required to make Draft 4 true.
+
+\section{Scope and evidence}
+The paper is assessed as standalone finite-dimensional mathematics, independently of the author's UFFT programme. No claim about photons, continuum electromagnetism, particle constants, or cosmology is validated by this report.
+
+I read the complete supplied PDF, inspected the rendered formulas and new appendix, compared the revision with the preceding consolidated report, and inspected and executed the relevant public code. The release was resolved through the public GitHub API:
+\begin{itemize}
+\item tag: \texttt{face-graph-note-v4};
+\item annotated tag object: \texttt{265c55a0fd8c0cb6c0adb3af2ec520567a34161f};
+\item target commit: \texttt{8df0e0b3a62457c8904181fa8412a3e949473d5d}.
+\end{itemize}
+All statements about the release below refer to this commit, as inspected on 7 October 2026. The accompanying evidence records the attachment's SHA-256 hash, downloaded source hashes, execution logs, and the resolved tag object. It does not rely on a moving main branch.
+
+The independently implemented checkers used here originated in the preceding review process and are now also included verbatim in the author's repository. Re-executing them is useful reproducibility evidence, but it is not another independent discovery or a separate human referee's endorsement. The present report distinguishes analytical verification, exact arithmetic, numerical checks, and documentary inspection.
+
+\section{Resolution of the previous review}
+\small
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.29\linewidth}>{\raggedright\arraybackslash}p{0.63\linewidth}}
+\toprule
+Earlier issue & Finding in Draft 4\\\midrule
+\endhead
+Incorrect hexagon centre & \textbf{Resolved.} Section 6.1, p.~6, uses centre $h$ and explains $h\cdot h=3$.\\
+Gauge existence and uniqueness & \textbf{Resolved.} Proposition 6.1 gives the primal-tree/dual-tree construction and the flat-ratio uniqueness argument.\\
+Monomiality of compensated rotations & \textbf{Resolved.} Section 6.1, p.~8, uses gauge uniqueness and the connected flat cube; the explicit generator actions agree with exact calculation.\\
+Fedorov graph definitions and proofs & \textbf{Resolved.} Section 7 and Appendix A define the elongated graph by indexed incidences and provide all four auxiliary derivations.\\
+Triangle and four-cycle counts & \textbf{Resolved.} Proposition 2.1 excludes additional triangles and gives the numerical trace substitution for 42 four-cycles.\\
+Unstated relative tolerance & \textbf{Resolved for the claimed checks.} All eight ordinary-script \texttt{allclose} calls with \texttt{atol=1e-12} explicitly set \texttt{rtol=0}; the script passes.\\
+Unconditional success message & \textbf{Remains resolved.} A fresh controlled error exits with status 1 and suppresses \texttt{ALL PASS}.\\
+Unavailable public tag & \textbf{Substantially resolved.} The v4 tag resolves to the commit above. Its message is empty, contrary to the parenthetical description in Section 8.\\
+Overbroad abstract coverage claim & \textbf{Resolved in the abstract.} Author scripts, supplementary exact checkers, and numerical sweep data are distinguished. Some older repository prose remains broader.\\
+Single entry point & \textbf{Available for the supplementary suite.} Its \texttt{run\_all.py} executes five auditors' checkers; it does not execute the two current author scripts or render Figure 1.\\
+Figure interpretation & \textbf{Resolved in the caption.} Integer sectors and connections between sorted eigenvalues are specified; segments are explicitly not analytic branches. The exact figure-producing pipeline still needs identification.\\
+Focused references & \textbf{Resolved.} Reff and Lange--Liu--Peyerimhoff--Post are added in an appropriate context.\\
+\bottomrule
+\end{longtable}
+\normalsize
+The already-satisfied and optional comments identified in the Draft 3 report should stay closed. In particular, there is no reason to require a full character table, a weighted generalization, a new physical selection principle, or a broad survey of unrelated applications.
+
+\section{Mathematical assessment}
+\subsection{Graph, ordinary spectrum, and representation labels}
+The incidence model in Section 2 is internally consistent. Squares form an independent set; hexagons induce $Q_3$; the square--hexagon incidences are precisely $h_a=\sigma$. The counts $14$, $36$, degrees $4^6 6^8$, 24 triangles, and 42 simple four-cycles are correct. The automorphism argument is complete: restriction to the cube is injective, and every cube automorphism permutes the six coordinate-face neighbourhoods and extends. The fresh enumeration, with NetworkX installed, gives 48.
+
+The monomial basis on $\{\pm1\}^3$ and the even/odd decomposition on the square orbit correctly give
+\[
+\C^{14}\cong 2A_{1g}\oplus E_g\oplus2T_{1u}\oplus T_{2g}\oplus A_{2u}.
+\]
+The two non-scalar Laplacian blocks are
+\[
+\begin{pmatrix}4&-\sqrt{12}\\-\sqrt{12}&3\end{pmatrix},\qquad
+\begin{pmatrix}4&-2\\-2&5\end{pmatrix}.
+\]
+Together with the scalar sectors, these prove
+\[
+\det(xI-\Delta)=x(x-9)(x-7)^4(x-4)^2(x^2-9x+16)^3.
+\]
+The adjacency polynomial and splitting fields remain correct: $\Q(\sqrt{17})$ for the Laplacian and $\Q(\sqrt{17},\sqrt{57})$ for adjacency. The distinction matters because the graph is not regular.
+
+Proposition 4.1 correctly reports the average square weight of the whole eigenvalue-seven space as $1/7$, while its $A_{1g}$ line has weight $4/7$. The irrational-sector weights $(1\pm1/\sqrt{17})/2$ also agree with the fresh numerical projectors. The graph counts and characteristic polynomials were checked exactly; these floating-point projector calculations are corroboration, not the proof of the weights.
+
+\subsection{The inter-orbit operator}
+The identity $K=[P_s,\Delta]$ makes skew-adjointness and equivariance transparent. Its block on each orthonormal $T_{1u}$ multiplicity plane is
+\[
+\begin{pmatrix}0&-2\\2&0\end{pmatrix},
+\]
+so $K^2=-4I$ on the six-dimensional isotypic component. The two distinct real Laplacian eigenlines in each plane are perpendicular; a scaled quarter-turn exchanges them. This proves the mapping between the two three-dimensional eigenspaces and the three singular values equal to two.
+
+The separate $A_{1g}$ plane has $K^2=-12I$, and the $T_{2g}$ part of the eigenvalue-seven space is annihilated while its $A_{1g}$ part is not. These qualifications are now stated correctly. The result is a useful explicit block identity, and the introduction appropriately avoids presenting it as a general structural breakthrough.
+
+\subsection{Gauge classification and the quarter-flux proof}
+Proposition 6.1 is sound for a connected cellular embedding in the oriented sphere. After fixing a primal spanning tree, complementary edges form a dual spanning tree. Leaf elimination assigns the remaining phases, and the product constraint supplies the final face equation. For uniqueness, the ratio connection has trivial holonomy on every face boundary and hence on every integral cycle. It is therefore a vertex gauge. If desired, inserting ``over the integers'' after ``generate the cycle space'' removes any possible confusion with a binary cycle-space convention; the argument is already clear in context.
+
+The uniform connections are consequently classified by $q\in\mathbb Z/24\mathbb Z$. This is a classification of connections modulo gauge, not an assertion that their spectra are all different. Complex conjugation identifies $q$ with $-q$ spectrally.
+
+At $q=6$, the correct hexagon centres and the stated square-to-hexagon phase convention give outward triangular holonomy $i$. The conjugation bar in the displayed holonomy on p.~7 is present in the rendered PDF. The Gram identities
+\[
+B^*B=\frac{9I-C^2}{2}=4(P_1+P_2),\qquad BB^*=4I_6
+\]
+are correct. Rank six and the six singular values equal to two justify the second equality; no extra assumption is hidden there. The two magnetic multiplicity blocks are
+\[
+\begin{pmatrix}4&-2\\-2&5\end{pmatrix}\quad\text{and}\quad
+\begin{pmatrix}4&-2\\-2&7\end{pmatrix},
+\]
+each repeated three times, with remaining scalar eigenvalues 3 and 9. Thus
+\[
+\det(xI-\Delta_6)=(x-9)(x-8)^3(x-3)^4(x^2-9x+16)^3.
+\]
+The intertwiner in (9), with both $h,k\in W_1$, identifies the actual incidence embeddings and explains the persistent irrational pair. It is more informative than merely noting equality of characteristic factors.
+
+At $q=12$, all edge phases can be chosen $-1$, giving $D+A$. The resulting polynomial
+\[
+(x-8)^3(x-5)^3(x-4)^2(x-3)^4(x^2-13x+24)
+\]
+and the discriminant 73 are correct. Neither proof requires a physical monopole model beyond the specified graph connection.
+
+\subsection{Magnetic rotations and the Fedorov appendix}
+The argument for $R_s(g)=BP(g)B^*/4$ now establishes both the representation law and its geometric monomial character. Gauge compensation is constant on the connected cube and can be normalized there to one; its action on squares is a diagonal unitary times the geometric permutation. The intertwining relation and $BB^*=4I$ identify that action uniquely with $R_s(g)$. This is a genuine representation of the proper rotation group for this connection, not merely an abstract unitary action on an isospectral space. The exact checks verify all 24 rotations, all 576 products, the geometric support of the monomial matrices, and equivariance of the intertwiner. The stated irreducible contents and the accidental $A_1\oplus T_2$ coincidence at eigenvalue three are correct. The warning about improper operations and the absence of ordinary $g/u$ magnetic labels is appropriate.
+
+Appendix A's four derivations are correct. In the prism formula the PDF has $C_6\vee\overline{K_2}$, with the overbar present; there is no unwanted edge between the two apexes. The rhombic example correctly uses the unsigned incidence matrix of the bipartite cube, whose rank is seven. The elongated graph's four Fourier blocks have the stated characteristic polynomials. The ordinary graph checks and the exact Fourier calculation agree with Table 1.
+
+Proposition 7.1 carefully distinguishes polynomial discriminants from field discriminants. Its descriptive distinctions are true, but are not intrinsic optimality criteria. The explicit refusal to infer a canonical cell-selection principle is scientifically appropriate and should remain.
+
+\section{Optional strengthening: exactly thirteen spectra}\label{sec:moment}
+The sentence following Proposition 6.1 is true as written, but a very short argument gives the complete isospectral classification.
+
+\begin{proposition}
+For the uniform-flux magnetic Laplacians of this graph,
+\[
+\spec(\Delta_p)=\spec(\Delta_q)
+\quad\Longleftrightarrow\quad p\equiv q\ \text{or}\ p\equiv-q\pmod{24}.
+\]
+There are exactly thirteen distinct spectra.
+\end{proposition}
+\begin{proof}
+Write $A_q$ for the Hermitian magnetic adjacency matrix and $\Delta_q=D-A_q$. Since $A_q$ has zero diagonal and unit-modulus entries on the edges,
+\[
+\tr\Delta_q=72,\qquad \tr\Delta_q^2=\sum_v(d_v^2+d_v)=456.
+\]
+Cyclicity of trace, without assuming $D$ and $A_q$ commute, gives
+\[
+\tr\Delta_q^3=\tr D^3+3\tr(DA_q^2)-\tr A_q^3.
+\]
+Here $\tr D^3=2112$ and $\tr(DA_q^2)=\sum_vd_v^2=384$. Each of the 24 triangles contributes three closed walks in each orientation, hence
+\[
+\tr A_q^3=24\cdot6\cos(2\pi q/24).
+\]
+Therefore
+\begin{equation}\label{eq:moment}
+\boxed{\tr\Delta_q^3=3264-144\cos(\pi q/12).}
+\end{equation}
+Equal spectra imply equal third moments, so $\cos(\pi p/12)=\cos(\pi q/12)$, equivalently $p\equiv\pm q\pmod{24}$. Conversely, equality modulo 24 is gauge equivalence, and sign reversal is complex conjugation, so both preserve the spectrum. Equivalently, the thirteen representatives $q=0,\ldots,12$ have distinct third moments because cosine is strictly decreasing on $[0,\pi]$.
+\end{proof}
+This sharpens the finite classification without computing new characteristic polynomials. It does not certify all individual eigenvalues algebraically, and it does not turn Figure 1's joining segments into continuous spectral branches.
+
+The accompanying new checker derives the third-moment identity by exact counting of closed walks in $\mathbb Z[z]/(z^{24}-1)$: $\tr A^3=72(z+z^{23})$. It also checks the numerical sweep against (\ref{eq:moment}). The strict-monotonicity argument above, not a numerical separation threshold, proves that the thirteen spectra are different. Inclusion in the paper is optional; if used, its origin in this revision audit should be acknowledged consistently with the other supplied arguments.
+
+\section{Reproducibility audit and remaining corrections}
+\subsection{What was actually executed}
+At the resolved v4 commit, both named author scripts completed with status zero. The ordinary script included the automorphism enumeration. A temporary in-memory alteration of the expected ordinary Laplacian factor, $(x-9)\mapsto(x-10)$ in one comparison, produced a named failure, exit status one, and no final success message. The original source was left unchanged.
+
+The five supplementary checkers and their runner are byte-for-byte identical to those delivered with the preceding review. They were rerun, rather than accepting their stored logs as evidence. Their suite verifies the ordinary and special-flux polynomials, the quarter-flux algebra and rotations, the certificate, the supplementary geometry and Fourier blocks, and the 25-charge numerical sweep. I additionally validated the JSON freshly generated by the current author script; it is byte-identical to the certificate stored under \texttt{verification/} at this commit.
+
+The regenerated CSV agrees numerically with the published supplementary CSV at every stored entry in this runtime (maximum absolute difference zero). The maximum observed residual for the three moment checks is approximately $3.18\times10^{-12}$; the declared moment-test threshold is $10^{-9}$, while the conjugation-symmetry test uses $10^{-12}$. These are different checks and tolerances and should not be conflated with the author's $10^{-12}$ projector/operator comparisons. Numerical diagonalization of the general-charge matrices remains numerical.
+
+\subsection{R1: correct the release-reference sentence}
+The previous missing-tag issue is closed: \texttt{face-graph-note-v4} is public and resolves. However, Section 8 says that the corresponding commit hash is printed in the tag message. The returned annotated tag object has an empty \texttt{message} field. The same assertion appears in the author's response to the Draft 3 review.
+
+Replace that parenthetical with the actual target commit hash or an immutable commit link. There is no need to rewrite the public tag merely to populate its message. \begin{samepage}The target commit is
+\begin{center}\small\texttt{8df0e0b3a62457c8904181fa8412a3e949473d5d}.\end{center}\end{samepage}
+The wording about a future Zenodo archive is appropriately prospective. Add its actual identifier once deposited, before describing that deposit as complete.
+
+\subsection{R2: provide the complete reproduction recipe and figure provenance}
+The supplied runner is real and works, but its scope is the \emph{supplementary auditors' suite}. It does not launch the two current author scripts, and its certificate checker normally reads an archived JSON inside its own \texttt{author\_evidence/} directory. This is not a mathematical defect or a broken runner. It means that the manuscript should identify exactly what each entry point runs and which certificate it checks.
+
+A complete documented recipe at repository root can start with:
+\begin{verbatim}
+python3 verification/verify_face_graph_paper_2026-10-06.py
+python3 verification/verify_face_graph_flux_exact_2026-10-06.py
+python3 reviews/2026-10-07_face_graph_draft3/run_all.py
+\end{verbatim}
+Then specify how the independent validator is pointed at the freshly generated certificate. Alternatively, add a wrapper that executes these steps and propagates every failure. State the Python, NumPy, SymPy and optional NetworkX requirements together, and warn that assertion-based checkers require ordinary execution without \texttt{-O}. Do not imply that one historical runner by itself executes all current code.
+
+Figure 1's revised caption is good. Its numerical levels are supported by the released sweep, which reproduces correctly. Nevertheless, that supplementary sweep constructs its gauge using exact rational linear algebra followed by numerical diagonalization, whereas the caption describes a least-squares gauge. Both methods can give gauge-equivalent operators; their agreement validates the spectral data but does not identify the exact code that drew the supplied figure. I did not identify a dedicated figure-producing script or the current standalone manuscript source/PDF in the inspected tag's tree. This is a limitation of the documented figure pipeline, not evidence that the plotted eigenvalues are wrong.
+
+For submission, include the plot script and its input data with a command producing Figure 1, or regenerate the figure directly from the released CSV and document that route. Include the submitted manuscript and source in the archival bundle so that the paper, code and figure have an unambiguous version relationship. No new sweep or exact solution of every charge sector is required.
+
+\subsection{R3: make provenance language precise}
+The acknowledgements on p.~10 begin by saying that two drafts were examined, then enumerate a first, second and third audit. Correct the count, preferably with a neutral phrase such as ``Earlier drafts underwent three rounds of AI-assisted review.''
+
+The mathematical contributions are now substantially attributed, and the explicit statement that no personal endorsement is implied is welcome. Avoid suggesting that successive rounds of this same review process are independent referees or independent rediscoveries. It is accurate to say that separately implemented verification code checked the author's computations, and that the review process supplied certain proofs. The exact checker deposited in the author's repository retains that origin; depositing and rerunning it does not create another independent source of confirmation.
+
+\Needspace{8\baselineskip}
+\subsection{R4: synchronize small documentary details}
+These are short editorial cleanups, not grounds for another scientific review cycle:
+\begin{itemize}
+\item The ordinary script's opening description and its row in \texttt{verification/README.md} retain older, broader coverage/revision language. Align them with the more accurate Draft 4 abstract and revision 3 of the script.
+\item The introduction's blanket description of statements as proved or computed exactly should explicitly allow the numerical all-charge figure, which is already correctly qualified in its caption.
+\item The flux-script certificate describes its Dirac-string convention as ``total flux zero on the sphere.'' More precisely, the chosen \emph{real-valued lift of the face phases} sums to zero, with a compensating multiple of $2\pi$ at one face; the uniform face holonomies still represent the stated $q$ sector. Align this metadata with the careful distinction in Section 6. Its current wording does not invalidate the exact residue checks.
+\end{itemize}
+The preliminary least-squares checks in the flux script still have their own floating-point tolerances. They are candidate-generation checks followed by exact integer holonomy tests and exact characteristic polynomials. They do not reopen the repaired absolute-tolerance issue in the ordinary script.
+
+\section{Contribution, literature, and proportionality}
+The strongest mathematical content is the explicit $q=6$ Gram reduction, its incidence-based intertwiner, and the gauge-compensated proper-rotation action. The ordinary spectrum and orbit weights are clean applications of small representation blocks; the Fedorov appendix is useful comparative exposition. These ingredients make a coherent mathematical note, with no need to import the author's physical programme.
+
+The added references are relevant. Reff provides a complex unit-gain-graph setting \cite{reff}; Lange and collaborators provide magnetic gauge/switching context \cite{lange}. Avishai and Luck explicitly study monopole-dependent spectra on spherical polyhedral graphs \cite{avishai}; the introduction properly treats that construction as prior work. A bounded search using the tetrakis-hexahedral and truncated-octahedral magnetic-spectrum terminology did not establish a prior occurrence of this specific quarter-flux calculation. Such a search is not a systematic novelty certificate, and the manuscript's cautious statement about priority should remain.
+
+The remaining tasks are finite: correct the release parenthetical, document and archive the complete reproduction/figure route, and clean up the audit and metadata wording. The optional thirteen-spectrum corollary can improve the paper, but should not become a new acceptance condition. On the checked mathematics, my recommendation is favorable after these limited corrections.
+
+\appendix
+\small
+\section{Package contents and verification limits}
+The accompanying package contains this report in \LaTeX\ and PDF, the five reused independent checkers, a runner, the new moment checker, a regenerated numerical CSV, exact-check results, the current author certificate, execution logs, and source/version evidence. The reused scripts are identified as such rather than represented as newly written independent analyses. The optional weighted identities already present in the deeper checker are not a requested extension to Draft 4.
+
+Install \path{requirements.txt}, then run \texttt{python3 run\_all.py} in this review package. Its runner includes the new moment check after the original five checks. The package does not redistribute the full author repository or claim to regenerate the author's original Figure 1. The source manifest identifies the inspected author files so their runs can be repeated at the pinned commit. Logs of the controlled negative test clearly identify the temporary change.
+
+The supplied attachment has SHA-256
+\begin{center}\footnotesize
+\path{2da8d68216695ce718b0879269d5b11f2237bc6b82e5dc2d2315773d596a7ce2}.
+\end{center}
+Source inspection and successful tests cover the concrete claims described above. They do not establish publication priority, validate uninspected repository content, or endorse physical applications.
+
+\begin{thebibliography}{9}
+\bibitem{paper} L.~Martin, \emph{The Face-Adjacency Graph of the Truncated Octahedron: Laplacian Spectrum, Symmetry Decomposition, an Inter-Orbit Operator, and the Magnetic Laplacian}, October 2026, Draft 4, supplied eleven-page PDF.
+\bibitem{prior} \emph{Consolidated Referee Report on Draft 3}, AI-assisted mathematical audit prepared for Pablo Moscato, 7 October 2026, nine-page report and accompanying verification package.
+\bibitem{repo} L.~Martin, accompanying verification code and archived reviews, UFFT repository, tag \texttt{face-graph-note-v4}, inspected commit \texttt{8df0e0b3a62457c8904181fa8412a3e949473d5d}, 7 October 2026. \url{https://github.com/ufft-info/UFFT/tree/8df0e0b3a62457c8904181fa8412a3e949473d5d}.
+\bibitem{avishai} Y.~Avishai and J.~M.~Luck, Tight-binding electronic spectra on graphs with spherical topology. I. The effect of a magnetic charge, \emph{J. Stat. Mech.} (2008), P06007. \url{https://arxiv.org/abs/0801.1460}.
+\bibitem{reff} N.~Reff, Spectral properties of complex unit gain graphs, \emph{Linear Algebra Appl.} \textbf{436} (2012), 3165--3176. \url{https://arxiv.org/abs/1110.4554}.
+\bibitem{lange} C.~Lange, S.~Liu, N.~Peyerimhoff and O.~Post, Frustration index and Cheeger inequalities for discrete and continuous magnetic Laplacians, \emph{Calc. Var. Partial Differential Equations} \textbf{54} (2015), 4165--4196. \url{https://arxiv.org/abs/1502.06299}.
+\end{thebibliography}
+\end{document}

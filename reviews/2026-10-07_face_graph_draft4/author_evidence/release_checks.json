@@ -1,0 +1,8 @@
+{
+  "negative_exit": 1,
+  "false_success_suppressed": true,
+  "fresh_certificate_checked": true,
+  "published_csv_max_abs_difference": 0.0,
+  "tag_message": "",
+  "commit": "8df0e0b3a62457c8904181fa8412a3e949473d5d"
+}
