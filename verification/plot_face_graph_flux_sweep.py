@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
-plot_face_graph_flux_sweep.py  (revision 2, 2026-10-08)
+plot_face_graph_flux_sweep.py  (revision 3, 2026-10-09)
 
-Figure 1 of "The face-adjacency graph of the truncated octahedron" (Draft 5), produced from first
+Figure 1 of "The face-adjacency graph of the truncated octahedron" (Draft 6 and later), produced from first
 principles so that the figure, its data and the paper have one documented route (fourth review round, R2).
 Revision 2 answers the fifth review round: every numerical comparison sets rtol=0 explicitly (R1); the
 unimodularity of the free-edge system is certified by an exact integer determinant, not a rounded float (R2);
 the lift target is written in the order the code uses, (-23, 1, ..., 1) with -23 on plaquette 0 (R3); and the
 fourth trace moment supplied by that round is checked as an additional cross-check.
+Revision 3 corrects this header, which still named Draft 5 (sixth review round, minor task 1); no code changed.
 
 Steps, each a named check:
   1. read flux_gauge_certificate.json written by verify_face_graph_flux_exact_2026-10-06.py (same directory);
