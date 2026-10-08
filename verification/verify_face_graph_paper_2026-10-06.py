@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
 """
-verify_face_graph_paper_2026-10-06.py  (revision 4, 2026-10-08)
+verify_face_graph_paper_2026-10-06.py  (revision 5, 2026-10-08)
 
-Test harness for "The face-adjacency graph of the truncated octahedron" (Draft 5): the graph
+Test harness for "The face-adjacency graph of the truncated octahedron" (Draft 6): the graph
 counts, the exact characteristic polynomials (adjacency, Laplacian, signless Laplacian, the
 five Fedorov face graphs) and the stated numerical eigenspace and inter-orbit identities at
 declared tolerances. It does NOT cover the quarter-flux matrix identities, the magnetic
 rotation action or the all-charge sweep: those are checked by the flux script, by the
-auditors' checkers filed under reviews/, and by plot_face_graph_flux_sweep.py. Every
+reviewers' checkers filed under reviews/, and by plot_face_graph_flux_sweep.py. Every
 advertised claim is an explicit check, failures are accumulated, and the exit status is
-nonzero if any positive assertion fails. Revision 4 (fourth audit, R4) changes this
-description only.
+nonzero if any positive assertion fails. Revision 4 (fourth review round, R4) changed this
+description only. Revision 5 (fifth review round) adds one EXACT check, the spanning-tree count
+101,154,816 by an exact cofactor determinant and its agreement with the Laplacian spectrum
+(Remark 6.3 of Draft 6); nothing else changes.
 
 Revision 2 answers the referee's software audit of 2026-10-07 (revision 3 sets rtol=0 on every declared 1e-12 check, per the third audit):
   * ALL PASS is now conditional on every check; exit status 1 on any failure.
@@ -117,6 +119,21 @@ check("discriminants 57 and 17 (adjacency), 17 (Laplacian), 73 (signless)",
       9+48 == 57 and 1+16 == 17 and 81-64 == 17 and 169-96 == 73)
 
 # ================================================================ 3. exact block identities on raw vectors
+def det_exact(M):
+    M = [[Fraction(x) for x in row] for row in M]; m = len(M); d = Fraction(1)
+    for c in range(m):
+        p = next((r for r in range(c, m) if M[r][c] != 0), None)
+        if p is None: return Fraction(0)
+        if p != c: M[c], M[p] = M[p], M[c]; d = -d
+        d *= M[c][c]
+        for r in range(c + 1, m):
+            fct = M[r][c]/M[c][c]
+            for k in range(c, m): M[r][k] -= fct*M[c][k]
+    return d
+tau = det_exact([row[1:] for row in L[1:]])
+check("spanning trees: cofactor of L = 101,154,816 = 9 * 7^4 * 4^2 * 16^3 / 14 (matrix-tree theorem against the spectrum)",
+      tau == 101154816 and Fraction(9*7**4*4**2*16**3, 14) == tau, f"tau = {tau}")
+
 print("\n== 3. orbit blocks on raw coordinate vectors (EXACT) ==")
 def mv(M, v): return [sum(M[i][j]*v[j] for j in range(n)) for i in range(n)]
 def lin(a, u, b, w): return [a*x + b*y for x, y in zip(u, w)]

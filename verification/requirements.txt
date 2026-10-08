@@ -1,3 +1,5 @@
 numpy
 sympy
 scipy
+matplotlib
+# optional: networkx (automorphism count in verify_face_graph_paper_2026-10-06.py; skipped with a note if absent)
