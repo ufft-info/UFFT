@@ -1,0 +1,212 @@
+#!/usr/bin/env python3
+"""gen_fedorov.py: builds the face-graph Laplacians of the cube, hexagonal prism, rhombic dodecahedron and
+elongated dodecahedron from the same adjacency rules as FaceGraph/Fedorov.lean, finds a rational change of basis
+P with P^-1 L P block diagonal in 2 x 2 blocks, and prints the Lean literals (L, P, Q = P^-1, blocks) together
+with the charpoly factorisation. Rational eigenvalues give diagonal blocks; the irreducible quadratic of the
+elongated dodecahedron gives companion-type blocks on cyclic subspaces (v, L v)."""
+import sympy as sp
+from sympy import Matrix, Rational, factor, symbols, eye, zeros
+x = symbols('x')
+
+def cube_adj(i, j): return i // 2 != j // 2
+def prism_adj(i, j):
+    if i < 6 and j < 6: return (i + 1) % 6 == j or (j + 1) % 6 == i
+    return (i < 6) != (j < 6)
+def edge_ends(k):
+    a, r = k // 4, k % 4
+    lo, hi = r % 2, r // 2
+    b, c = [t for t in range(3) if t != a]
+    u = lo * 2 ** b + hi * 2 ** c
+    return u, u + 2 ** a
+def rhombic_adj(i, j):
+    if i == j: return False
+    u, v = edge_ends(i); s, t = edge_ends(j)
+    return len({u, v} & {s, t}) > 0
+def elong_adj(i, j):
+    ci, cj = i // 4, j // 4; a, b = i % 4, j % 4
+    if ci == cj: return (a + 1) % 4 == b or (b + 1) % 4 == a
+    if ci == 0: return b == a or b == (a + 1) % 4          # H_a ~ T_a, T_{a+1}, B_a, B_{a+1}
+    if cj == 0: return a == b or a == (b + 1) % 4
+    return False
+
+def laplacian(n, adj):
+    A = Matrix(n, n, lambda i, j: 1 if adj(i, j) else 0)
+    assert A == A.T
+    return sp.diag(*[sum(A[i, :]) for i in range(n)]) - A
+
+def block_basis(L):
+    """rational basis in which L is block diagonal with 2x2 blocks; returns P, Q, list of 2x2 blocks."""
+    n = L.shape[0]
+    cp = factor(L.charpoly(x).as_expr())
+    cols = []; blocks = []
+    pend = []  # pending rational eigenvectors (vec, lam)
+    for fac, mult in sp.factor_list(L.charpoly(x).as_expr())[1]:
+        deg = sp.degree(fac, x)
+        if deg == 1:
+            lam = sp.solve(fac, x)[0]
+            for v in (L - lam * eye(n)).nullspace():
+                v = v * sp.ilcm(*[sp.fraction(e)[1] for e in v])
+                pend.append((v, lam))
+        else:
+            fL = (fac.subs(x, L) if False else None)
+            # f(L) for quadratic x^2 + p x + q
+            p, q = sp.Poly(fac, x).all_coeffs()[1:]
+            FL = L * L + p * L + q * eye(n)
+            ker = FL.nullspace()
+            ker = [v * sp.ilcm(*[sp.fraction(e)[1] for e in v]) for v in ker]
+            used = []
+            for v in ker:
+                M = Matrix.hstack(*(used + [v])) if used else v
+                if M.rank() == len(used) + 1:
+                    w = L * v
+                    used += [v, w]
+                    # block on (v, w): L v = w = 0 v + 1 w; L w = L^2 v = -p L v - q v = -q v - p w
+                    blocks.append(Matrix([[0, -q], [1, -p]]))
+                    cols += [v, w]
+            assert len(used) == len(ker)
+    while pend:
+        (v1, l1), (v2, l2) = pend.pop(0), pend.pop(0)
+        cols += [v1, v2]; blocks.append(Matrix([[l1, 0], [0, l2]]))
+    P = Matrix.hstack(*cols); Q = P.inv()
+    B = sp.diag(*blocks)
+    assert Q * L * P == B
+    return P, Q, blocks, cp
+
+def lean_mat(M, name, n):
+    rows = []
+    for i in range(n):
+        rows.append(", ".join(str(M[i, j]) for j in range(n)))
+    body = ";\n     ".join(rows)
+    return f"def {name} : Matrix (Fin {n}) (Fin {n}) ℚ :=\n  !![{body}]"
+
+if __name__ == "__main__":
+    for nm, n, adj in [("Cube", 6, cube_adj), ("Prism", 8, prism_adj), ("Rhombic", 12, rhombic_adj), ("Elong", 12, elong_adj)]:
+        L = laplacian(n, adj)
+        P, Q, blocks, cp = block_basis(L)
+        print(f"-- {nm}: charpoly = {cp}; degrees {sorted(L[i,i] for i in range(n))}")
+        print(lean_mat(L, f"L{nm}", n)); print(lean_mat(P, f"P{nm}", n)); print(lean_mat(Q, f"Q{nm}", n))
+        bl = ", ".join("!![%s; %s]" % (", ".join(str(b[0, j]) for j in range(2)), ", ".join(str(b[1, j]) for j in range(2))) for b in blocks)
+        print(f"def blk{nm} : Fin {n//2} → Matrix (Fin 2) (Fin 2) ℚ :=\n  ![{bl}]")
+        for k, b in enumerate(blocks):
+            print(f"-- blk{nm} {k}: {factor(b.charpoly(x).as_expr())}")
+        print()
+
+
+HEADER = '''import FaceGraph.Theorem31
+
+/-!
+# The face-graph Laplacian spectra of the other four Fedorov parallelohedra (Table 2, Appendix A)
+
+Each graph is defined by its adjacency rule (Section 7 of the note), the Laplacian is built from the rule, proved
+equal to a literal matrix by `decide +kernel`, and the characteristic polynomial is obtained exactly as in
+`Theorem31.lean`: a rational change of basis to 2 × 2 blocks (diagonal blocks for the rational eigenvalues, the
+cyclic pair `(v, L v)` for the irreducible quadratic `x² - 10x + 20` of the elongated dodecahedron), the block
+identity decided by the kernel, and the polynomial assembled from the blocks. The change-of-basis matrices were
+generated by `gen_fedorov.py` and are checked here, not trusted.
+
+Conventions. Cube: faces 0–5 are `+x, -x, +y, -y, +z, -z` (pair `v / 2`); two faces are adjacent unless opposite
+(`K_{2,2,2}`). Hexagonal prism: faces 0–5 the squares in cyclic order, 6–7 the hexagons; squares adjacent when
+consecutive, every square adjacent to both hexagons, the hexagons not adjacent (`C₆ ∨ K̄₂`). Rhombic dodecahedron:
+face `k` (0–11) is the cube edge with axis `k / 4` from the vertex whose other two bits are `k % 4`; two faces are
+adjacent when the edges share a vertex (the line graph of the cube). Elongated dodecahedron: faces `0–3` the
+hexagons `H_i`, `4–7` the top rhombi `T_i`, `8–11` the bottom rhombi `B_i`, `i ∈ ℤ/4`; each class is a 4-cycle and
+`H_i` is adjacent to `T_i, T_{i+1}, B_i, B_{i+1}`.
+-/
+
+open Matrix Polynomial
+
+/-- Laplacian of a graph on `Fin n` given by a symmetric adjacency rule. -/
+def lapOf {n : ℕ} (adj : ℕ → ℕ → Bool) : Matrix (Fin n) (Fin n) ℚ := fun v w =>
+  if v = w then (((List.range n).filter (fun u => adj v.val u)).length : ℚ) else if adj v.val w.val then -1 else 0
+
+/-- `(i, k) ↦ i + 2k`, as `e72` in `Theorem31.lean`. -/
+def e23 : Fin 2 × Fin 3 ≃ Fin 6 := (Equiv.prodComm (Fin 2) (Fin 3)).trans finProdFinEquiv
+def e24 : Fin 2 × Fin 4 ≃ Fin 8 := (Equiv.prodComm (Fin 2) (Fin 4)).trans finProdFinEquiv
+def e26 : Fin 2 × Fin 6 ≃ Fin 12 := (Equiv.prodComm (Fin 2) (Fin 6)).trans finProdFinEquiv
+
+section Cube
+/-- Cube: adjacent unless opposite. -/
+def cubeAdj (i j : ℕ) : Bool := i / 2 ≠ j / 2
+def LcubeG : Matrix (Fin 6) (Fin 6) ℚ := lapOf cubeAdj
+end Cube
+
+section Prism
+/-- Hexagonal prism: squares 0–5 in a 6-cycle, hexagons 6–7 joined to every square. -/
+def prismAdj (i j : ℕ) : Bool :=
+  if i < 6 ∧ j < 6 then (i + 1) % 6 = j ∨ (j + 1) % 6 = i else (i < 6 ∧ 6 ≤ j) ∨ (6 ≤ i ∧ j < 6)
+def LprismG : Matrix (Fin 8) (Fin 8) ℚ := lapOf prismAdj
+end Prism
+
+section Rhombic
+/-- Endpoints of cube edge `k`: axis `k / 4`, the other two bits from `k % 4`. -/
+def edgeEnds (k : ℕ) : ℕ × ℕ :=
+  let a := k / 4
+  let r := k % 4
+  let b := if a = 0 then 1 else 0
+  let c := if a = 2 then 1 else 2
+  let u := (r % 2) * 2 ^ b + (r / 2) * 2 ^ c
+  (u, u + 2 ^ a)
+/-- Rhombic dodecahedron: distinct cube edges sharing a vertex (line graph of the cube). -/
+def rhombicAdj (i j : ℕ) : Bool :=
+  i ≠ j ∧ ((edgeEnds i).1 = (edgeEnds j).1 ∨ (edgeEnds i).1 = (edgeEnds j).2 ∨
+           (edgeEnds i).2 = (edgeEnds j).1 ∨ (edgeEnds i).2 = (edgeEnds j).2)
+def LrhombicG : Matrix (Fin 12) (Fin 12) ℚ := lapOf rhombicAdj
+end Rhombic
+
+section Elong
+/-- Elongated dodecahedron: `H_i = i`, `T_i = 4 + i`, `B_i = 8 + i`. -/
+def elongAdj (i j : ℕ) : Bool :=
+  let ci := i / 4
+  let cj := j / 4
+  let a := i % 4
+  let b := j % 4
+  if ci = cj then (a + 1) % 4 = b ∨ (b + 1) % 4 = a
+  else if ci = 0 then b = a ∨ b = (a + 1) % 4
+  else if cj = 0 then a = b ∨ a = (b + 1) % 4
+  else false
+def LelongG : Matrix (Fin 12) (Fin 12) ℚ := lapOf elongAdj
+end Elong
+'''
+
+def emit_section(nm, n, L, P, Q, blocks, cp_lean, blk_polys, prod_lemma):
+    m = n // 2
+    s = [f"\nsection {nm}Proof\n"]
+    s.append(lean_mat(L, f"L{nm}", n)); s.append(lean_mat(P, f"P{nm}", n)); s.append(lean_mat(Q, f"Q{nm}", n))
+    bl = ", ".join("!![%s; %s]" % (", ".join(str(b[0, j]) for j in range(2)), ", ".join(str(b[1, j]) for j in range(2))) for b in blocks)
+    s.append(f"def blk{nm} : Fin {m} → Matrix (Fin 2) (Fin 2) ℚ :=\n  ![{bl}]")
+    s.append(f"set_option linter.style.longLine false in\ndef B{nm} : Matrix (Fin {n}) (Fin {n}) ℚ := Matrix.reindex e2{m} e2{m} (Matrix.blockDiagonal blk{nm})\n")
+    s.append(f"/-- The rule-built Laplacian is the literal. -/\ntheorem L{nm}G_eq : L{nm.lower()}G = L{nm} := by decide +kernel")
+    s.append(f"lemma LP{nm} : L{nm} * P{nm} = P{nm} * B{nm} := by rw [← Matrix.mulᵣ_eq, ← Matrix.mulᵣ_eq]; decide +kernel")
+    s.append(f"lemma PQ{nm} : P{nm} * Q{nm} = 1 := by rw [← Matrix.mulᵣ_eq]; decide +kernel")
+    s.append(f"lemma QP{nm} : Q{nm} * P{nm} = 1 := by rw [← Matrix.mulᵣ_eq]; decide +kernel")
+    s.append(f"def Punit{nm} : (Matrix (Fin {n}) (Fin {n}) ℚ)ˣ := ⟨P{nm}, Q{nm}, PQ{nm}, QP{nm}⟩")
+    s.append(f"lemma L{nm}_conj : L{nm} = P{nm} * B{nm} * Q{nm} := by\n  calc L{nm} = L{nm} * (P{nm} * Q{nm}) := by rw [PQ{nm}, mul_one]\n    _ = (L{nm} * P{nm}) * Q{nm} := by rw [mul_assoc]\n    _ = P{nm} * B{nm} * Q{nm} := by rw [LP{nm}]")
+    names = []
+    for k, (b, poly) in enumerate(zip(blocks, blk_polys)):
+        lit = "!![%s; %s]" % (", ".join(str(b[0, j]) for j in range(2)), ", ".join(str(b[1, j]) for j in range(2)))
+        s.append(f"lemma blk{nm}{k} : (blk{nm} {k}).charpoly = {poly} := by\n  rw [show blk{nm} {k} = {lit} from rfl, cp2]; simp [Polynomial.C_ofNat]; try ring")
+        names.append(f"blk{nm}{k}")
+    s.append(f"theorem charpoly_B{nm} : B{nm}.charpoly = {cp_lean} := by\n  unfold B{nm}\n  rw [Matrix.charpoly_reindex, charpoly_blockDiagonal, {prod_lemma},\n    {', '.join(names)}]\n  try ring")
+    s.append(f"theorem charpoly_L{nm} : L{nm}.charpoly = {cp_lean} := by\n  rw [L{nm}_conj, ← charpoly_B{nm}]\n  have h := Matrix.charpoly_units_conj Punit{nm} B{nm}\n  rw [← Matrix.coe_units_inv] at h\n  exact h")
+    s.append(f"/-- Table 2 row for the {nm.lower()}, for the rule-built Laplacian. -/\ntheorem charpoly_L{nm.lower()}G : L{nm.lower()}G.charpoly = {cp_lean} := by\n  rw [L{nm}G_eq]; exact charpoly_L{nm}")
+    s.append(f"end {nm}Proof\n")
+    return "\n".join(s)
+
+def lean_poly(expr):
+    """sympy factored charpoly -> Lean polynomial text in X."""
+    t = str(expr).replace("**", " ^ ").replace("*", " * ").replace("x", "X")
+    return t
+
+if __name__ == "__main__" and True:
+    import sys
+    out = [HEADER]
+    specs = [("Cube", 6, cube_adj, "Fin.prod_univ_three"), ("Prism", 8, prism_adj, "Fin.prod_univ_four"),
+             ("Rhombic", 12, rhombic_adj, "Fin.prod_univ_six"), ("Elong", 12, elong_adj, "Fin.prod_univ_six")]
+    for nm, n, adj, pl in specs:
+        L = laplacian(n, adj)
+        P, Q, blocks, cp = block_basis(L)
+        polys = [lean_poly(factor(b.charpoly(x).as_expr())) for b in blocks]
+        out.append(emit_section(nm, n, L, P, Q, blocks, lean_poly(cp), polys, pl))
+    out.append("#print axioms charpoly_LcubeG\n#print axioms charpoly_LprismG\n#print axioms charpoly_LrhombicG\n#print axioms charpoly_LelongG\n")
+    open("FaceGraph/Fedorov.lean", "w").write("\n".join(out))
+    print("wrote FaceGraph/Fedorov.lean")
